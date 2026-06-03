@@ -1,22 +1,69 @@
-# Skill: Risk Metrics
+---
+name: risk-metrics
+description: "Define, implement, and validate quantitative metrics for measuring AV collision risk with citations and benchmarks."
+---
 
-**Purpose:** Define, implement, and validate quantitative metrics for measuring AV collision risk.
+# Risk Metrics
 
-## Capabilities
+Define, implement, and validate quantitative metrics for measuring AV collision risk.
 
-1. **Metric definition** — Formalize risk metrics with clear mathematical definitions
-2. **Metric implementation** — Code metrics in `src/analysis/` and `src/risk_models/`
-3. **Benchmark comparison** — Compare against industry metrics (PMHS, VRU collision rates, etc.)
-4. **Sensitivity analysis** — Test how metrics respond to parameter changes
+## Key Metrics with Formulas
 
-## Key Metrics to Implement
+### Collision Rate (λ)
+```
+λ = n_collisions / exposure
+exposure = Σ (distance_traveled) or Σ (time_driven)
+Units: collisions per 10M vehicle miles (VMT) or per 100M vehicle hours (VHT)
+Citation: NHTSA standard reporting metric
+```
 
-- **Collision rate** (per distance, per trip, per exposure hour)
-- **Severity-weighted risk** (injury level × frequency)
-- **Time-to-collision** distributions
-- **Critical event rate** (near-miss analysis)
-- **Risk per scenario type** (intersection, highway, urban, pedestrian, etc.)
-- **Standard-aligned metrics** (from UL 4600, ISO 21448)
+### Severity-Weighted Risk (SWR)
+```
+SWR = Σ (severity_i × weight_i) / n_events
+severity_i ∈ {fatal=1.0, MAIS3+=0.5, injury=0.1, property damage=0.01}
+weight_i = exposure_weight_i
+Citation: NHTSA ES-28, BANSYSE injury correlation
+```
+
+### TTC Distribution
+```
+TTC(t) = d(t) / v_rel(t) when v_rel > 0
+Model TTC as GPD above threshold u
+P(TTC < τ) = (1 + ξ·(τ - u)/σ)^(-(1/ξ + 1))
+```
+
+### Critical Event Rate
+```
+Critical event = any TTC < TTC_critical (typically 1.5–2.5s)
+Rate = n_critical_events / exposure
+Near-miss analysis: use TTC percentile distribution rather than binary collision
+```
+
+### Risk per Scenario Type
+```
+For each conflict type k:
+  λ_k = n_collisions_k / exposure_k
+  SWR_k = Σ(severity_i × weight_i) / n_events_k
+  Report by jurisdiction, time of day, road type
+```
+
+### Standard-Aligned Metrics
+
+**UL 4600 Requirements:**
+- Risk assessment methodology (Section 6.2)
+- Hazard identification (Section 7.1)
+- Safety case evidence (Section 10)
+
+**ISO 21448 (SOTIF) Requirements:**
+- HARA (Hazard Analysis and Risk Assessment)
+- Perceived functional hazards
+- Performance limitations
+- Manipulation and misuse
+
+**ISO 26262 Requirements:**
+- ASIL (Automotive Safety Integrity Level) classification
+- Safety goals and requirements
+- Technical safety requirements
 
 ## Workflow
 
@@ -30,22 +77,35 @@
 
 Each metric module must include:
 - Mathematical formula (LaTeX in docstring)
-- Input/output specs
-- Parameter descriptions with units
+- Input/output specs with units
 - Citation to source or derivation
 - Test coverage ≥ 80%
 
 ## Rules
 
 - Every metric must have a cited source or documented derivation
-- Never use undefined constants — all parameters justified
+- All parameters justified with literature or data
 - Test against multiple data sources when possible
 - Document limitations and known edge cases
 
-## Reuse
+## Reuse Trigger
 
-This skill is used when:
+Use when:
 - Building new risk quantification components
 - Comparing risk assessment approaches
 - Validating safety claims numerically
 - Portfolio visualization of risk metrics
+
+## File Structure
+```
+src/risk_models/
+├── metrics/
+│   ├── collision_rate.py
+│   ├── severity_weighted_risk.py
+│   ├── ttc_distribution.py
+│   ├── critical_event_rate.py
+│   └── risk_per_scenario_type.py
+└── validation/
+    ├── benchmark.py
+    └── citation_index.py
+```
