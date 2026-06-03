@@ -1,0 +1,9 @@
+services:
+  python:
+    image: python:3.14-slim
+    working_dir: /workspace
+    volumes:
+      - .:/workspace
+    command: tail -f /dev/null
+    environment:
+      - PYTHONUNBUFFERED=1
