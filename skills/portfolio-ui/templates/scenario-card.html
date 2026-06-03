@@ -1,0 +1,61 @@
+<div class="scenario-card" data-conflict-type="{{conflictType}}" data-scenario-id="{{scenarioId}}">
+  <div class="scenario-header">
+    <span class="conflict-type-badge">{{conflictType}}</span>
+    <span class="scenario-id">{{scenarioId}}</span>
+  </div>
+
+  <h3 class="scenario-title">{{title}}</h3>
+
+  <p class="scenario-description">{{description}}</p>
+
+  <div class="scenario-preview">
+    <div class="preview-metrics">
+      <div class="metric-item">
+        <span class="metric-label">Risk</span>
+        <span class="metric-value {{riskClass}}">{{risk}}%</span>
+      </div>
+      <div class="metric-item">
+        <span class="metric-label">TTC</span>
+        <span class="metric-value">{{ttc}}s</span>
+      </div>
+      <div class="metric-item">
+        <span class="metric-label">Sample Size</span>
+        <span class="metric-value">{{sampleSize}}</span>
+      </div>
+    </div>
+
+    <div class="preview-violation-indicators">
+      <span class="violation-indicator {{tciIndicator}}" title="Time-to-Collision Violation">TTC</span>
+      <span class="violation-indicator {{ssdiIndicator}}" title="Semi-Safe Distance Violation">SSD</span>
+      <span class="violation-indicator {{psdrIndicator}}" title="Post-Encroachment Time Violation">PET</span>
+    </div>
+  </div>
+
+  <div class="scenario-parameters">
+    <div class="parameter-row">
+      <span class="parameter-label">v₁</span>
+      <span class="parameter-value">{{v1}} km/h</span>
+    </div>
+    <div class="parameter-row">
+      <span class="parameter-label">v₂</span>
+      <span class="parameter-value">{{v2}} km/h</span>
+    </div>
+    <div class="parameter-row">
+      <span class="parameter-label">Headway</span>
+      <span class="parameter-value">{{headway}}m</span>
+    </div>
+    <div class="parameter-row">
+      <span class="parameter-label">Visibility</span>
+      <span class="parameter-value">{{visibility}}m</span>
+    </div>
+  </div>
+
+  <div class="scenario-actions">
+    <button class="btn-primary" data-action="view-scenario">
+      View Scenario
+    </button>
+    <button class="btn-secondary" data-action="compare-scenario">
+      Compare
+    </button>
+  </div>
+</div>

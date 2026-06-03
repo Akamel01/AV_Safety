@@ -1,0 +1,35 @@
+<nav class="conflict-type-nav" aria-label="Conflict type navigation">
+  <div class="nav-header">
+    <h2 class="nav-title">Conflict Types</h2>
+    <span class="nav-subtitle">Select a conflict type to explore scenarios</span>
+  </div>
+
+  <div class="conflict-type-grid">
+    {% for conflictType in conflictTypes %}
+    <button
+      class="conflict-type-card {{conflictType.id}}"
+      data-conflict-type="{{conflictType.id}}"
+      aria-label="Explore {{conflictType.name}} scenarios"
+    >
+      <div class="card-icon">
+        <span class="icon">{{conflictType.icon}}</span>
+      </div>
+
+      <div class="card-content">
+        <h3 class="card-title">{{conflictType.name}}</h3>
+        <p class="card-description">{{conflictType.description}}</p>
+
+        <div class="card-stats">
+          <span class="stat-count">{{conflictType.scenarioCount}} scenarios</span>
+          <span class="stat-sample">{{conflictType.sampleRisk}}% avg risk</span>
+        </div>
+
+        <div class="card-preview-metrics">
+          <span class="metric-preview">TTC: {{conflictType.avgTTC}}s</span>
+          <span class="metric-preview">Risk: {{conflictType.avgRisk}}%</span>
+        </div>
+      </div>
+    </button>
+    {% endfor %}
+  </div>
+</nav>
