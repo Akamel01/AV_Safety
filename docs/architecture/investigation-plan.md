@@ -192,14 +192,21 @@ Indicators computed at each simulation timestep, then aggregated:
 ## Phase 4: 3D Animation Engine
 
 ### Task 4.1: Technology selection
-**Options:**
-- **Three.js + JavaScript** — web-native, no backend needed, runs in browser
-- **Blender + export** — high quality but static, not interactive
-- **Unity WebGL** — powerful but heavy, large bundle
-- **Babylon.js** — similar to Three.js, good physics
-- **Custom canvas/WebGL** — maximum control but more work
 
-**Recommendation:** Three.js (or Babylon.js) — runs in browser, integrates with portfolio site, allows parameterized animation.
+**3D Engine:**
+- **Three.js + JavaScript** — web-native, no backend needed, runs in browser
+- **High-fidelity rendering:** PBR materials, shadows, physically-based lighting
+- **Asset quality:** High-poly vehicle meshes (GLTF/GLB format), detailed road geometry with lane markings, signage, curb, sidewalk
+- **Pedestrian/cyclist models:** Detailed human/cyclist meshes (not stick figures)
+- **Post-processing:** Bloom on collision flash, motion blur, particle effects for crash debris
+
+**2D Animation (fallback/lite mode):**
+- Canvas 2D rendering with smooth interpolation
+- Top-down orthographic view with scale markers
+- Color-coded conflict zones and trajectories
+- Toggle 3D/2D via UI control
+
+**Recommendation:** Three.js for 3D, Canvas 2D for lightweight mode. Toggle in UI.
 
 ### Task 4.2: 3D scene requirements per conflict type
 Each scenario needs:
@@ -216,11 +223,26 @@ Animation must reflect the computed collision probability:
 - **Stochastic output:** for a given parameter set, run N Monte Carlo sims → show distribution of outcomes (e.g., "72% show collision, 28% safe")
 
 ### Task 4.4: Animation fidelity requirements
-- Vehicles: simplified but recognizable (box geometry with wheels)
-- Road: lane markings, intersection approach geometry
-- Pedestrian/cyclist: simplified stick figure or box
-- Impact: flash/kinetic energy visualization, debris (optional)
-- Labels: real-time indicator display overlaid on animation
+
+**3D Mode (high-fidelity):**
+- **Vehicles:** High-poly GLTF models with PBR materials (metallic, roughness, normal maps)
+- **Roads:** Detailed road geometry with lane markings, centerlines, edge lines, curbs, sidewalks, medians
+- **Signage:** Stop signs, traffic lights, crosswalk markings, yield signs
+- **Lighting:** Physically-based lighting with shadows (sun position based on scenario time of day)
+- **Environment:** Optional time-of-day lighting, weather (dry/wet road surface effects)
+- **Pedestrians:** Detailed human mesh with walking animation
+- **Cyclists:** Detailed bicycle + cyclist mesh
+- **Collision:** Kinetic energy visualization (energy release effect), vehicle deformation, debris particles, sound (optional)
+- **Camera:** Auto-tracking camera + free-look mode
+
+**2D Mode (lite):**
+- Top-down orthographic view
+- Smooth animated trajectories
+- Color-coded indicators (green → yellow → red)
+- Scale reference bar
+- Real-time TTC/DRAC overlay
+
+**Critical requirement:** Animation must be visually polished — this is a portfolio piece. Every frame should be presentable.
 
 ---
 
@@ -249,6 +271,32 @@ f(x; ξ, σ) = (1/ξ) * (1 + ξ(x-μ)/σ)^(-(1/ξ+1))
 Severity | Collision ~ GPD(ξ, σ | θ)
 ```
 
+### Task 5.4: EVT threshold selection — Mean Residual Life Plot
+
+**Method:** Mean Residual Life (MRL) plot
+
+1. **Compute the empirical mean residual life function:**
+   For a threshold `u`, compute: `e(u) = E[X - u | X > u]` estimated from the data
+
+2. **Plot e(u) vs u:**
+   - If the GPD assumption is valid, e(u) should be approximately linear for large u
+   - The threshold is the point where linearity begins
+
+3. **Implementation:**
+   - Sort extreme values in descending order
+   - For each candidate threshold u_i, compute mean of values above u_i minus u_i
+   - Plot with uncertainty bands (bootstrap confidence intervals)
+   - Threshold = first point where the plot becomes approximately linear
+
+4. **Validation:**
+   - Stability analysis: fit GPD above multiple thresholds, check if ξ and σ stabilize
+   - Visual confirmation: QQ-plot of GPD fit against empirical extremes
+
+**Evidence needed:** 
+- Coles (2001) "An Introduction to Statistical Modeling of Extreme Values" — Chapter 3
+- Niermann et al. (2020) "Practical guide to threshold selection for EVT" 
+- Traffic conflict literature: Lord & Mannering (2010), Gamage & Tay (2008)
+
 ### Task 5.2: Implementation requirements
 ```
 src/evaluation/bayesian_evt/
@@ -257,6 +305,7 @@ src/evaluation/bayesian_evt/
   collision_rate.py — Occurrence likelihood estimation
   severity_model.py — Severity distribution fitting
   posterior_predictive.py — Validation checks
+  threshold_selection.py — Mean residual life plot + stability analysis
   crisis.py        — Full risk quantification pipeline
 ```
 
@@ -305,11 +354,30 @@ For each scenario parameter set:
 
 ### Task 6.3: Frontend implementation
 - React or vanilla JS for UI
-- Three.js or Babylon.js for 3D
-- D3.js or plotly.js for plots
-- pymc/PyMC for Bayesian computation (could run in browser via Pyodide, or pre-compute and serve results)
+- Three.js for 3D rendering (high-fidelity GLTF models, PBR materials, post-processing)
+- Canvas 2D for 2D lightweight mode
+- D3.js or plotly.js for distribution plots
+- **Bayesian computation options:**
 
-**Key decision:** Bayesian computation — run in-browser (Pyodide + PyMC-like) or pre-compute and serve? In-browser is more interactive but slower. Pre-computed is faster but less flexible.
+  **Option A — In-browser (Pyodide):**
+  - Pyodide (Python in WebAssembly) runs PyMC/NumPy in browser
+  - Full interactivity: user adjusts parameters → Bayesian re-runs in real-time
+  - **Pros:** True real-time interactivity, no backend needed
+  - **Cons:** Slower computation (~10-30s per full Bayesian run in browser), large WASM bundle (~50MB+), memory constraints
+  - **Mitigation:** Use NumPy via Pyodide (fast), limit MC samples during interaction, warm-start with cached results
+
+  **Option B — Pre-computed + served:**
+  - Bayesian results pre-computed on build server for each scenario's parameter grid
+  - Results served as JSON: collision rate grid, severity CDF grid, posterior samples
+  - **Pros:** Instant load, no WASM dependency, full precision
+  - **Cons:** Limited to pre-defined parameter grid (not fully continuous), rebuild needed for new scenarios
+  - **Hybrid approach:** Pre-compute for base scenarios, compute on-demand for user-adjusted parameters (cached)
+
+  **Recommended approach:** Hybrid.
+  - Base scenarios have pre-computed Bayesian results for instant display
+  - When user adjusts parameters beyond the base grid, trigger in-browser Pyodide computation
+  - Cache results locally (IndexedDB) to avoid re-computation
+  - Document both approaches in `docs/architecture/computation-strategy.md` for reference
 
 ---
 
@@ -317,9 +385,26 @@ For each scenario parameter set:
 
 ### Task 7.1: Scenario validation
 Each scenario must be validated against:
-- Published crash data (does it produce similar risk levels to real data?)
-- Expert judgment (do traffic safety researchers find it reasonable?)
-- Edge cases (what happens at 0 speed? infinite distance?)
+
+**Data sources:**
+- **USA:** NHTSA FARS (Fatality Analysis Reporting System), NHTSA Crash Investigation Sampling System (CISS), NASS-CRS (National Automotive Sampling System), NHTSA 4-Star Safety Rating publications, NHTSA AV guidance documents
+- **Canada:** Transport Canada Transportation Statistics, CMFwiki Canada entries, provincial data (ICBC BC, SAAQ Quebec)
+- **England:** Department for Transport (DfT) Road Casualties Great Britain, Highways England data, JACArP (JCA Road Safety Database)
+
+**Standards frameworks:**
+- **UL 4600** — Standard for UAS Destination Guidance and AV safety requirements (relevant clauses on collision avoidance, risk management)
+- **ISO 21448 (SOTIF)** — Safety of the Intended Functionality (scenario coverage, edge cases, performance limits)
+- **ISO 26262** — Road vehicles functional safety (hazard classification, ASIL levels relevant to collision scenarios)
+- **ISO 21002** — ITS (Intelligent Transport Systems) data access for traffic conflict analysis
+- **NHTSA publications:** "Autonomous Vehicles Safety Framework", "Crash Avoidance Methodology", vehicle crashworthiness publications
+
+**Validation criteria:**
+1. Published crash data alignment (does it produce similar risk levels to real data?)
+2. Expert judgment (do traffic safety researchers find it reasonable?)
+3. Edge cases (what happens at 0 speed? infinite distance?)
+4. **Standards alignment:** Each scenario must map to relevant UL 4600/ISO/NHTSA clauses where applicable
+
+**Evidence constraint:** Only use publicly available documents. If a document requires purchase/subscription, note it as "access restricted" and use available summaries or publicly cited extracts instead.
 
 ### Task 7.2: Indicator validation
 - Known analytical solutions where available (e.g., TTC for constant velocity approach)
@@ -358,22 +443,48 @@ Each scenario must be validated against:
 
 ---
 
-## Open Questions (need research to resolve)
+### Task 8.3: Scenario coverage strategy
 
-1. **EVT threshold selection:** What threshold to use for extreme value modeling? (Need to determine using mean residual life plot or stability analysis)
-2. **Prior specification:** What priors for GPD parameters? Need literature values for traffic conflict EVT studies
-3. **3D model quality:** Level of detail acceptable for a portfolio project? (Simplified boxes vs detailed meshes)
-4. **Computation location:** In-browser vs server-side Bayesian computation?
-5. **Data sources for validation:** Which crash databases to use? (NHTSA FARS, CMFwiki, local jurisdiction data)
-6. **Jurisdiction scope:** USA/Canada/UK only, or include EU/other for comparison?
-7. **Animation scope:** Which scenarios are most important for the portfolio? (Need to prioritize)
-8. **Performance:** Real-time computation of 42 indicators + Monte Carlo + Bayesian in browser is heavy. Need to determine what runs where.
+**Featured scenarios (2 per conflict type = 16 featured):**
+Each conflict type has 2 featured scenarios that users see immediately:
+- One "typical" scenario (common real-world instance)
+- One "edge" scenario (worst-case or unusual instance)
+
+**View All Scenarios:**
+When users click "View All Scenarios":
+- All 62+ scenarios across all 8 conflict types become accessible
+- Organized as expandable categories
+- Filter by conflict type, road user type, severity level
+- Each scenario opens with its own parameterized playground
+
+**Priority scenario list (featured first):**
+1. **Crossing:** (1) Intersection perpendicular crossing, (2) Mid-block jaywalking
+2. **Merging:** (1) Highway on-ramp merge, (2) Cut-in lane change
+3. **Diverging:** (1) Highway off-ramp exit, (2) Lane change outbound
+4. **Weaving:** (1) Short weave closely-spaced ramps, (2) Long weave distant ramps
+5. **Rear-end:** (1) Following constant gap, (2) Sudden braking + cut-under
+6. **Sideswipe:** (1) Lane-change induced, (2) Same-direction sideswipe
+7. **Right-angle:** (1) Intersection cross-traffic (red light), (2) T-bone at stop sign
+8. **Opposing LT:** (1) Unprotected left across opposing, (2) Multi-lane opposing turn
 
 ---
 
+## Resolved Decisions (June 2, 2026)
+
+1. **EVT threshold selection:** Mean Residual Life (MRL) plot with stability analysis ✅
+2. **3D model quality:** Highest possible — high-poly GLTF models, PBR materials, detailed road/signage/environment ✅
+3. **2D animation:** Also available as lightweight toggle (Canvas 2D top-down) ✅
+4. **Computation location:** Primary = in-browser Pyodide. Documented pre-compute + serve as fallback/hybrid ✅
+5. **Validation data:** NHTSA FARS/CISS, Transport Canada, DfT GB, CMFwiki Canada, JACArP England ✅
+6. **Standards:** UL 4600, ISO 21448 (SOTIF), ISO 26262, ISO 21002, NHTSA publications ✅
+7. **Data access:** Only publicly available documents; note restricted ones as "access restricted" ✅
+8. **Jurisdiction:** USA, Canada, England (not UK — use England-specific DfT/JACArP data) ✅
+9. **Scenario coverage:** 2 featured per conflict type (16 featured total) + "View All Scenarios" for all 62+ ✅
+10. **Featured scenario strategy:** One typical + one edge case per conflict type ✅
+
 ## Immediate Next Steps
 
-1. **Validate the conflict type taxonomy** against established literature (Task 1.2)
-2. **Build the scenario-taxonomy skill** (Skill #5) — this is the foundation for everything else
-3. **Start kinematics engine** (Skill #6) — compute trajectories for each conflict type
-4. **Research EVT threshold selection methods** — critical for the Bayesian model
+1. **Build computation-strategy document** — Document both Pyodide and pre-compute approaches in detail
+2. **Build the kinematics engine skill** — Trajectory computation per conflict type
+3. **Start standard literature review** — Extract relevant clauses from publicly available UL 4600/ISO/NHTSA docs
+4. **Build scenario-taxonomy scenarios** — Define the 16 featured scenarios with full parameter specs
