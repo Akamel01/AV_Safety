@@ -36,7 +36,7 @@ AV_Safety/
 
 1. **How safe is safe enough for autonomous vehicles?** — Define quantitative safety thresholds
 2. **What metrics and standards define acceptable AV collision risk?** — Cross-reference UL 4600, ISO 21448 (SOTIF), ISO 26262, NHTSA guidance
-3. **How do we model and quantify collision risk across USA, Canada, and UK contexts?**
+3. **How do we model and quantify collision risk across USA, Canada, and England contexts?**
 
 ## Working Principles (evidence-first)
 
@@ -47,27 +47,38 @@ AV_Safety/
 
 ## Skill Tree (reusable capabilities)
 
-This project's work breaks into these reusable skills — each with its own SKILL.md:
+| Capability | Status | Purpose |
+|---|-|---|
+| **project-setup** | ✅ Built | Initialize AV_Safety workspace |
+| **standards-research** | ✅ Built | Search, extract, organize UL 4600/ISO/NHTSA standards |
+| **risk-metrics** | ✅ Built | Define and implement collision risk metrics |
+| **bayesian-analysis** | ✅ Built | Bayesian modeling of risk and uncertainty |
+| **scenario-taxonomy** | ✅ Built | Complete conflict type × scenario mapping (62+ scenarios) |
+| **kinematics-engine** | ✅ Built | Trajectory computation per conflict type |
+| **indicator-computation** | ✅ Built | All 42 surrogate safety indicators |
+| **stochastic-simulation** | ✅ Built | Monte Carlo framework for collision risk |
+| **bayesian-evt** | 🔲 Pending | EVT + hierarchical Bayesian implementation |
+| **data-ingest** | 🔲 Pending | NHTSA crash datasets, traffic safety databases |
+| **data-exploration** | 🔲 Pending | EDA workflows for collision risk data |
+| **statistical-validation** | 🔲 Pending | Statistical validation of safety claims |
+| **collision-modeling** | 🔲 Pending | Build collision risk prediction models |
+| **safety-thresholds** | 🔲 Pending | Quantify "safe enough" thresholds |
+| **risk-quantification** | 🔲 Pending | End-to-end risk quantification pipeline |
+| **3d-animation** | 🔲 Pending | Three.js scene engine with parameterized scenarios |
+| **portfolio-ui** | 🔲 Pending | Frontend integration and visualization |
+| **portfolio-deploy** | 🔲 Pending | Portfolio presentation build and deployment |
+| **validation** | 🔲 Pending | Cross-validation against real crash data |
 
-### Phase 1: Foundation
-- [x] **project-setup** — Initialize AV_Safety workspace (this skill)
-- [x] **standards-research** — Search, extract, and organize UL 4600, ISO, NHTSA standards
-- [x] **risk-metrics** — Define and implement collision risk metrics
-- [x] **bayesian-analysis** — Bayesian modeling of risk and uncertainty
-- [ ] **data-ingest** — Ingest NHTSA crash datasets, traffic safety databases
-- [ ] **data-exploration** — EDA workflows for collision risk data
+### Skill Dependencies (build order)
 
-### Phase 2: Analysis
-- [ ] **statistical-validation** — Statistical validation of safety claims
+```
+phase1 ──► phase2 ──► phase3 ──► phase4
+foundation    analysis    modeling    portfolio
+```
 
-### Phase 3: Modeling
-- [ ] **collision-modeling** — Build collision risk prediction models
-- [ ] **safety-thresholds** — Quantify "safe enough" thresholds
-- [ ] **risk-quantification** — End-to-end risk quantification pipeline
-
-### Phase 4: Portfolio
-- [ ] **visualization** — Portfolio-grade visualizations and dashboards
-- [ ] **portfolio-deploy** — Build and deploy portfolio presentation
+**Phase 1 → Phase 2:** scenario-taxonomy and kinematics-engine must be complete before indicators
+**Phase 2 → Phase 3:** indicator-computation and stochastic-simulation must be complete before bayesian-evt
+**Phase 3 → Phase 4:** bayesian-evt and 3d-animation must be complete before portfolio-ui
 
 ## Technology Stack
 
@@ -76,6 +87,9 @@ This project's work breaks into these reusable skills — each with its own SKIL
 - **ML:** scikit-learn, xgboost, torch (as needed)
 - **Visualization:** matplotlib, seaborn, plotly, altair
 - **Data:** pandas, geopandas
+- **3D:** Three.js + GLTF models + PBR materials
+- **2D:** Canvas 2D fallback mode
+- **Bayesian:** PyMC, Pyodide (in-browser), pre-compute (server)
 - **Containerization:** Docker, docker-compose
 - **Documentation:** Jupyter, Markdown
 - **Version control:** Git
