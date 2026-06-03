@@ -1,0 +1,460 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "workspace-state.json",
+      "file_type": "code",
+      "source_file": ".openclaw/workspace-state.json",
+      "source_location": "L1",
+      "id": "openclaw_workspace_state",
+      "community": 3,
+      "norm_label": "workspace-state.json"
+    },
+    {
+      "label": "version",
+      "file_type": "code",
+      "source_file": ".openclaw/workspace-state.json",
+      "source_location": "L2",
+      "id": "openclaw_workspace_state_version",
+      "community": 3,
+      "norm_label": "version"
+    },
+    {
+      "label": "bootstrapSeededAt",
+      "file_type": "code",
+      "source_file": ".openclaw/workspace-state.json",
+      "source_location": "L3",
+      "id": "openclaw_workspace_state_bootstrapseededat",
+      "community": 3,
+      "norm_label": "bootstrapseededat"
+    },
+    {
+      "label": "setupCompletedAt",
+      "file_type": "code",
+      "source_file": ".openclaw/workspace-state.json",
+      "source_location": "L4",
+      "id": "openclaw_workspace_state_setupcompletedat",
+      "community": 3,
+      "norm_label": "setupcompletedat"
+    },
+    {
+      "label": "Workflow Discipline Rules",
+      "file_type": "concept",
+      "source_file": "AGENTS.md",
+      "id": "agents_workflow_discipline",
+      "community": 2,
+      "norm_label": "workflow discipline rules"
+    },
+    {
+      "label": "Memory Management",
+      "file_type": "concept",
+      "source_file": "AGENTS.md",
+      "id": "memory_management",
+      "community": 2,
+      "norm_label": "memory management"
+    },
+    {
+      "label": "Heartbeat System",
+      "file_type": "concept",
+      "source_file": "AGENTS.md",
+      "id": "heartbeat",
+      "community": 2,
+      "norm_label": "heartbeat system"
+    },
+    {
+      "label": "Git Hygiene",
+      "file_type": "concept",
+      "source_file": "AGENTS.md",
+      "id": "git_hygiene",
+      "community": 2,
+      "norm_label": "git hygiene"
+    },
+    {
+      "label": "Evidence-First Approach",
+      "file_type": "concept",
+      "source_file": "AGENTS.md",
+      "id": "evidence_first",
+      "community": 2,
+      "norm_label": "evidence-first approach"
+    },
+    {
+      "label": "Skill Tree Discipline",
+      "file_type": "concept",
+      "source_file": "AGENTS.md",
+      "id": "skill_tree",
+      "community": 2,
+      "norm_label": "skill tree discipline"
+    },
+    {
+      "label": "AV_Safety Project",
+      "file_type": "concept",
+      "source_file": "USER.md",
+      "id": "av_safety_project",
+      "community": 0,
+      "norm_label": "av_safety project"
+    },
+    {
+      "label": "Ahmed (User)",
+      "file_type": "concept",
+      "source_file": "USER.md",
+      "id": "user_ahmed",
+      "community": 0,
+      "norm_label": "ahmed (user)"
+    },
+    {
+      "label": "OpenClaw Agent",
+      "file_type": "concept",
+      "source_file": "AGENTS.md",
+      "id": "openclaw",
+      "community": 1,
+      "norm_label": "openclaw agent"
+    },
+    {
+      "label": "Gateway Service",
+      "file_type": "concept",
+      "source_file": "memory/2026-06-02-1720.md",
+      "id": "gateway",
+      "community": 1,
+      "norm_label": "gateway service"
+    },
+    {
+      "label": "Ollama Service",
+      "file_type": "concept",
+      "source_file": "memory/2026-06-02-1941.md",
+      "id": "ollama",
+      "community": 1,
+      "norm_label": "ollama service"
+    },
+    {
+      "label": "GLM-4.7-Flash Model",
+      "file_type": "concept",
+      "source_file": "memory/2026-06-02-1700.md",
+      "id": "glm-4_7-flash",
+      "community": 1,
+      "norm_label": "glm-4.7-flash model"
+    },
+    {
+      "label": "GitHub Repository",
+      "file_type": "concept",
+      "source_file": "memory/2026-06-02-1700.md",
+      "id": "github",
+      "community": 0,
+      "norm_label": "github repository"
+    },
+    {
+      "label": "Graphify Tool",
+      "file_type": "code",
+      "source_file": "memory/2026-06-02-1941.md",
+      "id": "graphify",
+      "community": 1,
+      "norm_label": "graphify tool"
+    },
+    {
+      "label": "Semantic Extraction",
+      "file_type": "concept",
+      "source_file": "memory/2026-06-02-1941.md",
+      "id": "semantic_extraction",
+      "community": 1,
+      "norm_label": "semantic extraction"
+    },
+    {
+      "label": "AST Extraction",
+      "file_type": "concept",
+      "source_file": "memory/2026-06-02-1941.md",
+      "id": "ast_extraction",
+      "community": 1,
+      "norm_label": "ast extraction"
+    },
+    {
+      "label": "UL 4600 Standard",
+      "file_type": "concept",
+      "source_file": "USER.md",
+      "id": "ul_4600",
+      "community": 0,
+      "norm_label": "ul 4600 standard"
+    },
+    {
+      "label": "ISO 21448 Standard",
+      "file_type": "concept",
+      "source_file": "USER.md",
+      "id": "iso_21448",
+      "community": 0,
+      "norm_label": "iso 21448 standard"
+    },
+    {
+      "label": "NHTSA Standards",
+      "file_type": "concept",
+      "source_file": "USER.md",
+      "id": "nhtsa",
+      "community": 0,
+      "norm_label": "nhtsa standards"
+    },
+    {
+      "label": "Remax Real Estate",
+      "file_type": "concept",
+      "source_file": "memory/2026-06-02-1918.md",
+      "id": "remax",
+      "community": 5,
+      "norm_label": "remax real estate"
+    },
+    {
+      "label": "Tenancy Application",
+      "file_type": "document",
+      "source_file": "memory/2026-06-02-1918.md",
+      "id": "tenancy_application",
+      "community": 5,
+      "norm_label": "tenancy application"
+    },
+    {
+      "label": "Session Failures Log",
+      "file_type": "document",
+      "source_file": "memory/2026-06-02.md",
+      "id": "session_failures",
+      "community": 4,
+      "norm_label": "session failures log"
+    },
+    {
+      "label": "Context Bloat Issue",
+      "file_type": "concept",
+      "source_file": "memory/2026-06-02.md",
+      "id": "context_bloat",
+      "community": 4,
+      "norm_label": "context bloat issue"
+    },
+    {
+      "label": "Error Recovery Protocol",
+      "file_type": "concept",
+      "source_file": "memory/2026-06-02.md",
+      "id": "error_recovery",
+      "community": 4,
+      "norm_label": "error recovery protocol"
+    },
+    {
+      "label": "Kinematics Engine Skill",
+      "file_type": "concept",
+      "source_file": "memory/2026-06-02-1700.md",
+      "id": "kinematics_engine",
+      "community": 0,
+      "norm_label": "kinematics engine skill"
+    },
+    {
+      "label": "Fixing Operational Issues Plan",
+      "file_type": "document",
+      "source_file": "memory/2026-06-02.md",
+      "id": "fixing_operational_issues_plan",
+      "community": 0,
+      "norm_label": "fixing operational issues plan"
+    }
+  ],
+  "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".openclaw/workspace-state.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "openclaw_workspace_state",
+      "target": "openclaw_workspace_state_bootstrapseededat",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".openclaw/workspace-state.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "openclaw_workspace_state",
+      "target": "openclaw_workspace_state_setupcompletedat",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".openclaw/workspace-state.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "openclaw_workspace_state",
+      "target": "openclaw_workspace_state_version",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "AGENTS.md",
+      "source": "agents_workflow_discipline",
+      "target": "evidence_first"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "AGENTS.md",
+      "source": "agents_workflow_discipline",
+      "target": "git_hygiene"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "AGENTS.md",
+      "source": "agents_workflow_discipline",
+      "target": "memory_management"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "AGENTS.md",
+      "source": "agents_workflow_discipline",
+      "target": "skill_tree"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "AGENTS.md",
+      "source": "memory_management",
+      "target": "heartbeat"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "USER.md",
+      "source": "av_safety_project",
+      "target": "iso_21448"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "USER.md",
+      "source": "av_safety_project",
+      "target": "nhtsa"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "USER.md",
+      "source": "av_safety_project",
+      "target": "ul_4600"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "USER.md",
+      "source": "av_safety_project",
+      "target": "user_ahmed"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "memory/2026-06-02.md",
+      "source": "fixing_operational_issues_plan",
+      "target": "av_safety_project"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "memory/2026-06-02-1700.md",
+      "source": "kinematics_engine",
+      "target": "av_safety_project"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "memory/2026-06-02-1720.md",
+      "source": "openclaw",
+      "target": "gateway"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "memory/2026-06-02-1941.md",
+      "source": "openclaw",
+      "target": "ollama"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "memory/2026-06-02-1941.md",
+      "source": "graphify",
+      "target": "ollama"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "memory/2026-06-02-1700.md",
+      "source": "ollama",
+      "target": "glm-4_7-flash"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "memory/2026-06-02.md",
+      "source": "github",
+      "target": "fixing_operational_issues_plan"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "memory/2026-06-02-1700.md",
+      "source": "github",
+      "target": "kinematics_engine"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "memory/2026-06-02-1941.md",
+      "source": "graphify",
+      "target": "ast_extraction"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "memory/2026-06-02-1941.md",
+      "source": "graphify",
+      "target": "semantic_extraction"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "memory/2026-06-02-1918.md",
+      "source": "remax",
+      "target": "tenancy_application"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 1.0,
+      "source_file": "memory/2026-06-02.md",
+      "source": "session_failures",
+      "target": "context_bloat"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 1.0,
+      "source_file": "memory/2026-06-02.md",
+      "source": "session_failures",
+      "target": "error_recovery"
+    }
+  ],
+  "hyperedges": []
+}

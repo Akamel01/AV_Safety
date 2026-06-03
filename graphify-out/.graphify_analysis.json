@@ -1,0 +1,167 @@
+{
+  "communities": {
+    "0": [
+      "av_safety_project",
+      "fixing_operational_issues_plan",
+      "github",
+      "iso_21448",
+      "kinematics_engine",
+      "nhtsa",
+      "ul_4600",
+      "user_ahmed"
+    ],
+    "1": [
+      "ast_extraction",
+      "gateway",
+      "glm-4_7-flash",
+      "graphify",
+      "ollama",
+      "openclaw",
+      "semantic_extraction"
+    ],
+    "2": [
+      "agents_workflow_discipline",
+      "evidence_first",
+      "git_hygiene",
+      "heartbeat",
+      "memory_management",
+      "skill_tree"
+    ],
+    "3": [
+      "openclaw_workspace_state",
+      "openclaw_workspace_state_bootstrapseededat",
+      "openclaw_workspace_state_setupcompletedat",
+      "openclaw_workspace_state_version"
+    ],
+    "4": [
+      "context_bloat",
+      "error_recovery",
+      "session_failures"
+    ],
+    "5": [
+      "remax",
+      "tenancy_application"
+    ]
+  },
+  "cohesion": {
+    "0": 0.2857142857142857,
+    "1": 0.2857142857142857,
+    "2": 0.3333333333333333,
+    "3": 0.5,
+    "4": 0.6666666666666666,
+    "5": 1.0
+  },
+  "gods": [
+    {
+      "id": "av_safety_project",
+      "label": "AV_Safety Project",
+      "degree": 6
+    },
+    {
+      "id": "agents_workflow_discipline",
+      "label": "Workflow Discipline Rules",
+      "degree": 4
+    },
+    {
+      "id": "ollama",
+      "label": "Ollama Service",
+      "degree": 3
+    },
+    {
+      "id": "graphify",
+      "label": "Graphify Tool",
+      "degree": 3
+    },
+    {
+      "id": "memory_management",
+      "label": "Memory Management",
+      "degree": 2
+    },
+    {
+      "id": "openclaw",
+      "label": "OpenClaw Agent",
+      "degree": 2
+    },
+    {
+      "id": "github",
+      "label": "GitHub Repository",
+      "degree": 2
+    },
+    {
+      "id": "session_failures",
+      "label": "Session Failures Log",
+      "degree": 2
+    },
+    {
+      "id": "kinematics_engine",
+      "label": "Kinematics Engine Skill",
+      "degree": 2
+    },
+    {
+      "id": "fixing_operational_issues_plan",
+      "label": "Fixing Operational Issues Plan",
+      "degree": 2
+    }
+  ],
+  "surprises": [
+    {
+      "source": "Fixing Operational Issues Plan",
+      "target": "AV_Safety Project",
+      "source_files": [
+        "memory/2026-06-02.md",
+        "USER.md"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "conceptually_related_to",
+      "why": "connects across different repos/directories; peripheral node `Fixing Operational Issues Plan` unexpectedly reaches hub `AV_Safety Project`"
+    },
+    {
+      "source": "Kinematics Engine Skill",
+      "target": "AV_Safety Project",
+      "source_files": [
+        "memory/2026-06-02-1700.md",
+        "USER.md"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "conceptually_related_to",
+      "why": "connects across different repos/directories; peripheral node `Kinematics Engine Skill` unexpectedly reaches hub `AV_Safety Project`"
+    },
+    {
+      "source": "OpenClaw Agent",
+      "target": "Gateway Service",
+      "source_files": [
+        "AGENTS.md",
+        "memory/2026-06-02-1720.md"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "implements",
+      "why": "connects across different repos/directories"
+    },
+    {
+      "source": "OpenClaw Agent",
+      "target": "Ollama Service",
+      "source_files": [
+        "AGENTS.md",
+        "memory/2026-06-02-1941.md"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "connects across different repos/directories"
+    },
+    {
+      "source": "Ollama Service",
+      "target": "GLM-4.7-Flash Model",
+      "source_files": [
+        "memory/2026-06-02-1941.md",
+        "memory/2026-06-02-1700.md"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "cross-file semantic connection"
+    }
+  ],
+  "tokens": {
+    "input": 10702,
+    "output": 5366
+  }
+}
