@@ -47,38 +47,40 @@ AV_Safety/
 
 ## Skill Tree (reusable capabilities)
 
-| Capability | Status | Purpose |
-|---|-|---|
-| **project-setup** | ✅ Built | Initialize AV_Safety workspace |
-| **standards-research** | ✅ Built | Search, extract, organize UL 4600/ISO/NHTSA standards |
-| **risk-metrics** | ✅ Built | Define and implement collision risk metrics |
-| **bayesian-analysis** | ✅ Built | Bayesian modeling of risk and uncertainty |
-| **scenario-taxonomy** | ✅ Built | Complete conflict type × scenario mapping (62+ scenarios) |
-| **kinematics-engine** | ✅ Built | Trajectory computation per conflict type |
-| **indicator-computation** | ✅ Built | All 42 surrogate safety indicators |
-| **stochastic-simulation** | ✅ Built | Monte Carlo framework for collision risk |
-| **bayesian-evt** | 🔲 Pending | EVT + hierarchical Bayesian implementation |
-| **data-ingest** | 🔲 Pending | NHTSA crash datasets, traffic safety databases |
-| **data-exploration** | 🔲 Pending | EDA workflows for collision risk data |
-| **statistical-validation** | 🔲 Pending | Statistical validation of safety claims |
-| **collision-modeling** | 🔲 Pending | Build collision risk prediction models |
-| **safety-thresholds** | 🔲 Pending | Quantify "safe enough" thresholds |
-| **risk-quantification** | 🔲 Pending | End-to-end risk quantification pipeline |
-| **3d-animation** | 🔲 Pending | Three.js scene engine with parameterized scenarios |
-| **portfolio-ui** | 🔲 Pending | Frontend integration and visualization |
-| **portfolio-deploy** | 🔲 Pending | Portfolio presentation build and deployment |
-| **validation** | 🔲 Pending | Cross-validation against real crash data |
+| Capability | Status | Dependency |
+|---|-|-|
+| project-setup | ✅ Built | — |
+| standards-research | ✅ Built | — |
+| risk-metrics | ✅ Built | — |
+| bayesian-analysis | ✅ Built | — |
+| scenario-taxonomy | ✅ Built | — |
+| kinematics-engine | ✅ Built | — |
+| indicator-computation | ✅ Built | kinematics-engine |
+| stochastic-simulation | ✅ Built | kinematics-engine |
+| bayesian-evt | ✅ Built | indicator + stochastic |
+| 3d-animation | ✅ Built | kinematics + stochastic |
+| data-ingest | 🔲 Pending | — |
+| data-exploration | 🔲 Pending | data-ingest |
+| statistical-validation | 🔲 Pending | bayesian-evt |
+| collision-modeling | 🔲 Pending | bayesian-evt |
+| safety-thresholds | 🔲 Pending | collision-modeling |
+| risk-quantification | 🔲 Pending | safety-thresholds |
+| portfolio-ui | 🔲 Pending | bayesian-evt + 3d |
+| portfolio-deploy | 🔲 Pending | portfolio-ui |
+| validation | 🔲 Pending | all above |
 
-### Skill Dependencies (build order)
+10/18 skills built. 8 remaining.
+
+### Build Order
 
 ```
 phase1 ──► phase2 ──► phase3 ──► phase4
 foundation    analysis    modeling    portfolio
 ```
 
-**Phase 1 → Phase 2:** scenario-taxonomy and kinematics-engine must be complete before indicators
-**Phase 2 → Phase 3:** indicator-computation and stochastic-simulation must be complete before bayesian-evt
-**Phase 3 → Phase 4:** bayesian-evt and 3d-animation must be complete before portfolio-ui
+- **Phase 1 → Phase 2:** scenario-taxonomy and kinematics-engine must be complete before indicators
+- **Phase 2 → Phase 3:** indicator-computation and stochastic-simulation must be complete before bayesian-evt
+- **Phase 3 → Phase 4:** bayesian-evt and 3d-animation must be complete before portfolio-ui
 
 ## Technology Stack
 
