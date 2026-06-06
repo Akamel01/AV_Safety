@@ -209,129 +209,61 @@ class RiskQuantificationPipeline:
         }
 
     def _run_monte_carlo(self, results: dict) -> dict[str, Any]:
-        """Step 3: Monte Carlo simulation with parameter distributions.
+        """Step 3: Monte Carlo simulation using actual kinematics engine.
 
         Samples from distributions defined in scenario spec and runs
-        kinematics for each sample to compute collision statistics.
+        the full kinematics engine (2.5ms timestep simulation) for each
+        sample to compute accurate collision statistics.
+
+        Replaces the previous heuristic quadratic approximation with
+        exact trajectory simulation from kinematics_engine.py.
         """
-        import random
+        from src.risk_quantification.kinematics_engine import (
+            SimulationConfig,
+            run_monte_carlo_samples,
+        )
 
         kin = results.get("kinematics", {})
         parameters = self.scenario.get("parameters", {})
 
-        # Define distributions from scenario data or defaults
+        # Build distribution overrides from scenario parameters
         distributions = {
-            "v_a0": {"mu": kin.get("v_a0", 27.8), "sigma": 1.0},
-            "v_b0": {"mu": kin.get("v_b0", 27.8), "sigma": 1.0},
-            "headway": {"mu": kin.get("headway", 30.0), "sigma": 5.0},
-            "t_reaction": {"mu": kin.get("t_reaction", 1.5), "sigma": 0.3},
-            "a_lead": {"mu": kin.get("a_lead", -5.0), "sigma": 1.0},
-            "a_follow_max": {"mu": kin.get("a_follow_max", -8.0), "sigma": 1.0},
+            "v_a0": (kin.get("v_a0", 27.8), 1.0),
+            "v_b0": (kin.get("v_b0", 27.8), 1.0),
+            "headway": (kin.get("headway", 30.0), 5.0),
+            "t_reaction": (kin.get("t_reaction", 1.5), 0.3),
+            "a_lead": (kin.get("a_lead", -5.0), 1.0),
+            "a_follow_max": (kin.get("a_follow_max", -8.0), 1.0),
         }
 
         # Override with explicit parameters if provided
+        param_overrides = {}
         for key in ["v_a0", "v_b0", "headway", "t_reaction"]:
             if key in parameters:
-                distributions[key] = parameters[key]
+                param_overrides[key] = parameters[key]
 
-        random.seed(self.seed)
-
-        n_sim = self.n_mc_samples
-        collisions = 0
-        ttcs = []
-        delta_vs = []
-        gaps = []
-        dracs = []
-
-        for _ in range(n_sim):
-            # Sample parameters
-            params = {}
-            for key, dist in distributions.items():
-                mu, sigma = dist["mu"], dist["sigma"]
-                val = random.gauss(mu, sigma)
-                # Apply bounds
-                if key == "v_a0":
-                    val = max(15.0, min(35.0, val))
-                elif key == "headway":
-                    val = max(5.0, min(60.0, val))
-                elif key == "t_reaction":
-                    val = max(0.5, min(4.0, val))
-                params[key] = val
-
-            # Quick kinematics: estimate TTC based on headway and relative speed
-            headway = params.get("headway", 30)
-            v_a = params.get("v_a0", 27.8)
-            v_b = params.get("v_b0", 27.8)
-            reaction = params.get("t_reaction", 1.5)
-            a_lead = params.get("a_lead", -5.0)
-            a_follow = params.get("a_follow_max", -8.0)
-
-            # Estimate time until collision or minimum TTC
-            if v_b > v_a and headway > 0:
-                # Closing speed
-                v_rel = v_b - v_a
-                # During reaction time, gap closes by v_rel * reaction
-                gap_after_reaction = headway - v_rel * reaction
-                if gap_after_reaction > 0:
-                    # After reaction, lead decelerates at a_lead, follow at a_follow
-                    # Relative acceleration
-                    a_rel = a_follow - a_lead  # negative = more decel
-                    # Time to close remaining gap
-                    if a_rel != 0:
-                        # Quadratic: gap_after_reaction + v_rel*t + 0.5*a_rel*t^2 = 0
-                        discriminant = v_rel**2 - 4 * (-0.5 * a_rel) * (-gap_after_reaction)
-                        if discriminant >= 0:
-                            t_close = (-v_rel + discriminant**0.5) / (-a_rel)
-                            if t_close > 0 and t_close < 10:
-                                # Collision will occur
-                                ttc = reaction + t_close
-                                # Delta V estimate
-                                dv = abs(v_rel) * min(1.0, t_close / 2.0)
-                                collisions += 1
-                                delta_vs.append(dv)
-                            else:
-                                ttcs.append(reaction + 5)  # Fallback TTC
-                        else:
-                            ttcs.append(reaction + 10)  # Safe
-                    else:
-                        t_close = gap_after_reaction / v_rel if v_rel > 0 else 999
-                        if t_close < 10:
-                            ttc = reaction + t_close
-                            collisions += 1
-                            delta_vs.append(abs(v_rel) * min(1.0, t_close / 2.0))
-                        else:
-                            ttcs.append(reaction + 10)
+        if param_overrides:
+            for key, value in param_overrides.items():
+                if isinstance(value, dict) and "mu" in value:
+                    distributions[key] = (value["mu"], value.get("sigma", 1.0))
                 else:
-                    # Collision during reaction phase
-                    ttc = headway / v_rel
-                    collisions += 1
-                    delta_vs.append(v_rel * 0.8)
-                ttcs.append(ttc)
-                gaps.append(max(0, headway - v_rel * reaction))
-                dracs.append(abs(a_follow - a_lead))
-            else:
-                # No collision likely
-                ttcs.append(10.0)
-                gaps.append(headway)
-                dracs.append(0)
+                    # Treat scalar as exact value (zero sigma)
+                    distributions[key] = (value, 0.001)
 
-        collision_rate = collisions / n_sim
-        avg_ttc = sum(ttcs) / len(ttcs) if ttcs else 0
+        # Use the kinematics engine Monte Carlo — full timestep simulation
+        mc_results = run_monte_carlo_samples(
+            n_samples=self.n_mc_samples,
+            distributions=distributions,
+            seed=self.seed,
+        )
+
+        # Add DRAC from the kinematics baseline
+        a_lead = kin.get("a_lead", -5.0)
+        a_follow = kin.get("a_follow_max", -8.0)
 
         return {
-            "n_samples": n_sim,
-            "collision_rate": collision_rate,
-            "n_collisions": collisions,
-            "collision_rate_ci95": (
-                max(0, collision_rate - 1.96 * (collision_rate * (1 - collision_rate) / n_sim)**0.5),
-                min(1.0, collision_rate + 1.96 * (collision_rate * (1 - collision_rate) / n_sim)**0.5)
-            ),
-            "ttc_mean": avg_ttc,
-            "ttc_std": (sum((t - avg_ttc)**2 for t in ttcs) / len(ttcs))**0.5 if ttcs else 0,
-            "ttc_min": min(ttcs) if ttcs else 0,
-            "delta_v_mean": sum(delta_vs) / len(delta_vs) if delta_vs else 0,
-            "delta_v_max": max(delta_vs) if delta_vs else 0,
-            "mean_gap": sum(gaps) / len(gaps) if gaps else 0,
+            **mc_results,
+            "drac_mean": abs(a_follow - a_lead) if mc_results.get("collision_rate", 0) > 0 else 0,
         }
 
     def _run_bayesian_evt(self, results: dict) -> dict[str, Any]:
