@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Collision Risk Playground — RE-CA-001 | AV_Safety Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Pyodide for in-browser Python -->
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.24.1/full/pyodide.js"></script>
+</head>
+<body>
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="header">
+    <div>
+      <h1>Collision Risk Playground — <span>RE-CA-001</span></h1>
+      <div class="header-subtitle">Rear-End · Highway Following · Cut-Under · USA Baseline</div>
+    </div>
+    <div class="header-actions">
+      <button class="btn btn-sm btn-icon" id="btn-mode" title="Toggle 3D/2D mode">🌐 3D</button>
+      <button class="btn btn-primary" id="btn-run-mc">▶ Monte Carlo (N=10,000)</button>
+      <button class="btn btn-sm" id="btn-evt">📊 Bayesian EVT</button>
+      <button class="btn btn-sm" id="btn-download">📥 CSV</button>
+      <button class="btn btn-sm" id="btn-share">🔗 Share</button>
+    </div>
+  </header>
+
+  <!-- ==================== MAIN LAYOUT ==================== -->
+  <main class="main-layout">
+
+    <!-- LEFT COLUMN: Controls + Indicators -->
+    <div class="panel" id="left-panel">
+
+      <!-- Vehicle A Controls -->
+      <div class="indicator-section open" id="ctrl-group-a">
+        <div class="indicator-section-title">Vehicle A (Lead)</div>
+        <div class="indicator-list">
+          <div class="controller-group">
+            <div class="controller-row">
+              <span class="controller-label">Speed</span>
+              <input type="range" class="controller-input" id="p-v-a0" min="15" max="35" step="0.5" value="27.8">
+              <span class="controller-value" id="v-v-a0">27.8 m/s</span>
+            </div>
+            <div class="controller-range">15 — 35 m/s</div>
+          </div>
+          <div class="controller-group">
+            <div class="controller-row">
+              <span class="controller-label">De cel</span>
+              <input type="range" class="controller-input" id="p-a-lead" min="-8" max="-2" step="0.25" value="-5.0">
+              <span class="controller-value" id="v-a-lead">-5.0 m/s²</span>
+            </div>
+            <div class="controller-range">-8 — -2 m/s²</div>
+          </div>
+          <div class="controller-group">
+            <div class="controller-row">
+              <span class="controller-label">Brake @</span>
+              <input type="range" class="controller-input" id="p-t-brake" min="1" max="6" step="0.25" value="3.0">
+              <span class="controller-value" id="v-t-brake">3.0 s</span>
+            </div>
+            <div class="controller-range">1.0 — 6.0 s</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vehicle B Controls -->
+      <div class="indicator-section open" id="ctrl-group-b">
+        <div class="indicator-section-title">Vehicle B (Follow)</div>
+        <div class="indicator-list">
+          <div class="controller-group">
+            <div class="controller-row">
+              <span class="controller-label">Speed</span>
+              <input type="range" class="controller-input" id="p-v-b0" min="15" max="35" step="0.5" value="27.8">
+              <span class="controller-value" id="v-v-b0">27.8 m/s</span>
+            </div>
+            <div class="controller-range">15 — 35 m/s</div>
+          </div>
+          <div class="controller-group">
+            <div class="controller-row">
+              <span class="controller-label">Gap</span>
+              <input type="range" class="controller-input" id="p-headway" min="5" max="60" step="0.5" value="30.0">
+              <span class="controller-value" id="v-headway">30.0 m</span>
+            </div>
+            <div class="controller-range">5 — 60 m</div>
+          </div>
+          <div class="controller-group">
+            <div class="controller-row">
+              <span class="controller-label">τ</span>
+              <input type="range" class="controller-input" id="p-reaction" min="0.5" max="4.0" step="0.1" value="1.5">
+              <span class="controller-value" id="v-reaction">1.5 s</span>
+            </div>
+            <div class="controller-range">0.5 — 4.0 s</div>
+          </div>
+          <div class="controller-group">
+            <div class="controller-row">
+              <span class="controller-label">Max d</span>
+              <input type="range" class="controller-input" id="p-a-follow" min="-10" max="-3" step="0.25" value="-8.0">
+              <span class="controller-value" id="v-a-follow">-8.0 m/s²</span>
+            </div>
+            <div class="controller-range">-10 — -3 m/s²</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Simulation Controls -->
+      <div class="indicator-section" id="ctrl-group-sim">
+        <div class="indicator-section-title">⚙ Simulation</div>
+        <div class="indicator-list">
+          <div class="controller-group">
+            <div class="controller-row">
+              <span class="controller-label">N</span>
+              <input type="range" class="controller-input" id="p-n-sim" min="100" max="50000" step="100" value="10000">
+              <span class="controller-value" id="v-n-sim">10,000</span>
+            </div>
+            <div class="controller-range">100 — 50,000</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Camera Mode -->
+      <div class="indicator-section" id="ctrl-group-cam">
+        <div class="indicator-section-title">📷 Camera</div>
+        <div class="indicator-list">
+          <div class="controller-group">
+            <select class="btn" id="cam-mode" style="width:100%">
+              <option value="auto-trace">Auto-Trace</option>
+              <option value="free-look">Free-Look</option>
+              <option value="top-down">Top-Down</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Time of Day -->
+      <div class="indicator-section" id="ctrl-group-time">
+        <div class="indicator-section-title">🌅 Time of Day</div>
+        <div class="indicator-list">
+          <div class="controller-group">
+            <select class="btn" id="tod-mode" style="width:100%">
+              <option value="day">Day</option>
+              <option value="sunset">Sunset</option>
+              <option value="night">Night</option>
+              <option value="overcast">Overcast</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- 42 Indicators -->
+      <div class="indicator-section" id="indicators-section">
+        <div class="indicator-section-title">📐 42 Indicators</div>
+        <div class="indicator-list" id="indicators-list">
+          <!-- Populated by JavaScript -->
+          <div class="indicator-section open" data-cat="time">
+            <div class="indicator-section-title">Time-based (11)</div>
+            <div class="indicator-list indicators-cat-list" data-cat="time"></div>
+          </div>
+          <div class="indicator-section" data-cat="distance">
+            <div class="indicator-section-title">Distance-based (5)</div>
+            <div class="indicator-list indicators-cat-list" data-cat="distance"></div>
+          </div>
+          <div class="indicator-section" data-cat="decel">
+            <div class="indicator-section-title">Decel-based (8)</div>
+            <div class="indicator-list indicators-cat-list" data-cat="decel"></div>
+          </div>
+          <div class="indicator-section" data-cat="kinematic">
+            <div class="indicator-section-title">Kinematic (5)</div>
+            <div class="indicator-list indicators-cat-list" data-cat="kinematic"></div>
+          </div>
+          <div class="indicator-section" data-cat="severity">
+            <div class="indicator-section-title">Severity (6)</div>
+            <div class="indicator-list indicators-cat-list" data-cat="severity"></div>
+          </div>
+          <div class="indicator-section" data-cat="probability">
+            <div class="indicator-section-title">Probability (6)</div>
+            <div class="indicator-list indicators-cat-list" data-cat="probability"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CENTER: Canvas -->
+    <div class="panel" id="center-panel" style="padding:12px; border-right:none;">
+      <div class="canvas-container" id="canvas-container">
+        <div class="loading-overlay" id="canvas-loading">
+          <div class="loading-spinner"></div>
+          <div class="loading-text">Loading visualization...</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT COLUMN: Risk Scoring + EVT + MC Results -->
+    <div class="panel" id="right-panel">
+
+      <!-- Risk Score -->
+      <div class="risk-score-display" id="risk-score-display">
+        <div class="risk-score-label" id="risk-classification">RISK SCORE</div>
+        <div class="risk-score-value" id="risk-score-value">--</div>
+        <div class="risk-score-bar">
+          <div class="risk-score-bar-segment" style="width:30%;background:var(--safe)"></div>
+          <div class="risk-score-bar-segment" style="width:30%;background:var(--moderate)"></div>
+          <div class="risk-score-bar-segment" style="width:20%;background:var(--danger)"></div>
+          <div class="risk-score-bar-segment" style="width:20%;background:var(--critical)"></div>
+        </div>
+      </div>
+
+      <!-- Key Metrics -->
+      <div class="panel-title">Key Metrics</div>
+      <div id="key-metrics">
+        <div class="metric-card safe" id="mc-ttc">
+          <div class="metric-card-label">TTC_min</div>
+          <div class="metric-card-value" id="val-ttc">--</div>
+          <div class="metric-card-sub">s</div>
+        </div>
+        <div class="metric-card moderate" id="mc-dv">
+          <div class="metric-card-label">ΔV_impact</div>
+          <div class="metric-card-value" id="val-dv">--</div>
+          <div class="metric-card-sub">m/s</div>
+        </div>
+        <div class="metric-card moderate" id="mc-cp">
+          <div class="metric-card-label">Collision Prob</div>
+          <div class="metric-card-value" id="val-cp">--</div>
+          <div class="metric-card-sub">%</div>
+        </div>
+        <div class="metric-card safe" id="mc-bayes-pc">
+          <div class="metric-card-label">Bayes P(collision)</div>
+          <div class="metric-card-value" id="val-bayes-pc">--</div>
+          <div class="metric-card-sub">via GPD</div>
+        </div>
+      </div>
+
+      <!-- Bayesian EVT -->
+      <div class="panel-title">Bayesian EVT</div>
+      <div class="collapsible" id="evt-collapse">
+        <div class="collapsible-header" onclick="this.parentElement.classList.toggle('open')">
+          GPD Parameters
+        </div>
+        <div class="collapsible-body">
+          <div class="metric-card moderate" id="evt-xi">
+            <div class="metric-card-label">ξ (shape)</div>
+            <div class="metric-card-value" id="val-xi">--</div>
+            <div class="metric-card-sub" id="val-xi-ci">95% CI: --</div>
+          </div>
+          <div class="metric-card moderate" id="evt-sigma">
+            <div class="metric-card-label">σ (scale)</div>
+            <div class="metric-card-value" id="val-sigma">--</div>
+            <div class="metric-card-sub" id="val-sigma-ci">95% CI: --</div>
+          </div>
+          <div class="metric-card safe" id="evt-threshold">
+            <div class="metric-card-label">Threshold u</div>
+            <div class="metric-card-value" id="val-threshold">--</div>
+            <div class="metric-card-sub">MRL method</div>
+          </div>
+          <div class="metric-card safe">
+            <div class="metric-card-label">Convergence</div>
+            <div class="metric-card-value" id="val-convergence">Waiting...</div>
+          </div>
+          <div class="metric-card safe" id="evt-ppc">
+            <div class="metric-card-label">PPC</div>
+            <div class="metric-card-value" id="val-ppc">--</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Monte Carlo Results -->
+      <div class="panel-title">Monte Carlo Results</div>
+      <div class="collapsible" id="mc-collapse">
+        <div class="collapsible-header" onclick="this.parentElement.classList.toggle('open')">
+          Simulation Stats
+        </div>
+        <div class="collapsible-body">
+          <div class="metric-card moderate" id="mc-rate">
+            <div class="metric-card-label">Collision Rate</div>
+            <div class="metric-card-value" id="val-mc-rate">--</div>
+            <div class="metric-card-sub" id="val-mc-n">N = --</div>
+          </div>
+          <div class="metric-card moderate" id="mc-ttc-dist">
+            <div class="metric-card-label">TTC Distribution</div>
+            <div class="metric-card-value" id="val-mc-ttc-dist">--</div>
+            <div class="metric-card-sub" id="val-mc-ttc-p5">P5 = --</div>
+          </div>
+          <div class="metric-card moderate" id="mc-dv-dist">
+            <div class="metric-card-label">ΔV Distribution</div>
+            <div class="metric-card-value" id="val-mc-dv-dist">--</div>
+            <div class="metric-card-sub" id="val-mc-dv-p95">P95 = --</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Severity Distribution -->
+      <div class="panel-title">Severity Distribution</div>
+      <div class="collapsible" id="sev-collapse">
+        <div class="collapsible-header" onclick="this.parentElement.classList.toggle('open')">
+          Per-Collision Severity
+        </div>
+        <div class="collapsible-body">
+          <div class="metric-card safe">
+            <div class="metric-card-label">P(PDO)</div>
+            <div class="metric-card-value" id="val-sev-pdo">--</div>
+          </div>
+          <div class="metric-card moderate">
+            <div class="metric-card-label">P(Minor Injury)</div>
+            <div class="metric-card-value" id="val-sev-minor">--</div>
+          </div>
+          <div class="metric-card danger">
+            <div class="metric-card-label">P(MAIS3+)</div>
+            <div class="metric-card-value" id="val-sev-mais3">--</div>
+          </div>
+          <div class="metric-card critical">
+            <div class="metric-card-label">P(Fatal)</div>
+            <div class="metric-card-value" id="val-sev-fatal">--</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Jurisdiction Comparison -->
+      <div class="panel-title">Jurisdiction Comparison</div>
+      <div class="collapsible" id="jur-collapse">
+        <div class="collapsible-header" onclick="this.parentElement.classList.toggle('open')">
+          vs Baseline Rates
+        </div>
+        <div class="collapsible-body">
+          <div class="metric-card safe">
+            <div class="metric-card-label">USA Baseline (FARS)</div>
+            <div class="metric-card-value">0.12/100Mm</div>
+            <div class="metric-card-sub">Rear-end fatal rate</div>
+          </div>
+          <div class="metric-card moderate">
+            <div class="metric-card-label">Canada Baseline</div>
+            <div class="metric-card-value">0.089/100Mm</div>
+            <div class="metric-card-sub">Transport Canada</div>
+          </div>
+          <div class="metric-card safe">
+            <div class="metric-card-label">England Baseline (DfT)</div>
+            <div class="metric-card-value">0.072/100Mm</div>
+            <div class="metric-card-sub">JACArP GB</div>
+          </div>
+          <div class="metric-card moderate" id="mc-vs-baseline">
+            <div class="metric-card-label">This Scenario</div>
+            <div class="metric-card-value" id="val-vs-baseline">--</div>
+            <div class="metric-card-sub">per simulation run</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Plot: Risk vs Severity -->
+      <div class="panel-title">Risk vs Severity</div>
+      <div class="chart-container">
+        <div class="chart-title">
+          Collision Risk vs Severity
+          <span class="chart-expand" onclick="document.getElementById('chart-risk-sev').style.height = document.getElementById('chart-risk-sev').style.height === '200px' ? '100px' : '200px'">⬆</span>
+        </div>
+        <canvas id="chart-risk-sev" height="100"></canvas>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div>
+      <strong>Citations:</strong> NHTSA FARS 2020 · Transport Canada 2020 · DfT GB 2020 · CMFwiki · JACArP England
+    </div>
+    <div>
+      <strong>Standards:</strong> UL 4600 · ISO 21448 (SOTIF) · ISO 26262 · ISO 21002 · NHTSA Publications
+    </div>
+    <div>
+      <a href="https://github.com/Akamel01/AV_Safety" target="_blank">🔗 GitHub</a> ·
+      <a href="docs/demo-readme.md" target="_blank">📖 Readme</a>
+    </div>
+  </footer>
+
+  <!-- ==================== APPLICATION SCRIPTS ==================== -->
+  <script src="modules/kinematics.js"></script>
+  <script src="modules/monte-carlo.js"></script>
+  <script src="modules/bayesian-evt.js"></script>
+  <script src="modules/risk-scoring.js"></script>
+  <script src="modules/visualization.js"></script>
+  <script src="app.js"></script>
+
+</body>
+</html>

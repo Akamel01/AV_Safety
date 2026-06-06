@@ -96,7 +96,17 @@ Use when:
 - Validating safety claims numerically
 - Portfolio visualization of risk metrics
 
-## File Structure
+## Cross-Skill Dependencies
+
+- **data-ingest** (upstream) — raw metrics computed from ingested data
+- **indicator-computation** (upstream) — 42 indicators feed risk metric computation
+- **bayesian-evt** (upstream) — GPD parameters feed TTC distribution metrics
+- **collision-modeling** (sibling) — ML predictions compared against risk metrics
+- **safety-thresholds** (sibling) — risk metrics evaluated against safety thresholds
+- **risk-quantification** (downstream) — risk metrics aggregated into overall risk score
+- **standards-research** (upstream) — metrics aligned with UL 4600/ISO 21448 requirements
+
+## File Structure (target — when src/risk_models/ package is created)
 ```
 src/risk_models/
 ├── metrics/

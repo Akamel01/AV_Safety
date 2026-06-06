@@ -82,7 +82,18 @@ Use when:
 - Validating model performance against benchmarks
 - Feature engineering for risk prediction
 
-## File Structure
+## Cross-Skill Dependencies
+
+- **kinematics-engine** (upstream) — kinematic features feed ML models
+- **bayesian-evt** (upstream) — EVT outputs provide Bayesian model inputs
+- **stochastic-simulation** (upstream) — Monte Carlo data trains ML models
+- **indicator-computation** (upstream) — 42 indicators become features
+- **safety-thresholds** (downstream) — ML predictions evaluated against safety thresholds
+- **risk-metrics** (downstream) — model outputs feed risk metric computation
+- **risk-quantification** (downstream) — ML models integrated into risk pipeline
+- **statistical-validation** (sibling) — model validation methods shared
+
+## File Structure (target — when src/risk_models/ package is created)
 ```
 src/risk_models/
 ├── collision_model.py    Base collision model class

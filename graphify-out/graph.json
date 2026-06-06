@@ -1,460 +1,4154 @@
 {
-  "directed": false,
-  "multigraph": false,
-  "graph": {},
   "nodes": [
     {
+      "id": "openclaw_workspace_state",
       "label": "workspace-state.json",
       "file_type": "code",
       "source_file": ".openclaw/workspace-state.json",
-      "source_location": "L1",
-      "id": "openclaw_workspace_state",
-      "community": 3,
-      "norm_label": "workspace-state.json"
+      "source_location": "L1"
     },
     {
+      "id": "openclaw_workspace_state_version",
       "label": "version",
       "file_type": "code",
       "source_file": ".openclaw/workspace-state.json",
-      "source_location": "L2",
-      "id": "openclaw_workspace_state_version",
-      "community": 3,
-      "norm_label": "version"
+      "source_location": "L2"
     },
     {
+      "id": "openclaw_workspace_state_bootstrapseededat",
       "label": "bootstrapSeededAt",
       "file_type": "code",
       "source_file": ".openclaw/workspace-state.json",
-      "source_location": "L3",
-      "id": "openclaw_workspace_state_bootstrapseededat",
-      "community": 3,
-      "norm_label": "bootstrapseededat"
+      "source_location": "L3"
     },
     {
+      "id": "openclaw_workspace_state_setupcompletedat",
       "label": "setupCompletedAt",
       "file_type": "code",
       "source_file": ".openclaw/workspace-state.json",
-      "source_location": "L4",
-      "id": "openclaw_workspace_state_setupcompletedat",
-      "community": 3,
-      "norm_label": "setupcompletedat"
+      "source_location": "L4"
     },
     {
-      "label": "Workflow Discipline Rules",
-      "file_type": "concept",
-      "source_file": "AGENTS.md",
-      "id": "agents_workflow_discipline",
-      "community": 2,
-      "norm_label": "workflow discipline rules"
-    },
-    {
-      "label": "Memory Management",
-      "file_type": "concept",
-      "source_file": "AGENTS.md",
-      "id": "memory_management",
-      "community": 2,
-      "norm_label": "memory management"
-    },
-    {
-      "label": "Heartbeat System",
-      "file_type": "concept",
-      "source_file": "AGENTS.md",
-      "id": "heartbeat",
-      "community": 2,
-      "norm_label": "heartbeat system"
-    },
-    {
-      "label": "Git Hygiene",
-      "file_type": "concept",
-      "source_file": "AGENTS.md",
-      "id": "git_hygiene",
-      "community": 2,
-      "norm_label": "git hygiene"
-    },
-    {
-      "label": "Evidence-First Approach",
-      "file_type": "concept",
-      "source_file": "AGENTS.md",
-      "id": "evidence_first",
-      "community": 2,
-      "norm_label": "evidence-first approach"
-    },
-    {
-      "label": "Skill Tree Discipline",
-      "file_type": "concept",
-      "source_file": "AGENTS.md",
-      "id": "skill_tree",
-      "community": 2,
-      "norm_label": "skill tree discipline"
-    },
-    {
-      "label": "AV_Safety Project",
-      "file_type": "concept",
-      "source_file": "USER.md",
-      "id": "av_safety_project",
-      "community": 0,
-      "norm_label": "av_safety project"
-    },
-    {
-      "label": "Ahmed (User)",
-      "file_type": "concept",
-      "source_file": "USER.md",
-      "id": "user_ahmed",
-      "community": 0,
-      "norm_label": "ahmed (user)"
-    },
-    {
-      "label": "OpenClaw Agent",
-      "file_type": "concept",
-      "source_file": "AGENTS.md",
-      "id": "openclaw",
-      "community": 1,
-      "norm_label": "openclaw agent"
-    },
-    {
-      "label": "Gateway Service",
-      "file_type": "concept",
-      "source_file": "memory/2026-06-02-1720.md",
-      "id": "gateway",
-      "community": 1,
-      "norm_label": "gateway service"
-    },
-    {
-      "label": "Ollama Service",
-      "file_type": "concept",
-      "source_file": "memory/2026-06-02-1941.md",
-      "id": "ollama",
-      "community": 1,
-      "norm_label": "ollama service"
-    },
-    {
-      "label": "GLM-4.7-Flash Model",
-      "file_type": "concept",
-      "source_file": "memory/2026-06-02-1700.md",
-      "id": "glm-4_7-flash",
-      "community": 1,
-      "norm_label": "glm-4.7-flash model"
-    },
-    {
-      "label": "GitHub Repository",
-      "file_type": "concept",
-      "source_file": "memory/2026-06-02-1700.md",
-      "id": "github",
-      "community": 0,
-      "norm_label": "github repository"
-    },
-    {
-      "label": "Graphify Tool",
+      "id": "data_scenario_re_ca_001",
+      "label": "scenario-RE-CA-001.json",
       "file_type": "code",
-      "source_file": "memory/2026-06-02-1941.md",
-      "id": "graphify",
-      "community": 1,
-      "norm_label": "graphify tool"
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L1"
     },
     {
-      "label": "Semantic Extraction",
-      "file_type": "concept",
-      "source_file": "memory/2026-06-02-1941.md",
-      "id": "semantic_extraction",
-      "community": 1,
-      "norm_label": "semantic extraction"
+      "id": "data_scenario_re_ca_001_scenario",
+      "label": "scenario",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L2"
     },
     {
-      "label": "AST Extraction",
-      "file_type": "concept",
-      "source_file": "memory/2026-06-02-1941.md",
-      "id": "ast_extraction",
-      "community": 1,
-      "norm_label": "ast extraction"
+      "id": "data_scenario_re_ca_001_scenario_id",
+      "label": "id",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L3"
     },
     {
-      "label": "UL 4600 Standard",
-      "file_type": "concept",
-      "source_file": "USER.md",
-      "id": "ul_4600",
-      "community": 0,
-      "norm_label": "ul 4600 standard"
+      "id": "data_scenario_re_ca_001_scenario_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L4"
     },
     {
-      "label": "ISO 21448 Standard",
-      "file_type": "concept",
-      "source_file": "USER.md",
-      "id": "iso_21448",
-      "community": 0,
-      "norm_label": "iso 21448 standard"
+      "id": "data_scenario_re_ca_001_scenario_conflict_type",
+      "label": "conflict_type",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L5"
     },
     {
-      "label": "NHTSA Standards",
-      "file_type": "concept",
-      "source_file": "USER.md",
-      "id": "nhtsa",
-      "community": 0,
-      "norm_label": "nhtsa standards"
+      "id": "data_scenario_re_ca_001_scenario_conflict_type_index",
+      "label": "conflict_type_index",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L6"
     },
     {
-      "label": "Remax Real Estate",
-      "file_type": "concept",
-      "source_file": "memory/2026-06-02-1918.md",
-      "id": "remax",
-      "community": 5,
-      "norm_label": "remax real estate"
+      "id": "data_scenario_re_ca_001_scenario_sub_category",
+      "label": "sub_category",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L7"
     },
     {
-      "label": "Tenancy Application",
+      "id": "data_scenario_re_ca_001_scenario_setting",
+      "label": "setting",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "data_scenario_re_ca_001_scenario_jurisdiction",
+      "label": "jurisdiction",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "data_scenario_re_ca_001_scenario_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L10"
+    },
+    {
+      "id": "data_scenario_re_ca_001_scenario_road_geometry",
+      "label": "road_geometry",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L11"
+    },
+    {
+      "id": "data_scenario_re_ca_001_road_geometry_lanes",
+      "label": "lanes",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L12"
+    },
+    {
+      "id": "data_scenario_re_ca_001_road_geometry_lane_width_m",
+      "label": "lane_width_m",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L13"
+    },
+    {
+      "id": "data_scenario_re_ca_001_road_geometry_segment_length_m",
+      "label": "segment_length_m",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L14"
+    },
+    {
+      "id": "data_scenario_re_ca_001_road_geometry_curve_type",
+      "label": "curve_type",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L15"
+    },
+    {
+      "id": "data_scenario_re_ca_001_road_geometry_visibility_m",
+      "label": "visibility_m",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L16"
+    },
+    {
+      "id": "data_scenario_re_ca_001_road_geometry_surface",
+      "label": "surface",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L17"
+    },
+    {
+      "id": "data_scenario_re_ca_001_road_geometry_friction_coefficient",
+      "label": "friction_coefficient",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L18"
+    },
+    {
+      "id": "data_scenario_re_ca_001_scenario_weather",
+      "label": "weather",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L20"
+    },
+    {
+      "id": "data_scenario_re_ca_001_scenario_time_of_day",
+      "label": "time_of_day",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L21"
+    },
+    {
+      "id": "data_scenario_re_ca_001_road_users",
+      "label": "road_users",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L23"
+    },
+    {
+      "id": "data_scenario_re_ca_001_road_users_vehicle_a",
+      "label": "vehicle_a",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L24"
+    },
+    {
+      "id": "data_scenario_re_ca_001_vehicle_a_type",
+      "label": "type",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L25"
+    },
+    {
+      "id": "data_scenario_re_ca_001_vehicle_a_dimensions_m",
+      "label": "dimensions_m",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L26"
+    },
+    {
+      "id": "data_scenario_re_ca_001_vehicle_a_mass_kg",
+      "label": "mass_kg",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "data_scenario_re_ca_001_vehicle_a_initial_position_m",
+      "label": "initial_position_m",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "data_scenario_re_ca_001_vehicle_a_initial_velocity_ms",
+      "label": "initial_velocity_ms",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L29"
+    },
+    {
+      "id": "data_scenario_re_ca_001_vehicle_a_initial_accel_ms2",
+      "label": "initial_accel_ms2",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L30"
+    },
+    {
+      "id": "data_scenario_re_ca_001_vehicle_a_brake_event_t",
+      "label": "brake_event_t",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L31"
+    },
+    {
+      "id": "data_scenario_re_ca_001_vehicle_a_brake_accel_ms2",
+      "label": "brake_accel_ms2",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L32"
+    },
+    {
+      "id": "data_scenario_re_ca_001_vehicle_a_max_brake_ms2",
+      "label": "max_brake_ms2",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L33"
+    },
+    {
+      "id": "data_scenario_re_ca_001_vehicle_a_brake_lag_s",
+      "label": "brake_lag_s",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L34"
+    },
+    {
+      "id": "data_scenario_re_ca_001_vehicle_a_stopping_distance_m",
+      "label": "stopping_distance_m",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L35"
+    },
+    {
+      "id": "data_scenario_re_ca_001_road_users_vehicle_b",
+      "label": "vehicle_b",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L37"
+    },
+    {
+      "id": "data_scenario_re_ca_001_vehicle_b_type",
+      "label": "type",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L38"
+    },
+    {
+      "id": "data_scenario_re_ca_001_vehicle_b_dimensions_m",
+      "label": "dimensions_m",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L39"
+    },
+    {
+      "id": "data_scenario_re_ca_001_vehicle_b_mass_kg",
+      "label": "mass_kg",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L40"
+    },
+    {
+      "id": "data_scenario_re_ca_001_vehicle_b_initial_gap_m",
+      "label": "initial_gap_m",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L41"
+    },
+    {
+      "id": "data_scenario_re_ca_001_vehicle_b_initial_velocity_ms",
+      "label": "initial_velocity_ms",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L42"
+    },
+    {
+      "id": "data_scenario_re_ca_001_vehicle_b_reaction_time_s",
+      "label": "reaction_time_s",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L43"
+    },
+    {
+      "id": "data_scenario_re_ca_001_vehicle_b_max_decel_ms2",
+      "label": "max_decel_ms2",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L44"
+    },
+    {
+      "id": "data_scenario_re_ca_001_vehicle_b_comfort_decel_ms2",
+      "label": "comfort_decel_ms2",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L45"
+    },
+    {
+      "id": "data_scenario_re_ca_001_vehicle_b_brake_lag_s",
+      "label": "brake_lag_s",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L46"
+    },
+    {
+      "id": "data_scenario_re_ca_001_vehicle_b_abs_threshold_ms2",
+      "label": "abs_threshold_ms2",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L47"
+    },
+    {
+      "id": "data_scenario_re_ca_001_nominal_case",
+      "label": "nominal_case",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L50"
+    },
+    {
+      "id": "data_scenario_re_ca_001_nominal_case_collision",
+      "label": "collision",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L51"
+    },
+    {
+      "id": "data_scenario_re_ca_001_nominal_case_ttc_min_s",
+      "label": "ttc_min_s",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L52"
+    },
+    {
+      "id": "data_scenario_re_ca_001_nominal_case_min_gap_m",
+      "label": "min_gap_m",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L53"
+    },
+    {
+      "id": "data_scenario_re_ca_001_nominal_case_gap_min_time_s",
+      "label": "gap_min_time_s",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L54"
+    },
+    {
+      "id": "data_scenario_re_ca_001_nominal_case_explanation",
+      "label": "explanation",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L55"
+    },
+    {
+      "id": "data_scenario_re_ca_001_worst_case",
+      "label": "worst_case",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L57"
+    },
+    {
+      "id": "data_scenario_re_ca_001_worst_case_parameters",
+      "label": "parameters",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L58"
+    },
+    {
+      "id": "data_scenario_re_ca_001_parameters_headway_m",
+      "label": "headway_m",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L59"
+    },
+    {
+      "id": "data_scenario_re_ca_001_parameters_reaction_time_s",
+      "label": "reaction_time_s",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L60"
+    },
+    {
+      "id": "data_scenario_re_ca_001_worst_case_collision",
+      "label": "collision",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L62"
+    },
+    {
+      "id": "data_scenario_re_ca_001_worst_case_collision_time_s",
+      "label": "collision_time_s",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L63"
+    },
+    {
+      "id": "data_scenario_re_ca_001_worst_case_delta_v_ms",
+      "label": "delta_v_ms",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L64"
+    },
+    {
+      "id": "data_scenario_re_ca_001_worst_case_delta_v_kmh",
+      "label": "delta_v_kmh",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L65"
+    },
+    {
+      "id": "data_scenario_re_ca_001_worst_case_severity",
+      "label": "severity",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L66"
+    },
+    {
+      "id": "data_scenario_re_ca_001_worst_case_explanation",
+      "label": "explanation",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L67"
+    },
+    {
+      "id": "data_scenario_re_ca_001_monte_carlo_expected",
+      "label": "monte_carlo_expected",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L69"
+    },
+    {
+      "id": "data_scenario_re_ca_001_monte_carlo_expected_n_simulations",
+      "label": "n_simulations",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L70"
+    },
+    {
+      "id": "data_scenario_re_ca_001_monte_carlo_expected_collision_rate",
+      "label": "collision_rate",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L71"
+    },
+    {
+      "id": "data_scenario_re_ca_001_monte_carlo_expected_ttc_median_s",
+      "label": "ttc_median_s",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L72"
+    },
+    {
+      "id": "data_scenario_re_ca_001_monte_carlo_expected_ttc_p5_s",
+      "label": "ttc_p5_s",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L73"
+    },
+    {
+      "id": "data_scenario_re_ca_001_monte_carlo_expected_delta_v_median_ms",
+      "label": "delta_v_median_ms",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L74"
+    },
+    {
+      "id": "data_scenario_re_ca_001_monte_carlo_expected_severity_distribution",
+      "label": "severity_distribution",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L75"
+    },
+    {
+      "id": "data_scenario_re_ca_001_severity_distribution_pdo_percent",
+      "label": "pdo_percent",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L76"
+    },
+    {
+      "id": "data_scenario_re_ca_001_severity_distribution_minor_injury_percent",
+      "label": "minor_injury_percent",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L77"
+    },
+    {
+      "id": "data_scenario_re_ca_001_severity_distribution_moderate_percent",
+      "label": "moderate_percent",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L78"
+    },
+    {
+      "id": "data_scenario_re_ca_001_severity_distribution_severe_percent",
+      "label": "severe_percent",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L79"
+    },
+    {
+      "id": "data_scenario_re_ca_001_gpd_expected",
+      "label": "gpd_expected",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L82"
+    },
+    {
+      "id": "data_scenario_re_ca_001_gpd_expected_threshold_method",
+      "label": "threshold_method",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L83"
+    },
+    {
+      "id": "data_scenario_re_ca_001_gpd_expected_threshold_u_s",
+      "label": "threshold_u_s",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L84"
+    },
+    {
+      "id": "data_scenario_re_ca_001_gpd_expected_xi_expected",
+      "label": "xi_expected",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L85"
+    },
+    {
+      "id": "data_scenario_re_ca_001_gpd_expected_sigma_expected",
+      "label": "sigma_expected",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L86"
+    },
+    {
+      "id": "data_scenario_re_ca_001_gpd_expected_convergence_targets",
+      "label": "convergence_targets",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L87"
+    },
+    {
+      "id": "data_scenario_re_ca_001_convergence_targets_rhat",
+      "label": "rhat",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L88"
+    },
+    {
+      "id": "data_scenario_re_ca_001_convergence_targets_ess",
+      "label": "ess",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L89"
+    },
+    {
+      "id": "data_scenario_re_ca_001_benchmarking",
+      "label": "benchmarking",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L92"
+    },
+    {
+      "id": "data_scenario_re_ca_001_benchmarking_nhtsa_fatal_rate_usa_highway_per_100m",
+      "label": "nhtsa_fatal_rate_usa_highway_per_100m",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L93"
+    },
+    {
+      "id": "data_scenario_re_ca_001_benchmarking_nhtsa_v_fatal_threshold_kmh",
+      "label": "nhtsa_v_fatal_threshold_kmh",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L94"
+    },
+    {
+      "id": "data_scenario_re_ca_001_benchmarking_nhtsa_v_pdo_threshold_kmh",
+      "label": "nhtsa_v_pdo_threshold_kmh",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L95"
+    },
+    {
+      "id": "data_scenario_re_ca_001_benchmarking_nhtsa_v_minor_threshold_kmh",
+      "label": "nhtsa_v_minor_threshold_kmh",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L96"
+    },
+    {
+      "id": "data_scenario_re_ca_001_benchmarking_aaa_safe_headway_seconds",
+      "label": "aaa_safe_headway_seconds",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L97"
+    },
+    {
+      "id": "data_scenario_re_ca_001_benchmarking_aaa_safe_headway_m_at_100kph",
+      "label": "aaa_safe_headway_m_at_100kph",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L98"
+    },
+    {
+      "id": "data_scenario_re_ca_001_indicator_benchmarks",
+      "label": "indicator_benchmarks",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L100"
+    },
+    {
+      "id": "data_scenario_re_ca_001_indicator_benchmarks_ttc_nominal_s",
+      "label": "ttc_nominal_s",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L101"
+    },
+    {
+      "id": "data_scenario_re_ca_001_indicator_benchmarks_drac_nominal_ms2",
+      "label": "drac_nominal_ms2",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L102"
+    },
+    {
+      "id": "data_scenario_re_ca_001_indicator_benchmarks_delta_v_nominal_ms",
+      "label": "delta_v_nominal_ms",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L103"
+    },
+    {
+      "id": "data_scenario_re_ca_001_indicator_benchmarks_rla_nominal_ms2",
+      "label": "rla_nominal_ms2",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L104"
+    },
+    {
+      "id": "data_scenario_re_ca_001_indicator_benchmarks_cp_nominal",
+      "label": "cp_nominal",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L105"
+    },
+    {
+      "id": "data_scenario_re_ca_001_indicator_benchmarks_cri_nominal",
+      "label": "cri_nominal",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L106"
+    },
+    {
+      "id": "data_scenario_re_ca_001_indicator_benchmarks_pce",
+      "label": "pce",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L107"
+    },
+    {
+      "id": "data_scenario_re_ca_001_nhtsa_sources",
+      "label": "nhtsa_sources",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L109"
+    },
+    {
+      "id": "data_scenario_re_ca_001_computed_at",
+      "label": "computed_at",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L114"
+    },
+    {
+      "id": "modules_bayesian_evt",
+      "label": "bayesian-evt.js",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/bayesian-evt.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "modules_bayesian_evt_bayesianevt",
+      "label": "BayesianEVT",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/bayesian-evt.js",
+      "source_location": "L11"
+    },
+    {
+      "id": "modules_bayesian_evt_bayesianevt_constructor",
+      "label": ".constructor()",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/bayesian-evt.js",
+      "source_location": "L12"
+    },
+    {
+      "id": "modules_bayesian_evt_bayesianevt_init",
+      "label": ".init()",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/bayesian-evt.js",
+      "source_location": "L20"
+    },
+    {
+      "id": "modules_bayesian_evt_bayesianevt_selectthresholdmrl",
+      "label": ".selectThresholdMRL()",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/bayesian-evt.js",
+      "source_location": "L49"
+    },
+    {
+      "id": "modules_bayesian_evt_bayesianevt_fitgpd",
+      "label": ".fitGPD()",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/bayesian-evt.js",
+      "source_location": "L125"
+    },
+    {
+      "id": "modules_bayesian_evt_bayesianevt_computecollisionrate",
+      "label": ".computeCollisionRate()",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/bayesian-evt.js",
+      "source_location": "L199"
+    },
+    {
+      "id": "modules_bayesian_evt_bayesianevt_computeseverity",
+      "label": ".computeSeverity()",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/bayesian-evt.js",
+      "source_location": "L233"
+    },
+    {
+      "id": "modules_bayesian_evt_bayesianevt_runfullpipeline",
+      "label": ".runFullPipeline()",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/bayesian-evt.js",
+      "source_location": "L272"
+    },
+    {
+      "id": "modules_bayesian_evt_bayesianevt_profilelikelihoodbayesian",
+      "label": "._profileLikelihoodBayesian()",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/bayesian-evt.js",
+      "source_location": "L386"
+    },
+    {
+      "id": "modules_bayesian_evt_bayesianevt_gpdloglikelihood",
+      "label": "._gpdLogLikelihood()",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/bayesian-evt.js",
+      "source_location": "L461"
+    },
+    {
+      "id": "modules_bayesian_evt_bayesianevt_posteriorpredictivecheck",
+      "label": "._posteriorPredictiveCheck()",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/bayesian-evt.js",
+      "source_location": "L476"
+    },
+    {
+      "id": "modules_bayesian_evt_bayesianevt_getmrlplotdata",
+      "label": ".getMRLPlotData()",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/bayesian-evt.js",
+      "source_location": "L531"
+    },
+    {
+      "id": "modules_bayesian_evt_bayesianevt_getgpdplotdata",
+      "label": ".getGPDPlotData()",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/bayesian-evt.js",
+      "source_location": "L538"
+    },
+    {
+      "id": "modules_kinematics",
+      "label": "kinematics.js",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/kinematics.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "modules_kinematics_rearendkinematics",
+      "label": "RearEndKinematics",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/kinematics.js",
+      "source_location": "L17"
+    },
+    {
+      "id": "modules_kinematics_rearendkinematics_constructor",
+      "label": ".constructor()",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/kinematics.js",
+      "source_location": "L18"
+    },
+    {
+      "id": "modules_kinematics_rearendkinematics_validateparams",
+      "label": ".validateParams()",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/kinematics.js",
+      "source_location": "L27"
+    },
+    {
+      "id": "modules_kinematics_rearendkinematics_run",
+      "label": ".run()",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/kinematics.js",
+      "source_location": "L52"
+    },
+    {
+      "id": "modules_kinematics_rearendkinematics_computeindicators",
+      "label": ".computeIndicators()",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/kinematics.js",
+      "source_location": "L216"
+    },
+    {
+      "id": "modules_kinematics_rearendkinematics_getvisualizationtrajectory",
+      "label": ".getVisualizationTrajectory()",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/kinematics.js",
+      "source_location": "L548"
+    },
+    {
+      "id": "modules_monte_carlo",
+      "label": "monte-carlo.js",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/monte-carlo.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "modules_monte_carlo_normalsampler",
+      "label": "NormalSampler",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/monte-carlo.js",
+      "source_location": "L15"
+    },
+    {
+      "id": "modules_monte_carlo_normalsampler_constructor",
+      "label": ".constructor()",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/monte-carlo.js",
+      "source_location": "L16"
+    },
+    {
+      "id": "modules_monte_carlo_normalsampler_mulberry32",
+      "label": "._mulberry32()",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/monte-carlo.js",
+      "source_location": "L22"
+    },
+    {
+      "id": "modules_monte_carlo_normalsampler_next",
+      "label": ".next()",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/monte-carlo.js",
+      "source_location": "L32"
+    },
+    {
+      "id": "modules_monte_carlo_normalsampler_sample",
+      "label": ".sample()",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/monte-carlo.js",
+      "source_location": "L49"
+    },
+    {
+      "id": "modules_monte_carlo_montecarloengine",
+      "label": "MonteCarloEngine",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/monte-carlo.js",
+      "source_location": "L63"
+    },
+    {
+      "id": "modules_monte_carlo_montecarloengine_constructor",
+      "label": ".constructor()",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/monte-carlo.js",
+      "source_location": "L64"
+    },
+    {
+      "id": "modules_monte_carlo_montecarloengine_run",
+      "label": ".run()",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/monte-carlo.js",
+      "source_location": "L71"
+    },
+    {
+      "id": "modules_monte_carlo_montecarloengine_sampleparameters",
+      "label": "._sampleParameters()",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/monte-carlo.js",
+      "source_location": "L183"
+    },
+    {
+      "id": "modules_monte_carlo_montecarloengine_collapseresults",
+      "label": "._collapseResults()",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/monte-carlo.js",
+      "source_location": "L209"
+    },
+    {
+      "id": "modules_monte_carlo_montecarloengine_computesensitivity",
+      "label": ".computeSensitivity()",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/monte-carlo.js",
+      "source_location": "L310"
+    },
+    {
+      "id": "modules_monte_carlo_montecarloengine_pearson",
+      "label": "._pearson()",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/monte-carlo.js",
+      "source_location": "L327"
+    },
+    {
+      "id": "modules_risk_scoring",
+      "label": "risk-scoring.js",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/risk-scoring.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "modules_risk_scoring_riskscorer",
+      "label": "RiskScorer",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/risk-scoring.js",
+      "source_location": "L11"
+    },
+    {
+      "id": "modules_risk_scoring_riskscorer_constructor",
+      "label": ".constructor()",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/risk-scoring.js",
+      "source_location": "L12"
+    },
+    {
+      "id": "modules_risk_scoring_riskscorer_compute",
+      "label": ".compute()",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/risk-scoring.js",
+      "source_location": "L37"
+    },
+    {
+      "id": "modules_risk_scoring_riskscorer_computecollisionscore",
+      "label": "._computeCollisionScore()",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/risk-scoring.js",
+      "source_location": "L126"
+    },
+    {
+      "id": "modules_risk_scoring_riskscorer_computeseverityscore",
+      "label": "._computeSeverityScore()",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/risk-scoring.js",
+      "source_location": "L150"
+    },
+    {
+      "id": "modules_risk_scoring_riskscorer_computeuncertaintyscore",
+      "label": "._computeUncertaintyScore()",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/risk-scoring.js",
+      "source_location": "L172"
+    },
+    {
+      "id": "modules_risk_scoring_riskscorer_computethresholdscore",
+      "label": "._computeThresholdScore()",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/risk-scoring.js",
+      "source_location": "L193"
+    },
+    {
+      "id": "modules_risk_scoring_riskscorer_classifyrisk",
+      "label": "._classifyRisk()",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/risk-scoring.js",
+      "source_location": "L223"
+    },
+    {
+      "id": "modules_risk_scoring_riskscorer_computepctbelowthreshold",
+      "label": "._computePctBelowThreshold()",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/risk-scoring.js",
+      "source_location": "L230"
+    },
+    {
+      "id": "modules_visualization",
+      "label": "visualization.js",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "modules_visualization_visualizationengine",
+      "label": "VisualizationEngine",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L12"
+    },
+    {
+      "id": "modules_visualization_visualizationengine_constructor",
+      "label": ".constructor()",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "modules_visualization_visualizationengine_init3d",
+      "label": ".init3D()",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L37"
+    },
+    {
+      "id": "modules_visualization_visualizationengine_init2d",
+      "label": ".init2D()",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L108"
+    },
+    {
+      "id": "modules_visualization_visualizationengine_togglemode",
+      "label": ".toggleMode()",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L130"
+    },
+    {
+      "id": "modules_visualization_visualizationengine_loadthree",
+      "label": "._loadThree()",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L141"
+    },
+    {
+      "id": "modules_visualization_visualizationengine_setuppostprocessing",
+      "label": "._setupPostProcessing()",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L156"
+    },
+    {
+      "id": "modules_visualization_visualizationengine_setuplighting",
+      "label": "._setupLighting()",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L176"
+    },
+    {
+      "id": "modules_visualization_visualizationengine_createroad",
+      "label": "._createRoad()",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L210"
+    },
+    {
+      "id": "modules_visualization_visualizationengine_createvehicle",
+      "label": "._createVehicle()",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L270"
+    },
+    {
+      "id": "modules_visualization_visualizationengine_updatepositions",
+      "label": ".updatePositions()",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L351"
+    },
+    {
+      "id": "modules_visualization_visualizationengine_setcameramode",
+      "label": ".setCameraMode()",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L399"
+    },
+    {
+      "id": "modules_visualization_visualizationengine_updatecamera",
+      "label": ".updateCamera()",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L404"
+    },
+    {
+      "id": "modules_visualization_visualizationengine_triggercollisionfx",
+      "label": "._triggerCollisionFX()",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L438"
+    },
+    {
+      "id": "modules_visualization_visualizationengine_createhud",
+      "label": "._createHUD()",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L470"
+    },
+    {
+      "id": "modules_visualization_visualizationengine_updatehud",
+      "label": "._updateHUD()",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L488"
+    },
+    {
+      "id": "modules_visualization_visualizationengine_updatehudvalues",
+      "label": ".updateHUDValues()",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L504"
+    },
+    {
+      "id": "modules_visualization_visualizationengine_getttccolor",
+      "label": "._getTTCColor()",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L526"
+    },
+    {
+      "id": "modules_visualization_visualizationengine_getdraccolor",
+      "label": "._getDRACColor()",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L534"
+    },
+    {
+      "id": "modules_visualization_visualizationengine_getdvcolor",
+      "label": "._getDVColor()",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L542"
+    },
+    {
+      "id": "modules_visualization_visualizationengine_getcpcolor",
+      "label": "._getCPColor()",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L550"
+    },
+    {
+      "id": "modules_visualization_visualizationengine_getcpicolor",
+      "label": "._getCPIColor()",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L558"
+    },
+    {
+      "id": "modules_visualization_visualizationengine_getskycolor",
+      "label": "._getSkyColor()",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L567"
+    },
+    {
+      "id": "modules_visualization_visualizationengine_settimeofday",
+      "label": ".setTimeOfDay()",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L573"
+    },
+    {
+      "id": "modules_visualization_visualizationengine_render",
+      "label": ".render()",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L582"
+    },
+    {
+      "id": "modules_visualization_visualizationengine_render2d",
+      "label": ".render2D()",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L589"
+    },
+    {
+      "id": "modules_visualization_visualizationengine_destroy",
+      "label": ".destroy()",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L688"
+    },
+    {
+      "id": "modules_visualization_visualizationengine_destroy3d",
+      "label": "._destroy3D()",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L697"
+    },
+    {
+      "id": "modules_visualization_visualizationengine_destroy2d",
+      "label": "._destroy2D()",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L715"
+    },
+    {
+      "id": "modules_visualization_visualizationengine_animate",
+      "label": ".animate()",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L724"
+    },
+    {
+      "id": "modules_visualization_visualizationengine_stopanimation",
+      "label": ".stopAnimation()",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L737"
+    },
+    {
+      "id": "modules_visualization_visualizationengine_getcameramodes",
+      "label": ".getCameraModes()",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L745"
+    },
+    {
+      "id": "modules_visualization_visualizationengine_gettimeofdaymodes",
+      "label": ".getTimeOfDayModes()",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L750"
+    },
+    {
+      "id": "modules_visualization_visualizationengine_setfog",
+      "label": ".setFog()",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L755"
+    },
+    {
+      "id": "modules_risk_computation",
+      "label": "risk-computation.js",
+      "file_type": "code",
+      "source_file": "skills/portfolio-ui/modules/risk-computation.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "modules_risk_computation_riskcomputation",
+      "label": "riskComputation",
+      "file_type": "code",
+      "source_file": "skills/portfolio-ui/modules/risk-computation.js",
+      "source_location": "L8"
+    },
+    {
+      "id": "agents_md",
+      "label": "AGENTS.md",
       "file_type": "document",
-      "source_file": "memory/2026-06-02-1918.md",
-      "id": "tenancy_application",
-      "community": 5,
-      "norm_label": "tenancy application"
+      "source_file": "AGENTS.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
     },
     {
-      "label": "Session Failures Log",
+      "id": "heartbeat_md",
+      "label": "HEARTBEAT.md",
       "file_type": "document",
-      "source_file": "memory/2026-06-02.md",
-      "id": "session_failures",
-      "community": 4,
-      "norm_label": "session failures log"
+      "source_file": "HEARTBEAT.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
     },
     {
-      "label": "Context Bloat Issue",
-      "file_type": "concept",
-      "source_file": "memory/2026-06-02.md",
-      "id": "context_bloat",
-      "community": 4,
-      "norm_label": "context bloat issue"
-    },
-    {
-      "label": "Error Recovery Protocol",
-      "file_type": "concept",
-      "source_file": "memory/2026-06-02.md",
-      "id": "error_recovery",
-      "community": 4,
-      "norm_label": "error recovery protocol"
-    },
-    {
-      "label": "Kinematics Engine Skill",
-      "file_type": "concept",
-      "source_file": "memory/2026-06-02-1700.md",
-      "id": "kinematics_engine",
-      "community": 0,
-      "norm_label": "kinematics engine skill"
-    },
-    {
-      "label": "Fixing Operational Issues Plan",
+      "id": "identity_md",
+      "label": "IDENTITY.md",
       "file_type": "document",
-      "source_file": "memory/2026-06-02.md",
-      "id": "fixing_operational_issues_plan",
-      "community": 0,
-      "norm_label": "fixing operational issues plan"
+      "source_file": "IDENTITY.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "readme_md",
+      "label": "README.md",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "skill_md",
+      "label": "SKILL.md (AV_Safety Core)",
+      "file_type": "document",
+      "source_file": "SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "soul_md",
+      "label": "SOUL.md",
+      "file_type": "document",
+      "source_file": "SOUL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "tools_md",
+      "label": "TOOLS.md",
+      "file_type": "document",
+      "source_file": "TOOLS.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "user_md",
+      "label": "USER.md",
+      "file_type": "document",
+      "source_file": "USER.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docker_compose_yml",
+      "label": "docker-compose.yml",
+      "file_type": "code",
+      "source_file": "docker-compose.yml",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "requirements_txt",
+      "label": "requirements.txt",
+      "file_type": "code",
+      "source_file": "requirements.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "graphify_skill_md",
+      "label": "Graphify Skill (SKILL.md)",
+      "file_type": "document",
+      "source_file": ".openclaw/skills/graphify/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "graphify_add_watch_md",
+      "label": "graphify reference: add-watch.md",
+      "file_type": "document",
+      "source_file": ".openclaw/skills/graphify/references/add-watch.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "graphify_exports_md",
+      "label": "graphify reference: extra exports and benchmark.md",
+      "file_type": "document",
+      "source_file": ".openclaw/skills/graphify/references/exports.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "graphify_extraction_spec_md",
+      "label": "graphify reference: extraction subagent prompt.md",
+      "file_type": "document",
+      "source_file": ".openclaw/skills/graphify/references/extraction-spec.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "graphify_github_and_merge_md",
+      "label": "graphify reference: GitHub clone and cross-repo merge.md",
+      "file_type": "document",
+      "source_file": ".openclaw/skills/graphify/references/github-and-merge.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "graphify_hooks_md",
+      "label": "graphify reference: commit hook and native CLAUDE.md",
+      "file_type": "document",
+      "source_file": ".openclaw/skills/graphify/references/hooks.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "graphify_query_md",
+      "label": "graphify reference: query, path, explain.md",
+      "file_type": "document",
+      "source_file": ".openclaw/skills/graphify/references/query.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "graphify_transcribe_md",
+      "label": "graphify reference: transcribe video and audio.md",
+      "file_type": "document",
+      "source_file": ".openclaw/skills/graphify/references/transcribe.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "graphify_update_md",
+      "label": "graphify reference: incremental update and cluster-only.md",
+      "file_type": "document",
+      "source_file": ".openclaw/skills/graphify/references/update.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "computation_strategy_md",
+      "label": "Computational Strategy (doc)",
+      "file_type": "document",
+      "source_file": "docs/architecture/computation-strategy.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "fixing_operational_issues_plan_md",
+      "label": "Fixing Operational Issues Plan (doc)",
+      "file_type": "document",
+      "source_file": "docs/architecture/fixing_operational_issues_plan.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "handoff_md",
+      "label": "Session Handoff (doc)",
+      "file_type": "document",
+      "source_file": "docs/architecture/handoff.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "investigation_plan_md",
+      "label": "Investigation Plan (doc)",
+      "file_type": "document",
+      "source_file": "docs/architecture/investigation-plan.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "session_failures_analysis_md",
+      "label": "Session Failures Analysis (doc)",
+      "file_type": "document",
+      "source_file": "docs/architecture/session-failures-analysis.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "index_html",
+      "label": "Single Scenario Demo (HTML)",
+      "file_type": "code",
+      "source_file": "single-scenario-demo/index.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "three_d_animation_skill_md",
+      "label": "3D Animation Skill (SKILL.md)",
+      "file_type": "document",
+      "source_file": "skills/3d-animation/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "bayesian_analysis_skill_md",
+      "label": "Bayesian Analysis Skill (SKILL.md)",
+      "file_type": "document",
+      "source_file": "skills/bayesian-analysis/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "bayesian_evt_skill_md",
+      "label": "Bayesian EVT Skill (SKILL.md)",
+      "file_type": "document",
+      "source_file": "skills/bayesian-evt/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "collision_modeling_skill_md",
+      "label": "Collision Modeling Skill (SKILL.md)",
+      "file_type": "document",
+      "source_file": "skills/collision-modeling/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "data_exploration_skill_md",
+      "label": "Data Exploration Skill (SKILL.md)",
+      "file_type": "document",
+      "source_file": "skills/data-exploration/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "data_ingest_skill",
+      "label": "Data Ingest",
+      "file_type": "document",
+      "source_file": "skills/data-ingest/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "indicator_computation_skill",
+      "label": "Indicator Computation",
+      "file_type": "document",
+      "source_file": "skills/indicator-computation/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "kinematics_engine_skill",
+      "label": "Kinematics Engine",
+      "file_type": "document",
+      "source_file": "skills/kinematics-engine/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "portfolio_ui_skill",
+      "label": "Portfolio UI",
+      "file_type": "document",
+      "source_file": "skills/portfolio-ui/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "risk_metrics_skill",
+      "label": "Risk Metrics",
+      "file_type": "document",
+      "source_file": "skills/risk-metrics/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "risk_quantification_skill",
+      "label": "Risk Quantification",
+      "file_type": "document",
+      "source_file": "skills/risk-quantification/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "safety_thresholds_skill",
+      "label": "Safety Thresholds",
+      "file_type": "document",
+      "source_file": "skills/safety-thresholds/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "scenario_taxonomy_skill",
+      "label": "Scenario Taxonomy",
+      "file_type": "document",
+      "source_file": "skills/scenario-taxonomy/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "standards_research_skill",
+      "label": "Standards Research",
+      "file_type": "document",
+      "source_file": "skills/standards-research/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "statistical_validation_skill",
+      "label": "Statistical Validation",
+      "file_type": "document",
+      "source_file": "skills/statistical-validation/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "stochastic_simulation_skill",
+      "label": "Stochastic Simulation",
+      "file_type": "document",
+      "source_file": "skills/stochastic-simulation/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
     }
   ],
-  "links": [
+  "edges": [
     {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".openclaw/workspace-state.json",
-      "source_location": "L3",
-      "weight": 1.0,
       "source": "openclaw_workspace_state",
-      "target": "openclaw_workspace_state_bootstrapseededat",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".openclaw/workspace-state.json",
-      "source_location": "L4",
-      "weight": 1.0,
-      "source": "openclaw_workspace_state",
-      "target": "openclaw_workspace_state_setupcompletedat",
-      "confidence_score": 1.0
-    },
-    {
+      "target": "openclaw_workspace_state_version",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": ".openclaw/workspace-state.json",
       "source_location": "L2",
-      "weight": 1.0,
+      "weight": 1.0
+    },
+    {
       "source": "openclaw_workspace_state",
-      "target": "openclaw_workspace_state_version",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "conceptually_related_to",
+      "target": "openclaw_workspace_state_bootstrapseededat",
+      "relation": "contains",
       "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "AGENTS.md",
-      "source": "agents_workflow_discipline",
-      "target": "evidence_first"
+      "source_file": ".openclaw/workspace-state.json",
+      "source_location": "L3",
+      "weight": 1.0
     },
     {
-      "relation": "conceptually_related_to",
+      "source": "openclaw_workspace_state",
+      "target": "openclaw_workspace_state_setupcompletedat",
+      "relation": "contains",
       "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "AGENTS.md",
-      "source": "agents_workflow_discipline",
-      "target": "git_hygiene"
+      "source_file": ".openclaw/workspace-state.json",
+      "source_location": "L4",
+      "weight": 1.0
     },
     {
-      "relation": "conceptually_related_to",
+      "source": "data_scenario_re_ca_001",
+      "target": "data_scenario_re_ca_001_scenario",
+      "relation": "contains",
       "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "AGENTS.md",
-      "source": "agents_workflow_discipline",
-      "target": "memory_management"
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L2",
+      "weight": 1.0
     },
     {
-      "relation": "conceptually_related_to",
+      "source": "data_scenario_re_ca_001_scenario",
+      "target": "data_scenario_re_ca_001_scenario_id",
+      "relation": "contains",
       "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "AGENTS.md",
-      "source": "agents_workflow_discipline",
-      "target": "skill_tree"
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L3",
+      "weight": 1.0
     },
     {
-      "relation": "conceptually_related_to",
+      "source": "data_scenario_re_ca_001_scenario",
+      "target": "data_scenario_re_ca_001_scenario_name",
+      "relation": "contains",
       "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "AGENTS.md",
-      "source": "memory_management",
-      "target": "heartbeat"
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L4",
+      "weight": 1.0
     },
     {
+      "source": "data_scenario_re_ca_001_scenario",
+      "target": "data_scenario_re_ca_001_scenario_conflict_type",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_scenario",
+      "target": "data_scenario_re_ca_001_scenario_conflict_type_index",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_scenario",
+      "target": "data_scenario_re_ca_001_scenario_sub_category",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_scenario",
+      "target": "data_scenario_re_ca_001_scenario_setting",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_scenario",
+      "target": "data_scenario_re_ca_001_scenario_jurisdiction",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_scenario",
+      "target": "data_scenario_re_ca_001_scenario_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_scenario",
+      "target": "data_scenario_re_ca_001_scenario_road_geometry",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_scenario_road_geometry",
+      "target": "data_scenario_re_ca_001_road_geometry_lanes",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_scenario_road_geometry",
+      "target": "data_scenario_re_ca_001_road_geometry_lane_width_m",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_scenario_road_geometry",
+      "target": "data_scenario_re_ca_001_road_geometry_segment_length_m",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_scenario_road_geometry",
+      "target": "data_scenario_re_ca_001_road_geometry_curve_type",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_scenario_road_geometry",
+      "target": "data_scenario_re_ca_001_road_geometry_visibility_m",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_scenario_road_geometry",
+      "target": "data_scenario_re_ca_001_road_geometry_surface",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_scenario_road_geometry",
+      "target": "data_scenario_re_ca_001_road_geometry_friction_coefficient",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_scenario",
+      "target": "data_scenario_re_ca_001_scenario_weather",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_scenario",
+      "target": "data_scenario_re_ca_001_scenario_time_of_day",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001",
+      "target": "data_scenario_re_ca_001_road_users",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_road_users",
+      "target": "data_scenario_re_ca_001_road_users_vehicle_a",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_road_users_vehicle_a",
+      "target": "data_scenario_re_ca_001_vehicle_a_type",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_road_users_vehicle_a",
+      "target": "data_scenario_re_ca_001_vehicle_a_dimensions_m",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_road_users_vehicle_a",
+      "target": "data_scenario_re_ca_001_vehicle_a_mass_kg",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_road_users_vehicle_a",
+      "target": "data_scenario_re_ca_001_vehicle_a_initial_position_m",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_road_users_vehicle_a",
+      "target": "data_scenario_re_ca_001_vehicle_a_initial_velocity_ms",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_road_users_vehicle_a",
+      "target": "data_scenario_re_ca_001_vehicle_a_initial_accel_ms2",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_road_users_vehicle_a",
+      "target": "data_scenario_re_ca_001_vehicle_a_brake_event_t",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_road_users_vehicle_a",
+      "target": "data_scenario_re_ca_001_vehicle_a_brake_accel_ms2",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_road_users_vehicle_a",
+      "target": "data_scenario_re_ca_001_vehicle_a_max_brake_ms2",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_road_users_vehicle_a",
+      "target": "data_scenario_re_ca_001_vehicle_a_brake_lag_s",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_road_users_vehicle_a",
+      "target": "data_scenario_re_ca_001_vehicle_a_stopping_distance_m",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_road_users",
+      "target": "data_scenario_re_ca_001_road_users_vehicle_b",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_road_users_vehicle_b",
+      "target": "data_scenario_re_ca_001_vehicle_b_type",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_road_users_vehicle_b",
+      "target": "data_scenario_re_ca_001_vehicle_b_dimensions_m",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_road_users_vehicle_b",
+      "target": "data_scenario_re_ca_001_vehicle_b_mass_kg",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_road_users_vehicle_b",
+      "target": "data_scenario_re_ca_001_vehicle_b_initial_gap_m",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_road_users_vehicle_b",
+      "target": "data_scenario_re_ca_001_vehicle_b_initial_velocity_ms",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_road_users_vehicle_b",
+      "target": "data_scenario_re_ca_001_vehicle_b_reaction_time_s",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_road_users_vehicle_b",
+      "target": "data_scenario_re_ca_001_vehicle_b_max_decel_ms2",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_road_users_vehicle_b",
+      "target": "data_scenario_re_ca_001_vehicle_b_comfort_decel_ms2",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_road_users_vehicle_b",
+      "target": "data_scenario_re_ca_001_vehicle_b_brake_lag_s",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_road_users_vehicle_b",
+      "target": "data_scenario_re_ca_001_vehicle_b_abs_threshold_ms2",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001",
+      "target": "data_scenario_re_ca_001_nominal_case",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_nominal_case",
+      "target": "data_scenario_re_ca_001_nominal_case_collision",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_nominal_case",
+      "target": "data_scenario_re_ca_001_nominal_case_ttc_min_s",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L52",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_nominal_case",
+      "target": "data_scenario_re_ca_001_nominal_case_min_gap_m",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L53",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_nominal_case",
+      "target": "data_scenario_re_ca_001_nominal_case_gap_min_time_s",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L54",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_nominal_case",
+      "target": "data_scenario_re_ca_001_nominal_case_explanation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001",
+      "target": "data_scenario_re_ca_001_worst_case",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L57",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_worst_case",
+      "target": "data_scenario_re_ca_001_worst_case_parameters",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L58",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_worst_case_parameters",
+      "target": "data_scenario_re_ca_001_parameters_headway_m",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L59",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_worst_case_parameters",
+      "target": "data_scenario_re_ca_001_parameters_reaction_time_s",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L60",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_worst_case",
+      "target": "data_scenario_re_ca_001_worst_case_collision",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L62",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_worst_case",
+      "target": "data_scenario_re_ca_001_worst_case_collision_time_s",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L63",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_worst_case",
+      "target": "data_scenario_re_ca_001_worst_case_delta_v_ms",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L64",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_worst_case",
+      "target": "data_scenario_re_ca_001_worst_case_delta_v_kmh",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L65",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_worst_case",
+      "target": "data_scenario_re_ca_001_worst_case_severity",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L66",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_worst_case",
+      "target": "data_scenario_re_ca_001_worst_case_explanation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001",
+      "target": "data_scenario_re_ca_001_monte_carlo_expected",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L69",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_monte_carlo_expected",
+      "target": "data_scenario_re_ca_001_monte_carlo_expected_n_simulations",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L70",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_monte_carlo_expected",
+      "target": "data_scenario_re_ca_001_monte_carlo_expected_collision_rate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L71",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_monte_carlo_expected",
+      "target": "data_scenario_re_ca_001_monte_carlo_expected_ttc_median_s",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L72",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_monte_carlo_expected",
+      "target": "data_scenario_re_ca_001_monte_carlo_expected_ttc_p5_s",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L73",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_monte_carlo_expected",
+      "target": "data_scenario_re_ca_001_monte_carlo_expected_delta_v_median_ms",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L74",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_monte_carlo_expected",
+      "target": "data_scenario_re_ca_001_monte_carlo_expected_severity_distribution",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L75",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_monte_carlo_expected_severity_distribution",
+      "target": "data_scenario_re_ca_001_severity_distribution_pdo_percent",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L76",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_monte_carlo_expected_severity_distribution",
+      "target": "data_scenario_re_ca_001_severity_distribution_minor_injury_percent",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L77",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_monte_carlo_expected_severity_distribution",
+      "target": "data_scenario_re_ca_001_severity_distribution_moderate_percent",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L78",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_monte_carlo_expected_severity_distribution",
+      "target": "data_scenario_re_ca_001_severity_distribution_severe_percent",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L79",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001",
+      "target": "data_scenario_re_ca_001_gpd_expected",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L82",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_gpd_expected",
+      "target": "data_scenario_re_ca_001_gpd_expected_threshold_method",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L83",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_gpd_expected",
+      "target": "data_scenario_re_ca_001_gpd_expected_threshold_u_s",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L84",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_gpd_expected",
+      "target": "data_scenario_re_ca_001_gpd_expected_xi_expected",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L85",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_gpd_expected",
+      "target": "data_scenario_re_ca_001_gpd_expected_sigma_expected",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L86",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_gpd_expected",
+      "target": "data_scenario_re_ca_001_gpd_expected_convergence_targets",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L87",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_gpd_expected_convergence_targets",
+      "target": "data_scenario_re_ca_001_convergence_targets_rhat",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L88",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_gpd_expected_convergence_targets",
+      "target": "data_scenario_re_ca_001_convergence_targets_ess",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L89",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001",
+      "target": "data_scenario_re_ca_001_benchmarking",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L92",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_benchmarking",
+      "target": "data_scenario_re_ca_001_benchmarking_nhtsa_fatal_rate_usa_highway_per_100m",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L93",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_benchmarking",
+      "target": "data_scenario_re_ca_001_benchmarking_nhtsa_v_fatal_threshold_kmh",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L94",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_benchmarking",
+      "target": "data_scenario_re_ca_001_benchmarking_nhtsa_v_pdo_threshold_kmh",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L95",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_benchmarking",
+      "target": "data_scenario_re_ca_001_benchmarking_nhtsa_v_minor_threshold_kmh",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L96",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_benchmarking",
+      "target": "data_scenario_re_ca_001_benchmarking_aaa_safe_headway_seconds",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L97",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_benchmarking",
+      "target": "data_scenario_re_ca_001_benchmarking_aaa_safe_headway_m_at_100kph",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L98",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001",
+      "target": "data_scenario_re_ca_001_indicator_benchmarks",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L100",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_indicator_benchmarks",
+      "target": "data_scenario_re_ca_001_indicator_benchmarks_ttc_nominal_s",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L101",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_indicator_benchmarks",
+      "target": "data_scenario_re_ca_001_indicator_benchmarks_drac_nominal_ms2",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L102",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_indicator_benchmarks",
+      "target": "data_scenario_re_ca_001_indicator_benchmarks_delta_v_nominal_ms",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L103",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_indicator_benchmarks",
+      "target": "data_scenario_re_ca_001_indicator_benchmarks_rla_nominal_ms2",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L104",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_indicator_benchmarks",
+      "target": "data_scenario_re_ca_001_indicator_benchmarks_cp_nominal",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L105",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_indicator_benchmarks",
+      "target": "data_scenario_re_ca_001_indicator_benchmarks_cri_nominal",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L106",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_indicator_benchmarks",
+      "target": "data_scenario_re_ca_001_indicator_benchmarks_pce",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L107",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001",
+      "target": "data_scenario_re_ca_001_nhtsa_sources",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L109",
+      "weight": 1.0
+    },
+    {
+      "source": "data_scenario_re_ca_001_nhtsa_sources",
+      "target": "ref_nhtsa_fars_2020_fatal_accident_reporting_system",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L109",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "data_scenario_re_ca_001_nhtsa_sources",
+      "target": "ref_nhtsa_es_28_event_severity_index_methodology",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L109",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "data_scenario_re_ca_001_nhtsa_sources",
+      "target": "ref_bansyse_bayesian_safety_analysis_system_injury_correlation",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L109",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "data_scenario_re_ca_001",
+      "target": "data_scenario_re_ca_001_computed_at",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/data/scenario-RE-CA-001.json",
+      "source_location": "L114",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_bayesian_evt",
+      "target": "modules_bayesian_evt_bayesianevt",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/bayesian-evt.js",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_bayesian_evt_bayesianevt",
+      "target": "modules_bayesian_evt_bayesianevt_constructor",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/bayesian-evt.js",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_bayesian_evt_bayesianevt",
+      "target": "modules_bayesian_evt_bayesianevt_init",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/bayesian-evt.js",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_bayesian_evt_bayesianevt",
+      "target": "modules_bayesian_evt_bayesianevt_selectthresholdmrl",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/bayesian-evt.js",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_bayesian_evt_bayesianevt",
+      "target": "modules_bayesian_evt_bayesianevt_fitgpd",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/bayesian-evt.js",
+      "source_location": "L125",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_bayesian_evt_bayesianevt",
+      "target": "modules_bayesian_evt_bayesianevt_computecollisionrate",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/bayesian-evt.js",
+      "source_location": "L199",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_bayesian_evt_bayesianevt",
+      "target": "modules_bayesian_evt_bayesianevt_computeseverity",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/bayesian-evt.js",
+      "source_location": "L233",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_bayesian_evt_bayesianevt",
+      "target": "modules_bayesian_evt_bayesianevt_runfullpipeline",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/bayesian-evt.js",
+      "source_location": "L272",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_bayesian_evt_bayesianevt",
+      "target": "modules_bayesian_evt_bayesianevt_profilelikelihoodbayesian",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/bayesian-evt.js",
+      "source_location": "L386",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_bayesian_evt_bayesianevt",
+      "target": "modules_bayesian_evt_bayesianevt_gpdloglikelihood",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/bayesian-evt.js",
+      "source_location": "L461",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_bayesian_evt_bayesianevt",
+      "target": "modules_bayesian_evt_bayesianevt_posteriorpredictivecheck",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/bayesian-evt.js",
+      "source_location": "L476",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_bayesian_evt_bayesianevt",
+      "target": "modules_bayesian_evt_bayesianevt_getmrlplotdata",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/bayesian-evt.js",
+      "source_location": "L531",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_bayesian_evt_bayesianevt",
+      "target": "modules_bayesian_evt_bayesianevt_getgpdplotdata",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/bayesian-evt.js",
+      "source_location": "L538",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_bayesian_evt_bayesianevt_runfullpipeline",
+      "target": "modules_bayesian_evt_bayesianevt_init",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/bayesian-evt.js",
+      "source_location": "L273",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_bayesian_evt_bayesianevt_runfullpipeline",
+      "target": "modules_bayesian_evt_bayesianevt_selectthresholdmrl",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/bayesian-evt.js",
+      "source_location": "L282",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_bayesian_evt_bayesianevt_runfullpipeline",
+      "target": "modules_bayesian_evt_bayesianevt_fitgpd",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/bayesian-evt.js",
+      "source_location": "L297",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_bayesian_evt_bayesianevt_runfullpipeline",
+      "target": "modules_bayesian_evt_bayesianevt_profilelikelihoodbayesian",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/bayesian-evt.js",
+      "source_location": "L311",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_bayesian_evt_bayesianevt_runfullpipeline",
+      "target": "modules_bayesian_evt_bayesianevt_computecollisionrate",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/bayesian-evt.js",
+      "source_location": "L320",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_bayesian_evt_bayesianevt_runfullpipeline",
+      "target": "modules_bayesian_evt_bayesianevt_computeseverity",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/bayesian-evt.js",
+      "source_location": "L326",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_bayesian_evt_bayesianevt_runfullpipeline",
+      "target": "modules_bayesian_evt_bayesianevt_posteriorpredictivecheck",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/bayesian-evt.js",
+      "source_location": "L329",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_bayesian_evt_bayesianevt_profilelikelihoodbayesian",
+      "target": "modules_bayesian_evt_bayesianevt_gpdloglikelihood",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/bayesian-evt.js",
+      "source_location": "L404",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_kinematics",
+      "target": "modules_kinematics_rearendkinematics",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/kinematics.js",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_kinematics_rearendkinematics",
+      "target": "modules_kinematics_rearendkinematics_constructor",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/kinematics.js",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_kinematics_rearendkinematics",
+      "target": "modules_kinematics_rearendkinematics_validateparams",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/kinematics.js",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_kinematics_rearendkinematics",
+      "target": "modules_kinematics_rearendkinematics_run",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/kinematics.js",
+      "source_location": "L52",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_kinematics_rearendkinematics",
+      "target": "modules_kinematics_rearendkinematics_computeindicators",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/kinematics.js",
+      "source_location": "L216",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_kinematics_rearendkinematics",
+      "target": "modules_kinematics_rearendkinematics_getvisualizationtrajectory",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/kinematics.js",
+      "source_location": "L548",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_kinematics_rearendkinematics_constructor",
+      "target": "modules_kinematics_rearendkinematics_validateparams",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/kinematics.js",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_kinematics_rearendkinematics_run",
+      "target": "modules_kinematics_rearendkinematics_computeindicators",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/kinematics.js",
+      "source_location": "L187",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_monte_carlo",
+      "target": "modules_monte_carlo_normalsampler",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/monte-carlo.js",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_monte_carlo_normalsampler",
+      "target": "modules_monte_carlo_normalsampler_constructor",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/monte-carlo.js",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_monte_carlo_normalsampler",
+      "target": "modules_monte_carlo_normalsampler_mulberry32",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/monte-carlo.js",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_monte_carlo_normalsampler",
+      "target": "modules_monte_carlo_normalsampler_next",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/monte-carlo.js",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_monte_carlo_normalsampler",
+      "target": "modules_monte_carlo_normalsampler_sample",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/monte-carlo.js",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_monte_carlo",
+      "target": "modules_monte_carlo_montecarloengine",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/monte-carlo.js",
+      "source_location": "L63",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_monte_carlo_montecarloengine",
+      "target": "modules_monte_carlo_montecarloengine_constructor",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/monte-carlo.js",
+      "source_location": "L64",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_monte_carlo_montecarloengine",
+      "target": "modules_monte_carlo_montecarloengine_run",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/monte-carlo.js",
+      "source_location": "L71",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_monte_carlo_montecarloengine",
+      "target": "modules_monte_carlo_montecarloengine_sampleparameters",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/monte-carlo.js",
+      "source_location": "L183",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_monte_carlo_montecarloengine",
+      "target": "modules_monte_carlo_montecarloengine_collapseresults",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/monte-carlo.js",
+      "source_location": "L209",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_monte_carlo_montecarloengine",
+      "target": "modules_monte_carlo_montecarloengine_computesensitivity",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/monte-carlo.js",
+      "source_location": "L310",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_monte_carlo_montecarloengine",
+      "target": "modules_monte_carlo_montecarloengine_pearson",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/monte-carlo.js",
+      "source_location": "L327",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_monte_carlo_normalsampler_constructor",
+      "target": "modules_monte_carlo_normalsampler_mulberry32",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/monte-carlo.js",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_monte_carlo_montecarloengine_run",
+      "target": "modules_monte_carlo_montecarloengine_sampleparameters",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/monte-carlo.js",
+      "source_location": "L107",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_monte_carlo_montecarloengine_run",
+      "target": "modules_monte_carlo_montecarloengine_collapseresults",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/monte-carlo.js",
+      "source_location": "L170",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_monte_carlo_montecarloengine_sampleparameters",
+      "target": "modules_monte_carlo_normalsampler_sample",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/monte-carlo.js",
+      "source_location": "L186",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_monte_carlo_montecarloengine_computesensitivity",
+      "target": "modules_monte_carlo_montecarloengine_pearson",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/monte-carlo.js",
+      "source_location": "L321",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_risk_scoring",
+      "target": "modules_risk_scoring_riskscorer",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/risk-scoring.js",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_risk_scoring_riskscorer",
+      "target": "modules_risk_scoring_riskscorer_constructor",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/risk-scoring.js",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_risk_scoring_riskscorer",
+      "target": "modules_risk_scoring_riskscorer_compute",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/risk-scoring.js",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_risk_scoring_riskscorer",
+      "target": "modules_risk_scoring_riskscorer_computecollisionscore",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/risk-scoring.js",
+      "source_location": "L126",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_risk_scoring_riskscorer",
+      "target": "modules_risk_scoring_riskscorer_computeseverityscore",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/risk-scoring.js",
+      "source_location": "L150",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_risk_scoring_riskscorer",
+      "target": "modules_risk_scoring_riskscorer_computeuncertaintyscore",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/risk-scoring.js",
+      "source_location": "L172",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_risk_scoring_riskscorer",
+      "target": "modules_risk_scoring_riskscorer_computethresholdscore",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/risk-scoring.js",
+      "source_location": "L193",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_risk_scoring_riskscorer",
+      "target": "modules_risk_scoring_riskscorer_classifyrisk",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/risk-scoring.js",
+      "source_location": "L223",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_risk_scoring_riskscorer",
+      "target": "modules_risk_scoring_riskscorer_computepctbelowthreshold",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/risk-scoring.js",
+      "source_location": "L230",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_risk_scoring_riskscorer_compute",
+      "target": "modules_risk_scoring_riskscorer_computecollisionscore",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/risk-scoring.js",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_risk_scoring_riskscorer_compute",
+      "target": "modules_risk_scoring_riskscorer_computeseverityscore",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/risk-scoring.js",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_risk_scoring_riskscorer_compute",
+      "target": "modules_risk_scoring_riskscorer_computeuncertaintyscore",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/risk-scoring.js",
+      "source_location": "L54",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_risk_scoring_riskscorer_compute",
+      "target": "modules_risk_scoring_riskscorer_computethresholdscore",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/risk-scoring.js",
+      "source_location": "L60",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_risk_scoring_riskscorer_compute",
+      "target": "modules_risk_scoring_riskscorer_classifyrisk",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/risk-scoring.js",
+      "source_location": "L78",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_risk_scoring_riskscorer_compute",
+      "target": "modules_risk_scoring_riskscorer_computepctbelowthreshold",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/risk-scoring.js",
+      "source_location": "L114",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_visualization",
+      "target": "modules_visualization_visualizationengine",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_visualization_visualizationengine",
+      "target": "modules_visualization_visualizationengine_constructor",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_visualization_visualizationengine",
+      "target": "modules_visualization_visualizationengine_init3d",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_visualization_visualizationengine",
+      "target": "modules_visualization_visualizationengine_init2d",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L108",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_visualization_visualizationengine",
+      "target": "modules_visualization_visualizationengine_togglemode",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L130",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_visualization_visualizationengine",
+      "target": "modules_visualization_visualizationengine_loadthree",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L141",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_visualization_visualizationengine",
+      "target": "modules_visualization_visualizationengine_setuppostprocessing",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L156",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_visualization_visualizationengine",
+      "target": "modules_visualization_visualizationengine_setuplighting",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L176",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_visualization_visualizationengine",
+      "target": "modules_visualization_visualizationengine_createroad",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L210",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_visualization_visualizationengine",
+      "target": "modules_visualization_visualizationengine_createvehicle",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L270",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_visualization_visualizationengine",
+      "target": "modules_visualization_visualizationengine_updatepositions",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L351",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_visualization_visualizationengine",
+      "target": "modules_visualization_visualizationengine_setcameramode",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L399",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_visualization_visualizationengine",
+      "target": "modules_visualization_visualizationengine_updatecamera",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L404",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_visualization_visualizationengine",
+      "target": "modules_visualization_visualizationengine_triggercollisionfx",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L438",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_visualization_visualizationengine",
+      "target": "modules_visualization_visualizationengine_createhud",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L470",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_visualization_visualizationengine",
+      "target": "modules_visualization_visualizationengine_updatehud",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L488",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_visualization_visualizationengine",
+      "target": "modules_visualization_visualizationengine_updatehudvalues",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L504",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_visualization_visualizationengine",
+      "target": "modules_visualization_visualizationengine_getttccolor",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L526",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_visualization_visualizationengine",
+      "target": "modules_visualization_visualizationengine_getdraccolor",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L534",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_visualization_visualizationengine",
+      "target": "modules_visualization_visualizationengine_getdvcolor",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L542",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_visualization_visualizationengine",
+      "target": "modules_visualization_visualizationengine_getcpcolor",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L550",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_visualization_visualizationengine",
+      "target": "modules_visualization_visualizationengine_getcpicolor",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L558",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_visualization_visualizationengine",
+      "target": "modules_visualization_visualizationengine_getskycolor",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L567",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_visualization_visualizationengine",
+      "target": "modules_visualization_visualizationengine_settimeofday",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L573",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_visualization_visualizationengine",
+      "target": "modules_visualization_visualizationengine_render",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L582",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_visualization_visualizationengine",
+      "target": "modules_visualization_visualizationengine_render2d",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L589",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_visualization_visualizationengine",
+      "target": "modules_visualization_visualizationengine_destroy",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L688",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_visualization_visualizationengine",
+      "target": "modules_visualization_visualizationengine_destroy3d",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L697",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_visualization_visualizationengine",
+      "target": "modules_visualization_visualizationengine_destroy2d",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L715",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_visualization_visualizationengine",
+      "target": "modules_visualization_visualizationengine_animate",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L724",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_visualization_visualizationengine",
+      "target": "modules_visualization_visualizationengine_stopanimation",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L737",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_visualization_visualizationengine",
+      "target": "modules_visualization_visualizationengine_getcameramodes",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L745",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_visualization_visualizationengine",
+      "target": "modules_visualization_visualizationengine_gettimeofdaymodes",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L750",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_visualization_visualizationengine",
+      "target": "modules_visualization_visualizationengine_setfog",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L755",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_visualization_visualizationengine_init3d",
+      "target": "modules_visualization_visualizationengine_loadthree",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_visualization_visualizationengine_init3d",
+      "target": "modules_visualization_visualizationengine_getskycolor",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_visualization_visualizationengine_init3d",
+      "target": "modules_visualization_visualizationengine_setuppostprocessing",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L72",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_visualization_visualizationengine_init3d",
+      "target": "modules_visualization_visualizationengine_setuplighting",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L75",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_visualization_visualizationengine_init3d",
+      "target": "modules_visualization_visualizationengine_createroad",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L78",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_visualization_visualizationengine_init3d",
+      "target": "modules_visualization_visualizationengine_createvehicle",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L81",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_visualization_visualizationengine_init3d",
+      "target": "modules_visualization_visualizationengine_createhud",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L93",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_visualization_visualizationengine_init2d",
+      "target": "modules_visualization_visualizationengine_createhud",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L124",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_visualization_visualizationengine_togglemode",
+      "target": "modules_visualization_visualizationengine_destroy3d",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L132",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_visualization_visualizationengine_togglemode",
+      "target": "modules_visualization_visualizationengine_init2d",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L133",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_visualization_visualizationengine_togglemode",
+      "target": "modules_visualization_visualizationengine_destroy2d",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L135",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_visualization_visualizationengine_togglemode",
+      "target": "modules_visualization_visualizationengine_init3d",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L136",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_visualization_visualizationengine_updatepositions",
+      "target": "modules_visualization_visualizationengine_triggercollisionfx",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L386",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_visualization_visualizationengine_updatepositions",
+      "target": "modules_visualization_visualizationengine_updatehud",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L395",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_visualization_visualizationengine_createhud",
+      "target": "modules_visualization_visualizationengine_updatehud",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L484",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_visualization_visualizationengine_updatehudvalues",
+      "target": "modules_visualization_visualizationengine_getttccolor",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L514",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_visualization_visualizationengine_updatehudvalues",
+      "target": "modules_visualization_visualizationengine_getdraccolor",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L516",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_visualization_visualizationengine_updatehudvalues",
+      "target": "modules_visualization_visualizationengine_getdvcolor",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L518",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_visualization_visualizationengine_updatehudvalues",
+      "target": "modules_visualization_visualizationengine_getcpcolor",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L520",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_visualization_visualizationengine_updatehudvalues",
+      "target": "modules_visualization_visualizationengine_getcpicolor",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L522",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_visualization_visualizationengine_destroy",
+      "target": "modules_visualization_visualizationengine_destroy3d",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L689",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_visualization_visualizationengine_destroy",
+      "target": "modules_visualization_visualizationengine_destroy2d",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L690",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_visualization_visualizationengine_animate",
+      "target": "modules_visualization_visualizationengine_updatecamera",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L726",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_visualization_visualizationengine_animate",
+      "target": "modules_visualization_visualizationengine_render",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L727",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_visualization_visualizationengine_animate",
+      "target": "modules_visualization_visualizationengine_render2d",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "single-scenario-demo/modules/visualization.js",
+      "source_location": "L729",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_risk_computation",
+      "target": "users_akamel_projects_av_safety_skills_portfolio_ui_modules_bayesian_evt",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "skills/portfolio-ui/modules/risk-computation.js",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_risk_computation",
+      "target": "modules_bayesian_evt_bayesianevt",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "skills/portfolio-ui/modules/risk-computation.js",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "modules_risk_computation",
+      "target": "modules_risk_computation_riskcomputation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "skills/portfolio-ui/modules/risk-computation.js",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "skill_md",
+      "target": "agents_md",
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "USER.md",
-      "source": "av_safety_project",
-      "target": "iso_21448"
+      "source_file": "SKILL.md",
+      "source_location": null,
+      "weight": 1.0
     },
     {
+      "source": "skill_md",
+      "target": "soul_md",
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "USER.md",
-      "source": "av_safety_project",
-      "target": "nhtsa"
+      "source_file": "SKILL.md",
+      "source_location": null,
+      "weight": 1.0
     },
     {
+      "source": "skill_md",
+      "target": "tools_md",
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "USER.md",
-      "source": "av_safety_project",
-      "target": "ul_4600"
+      "source_file": "SKILL.md",
+      "source_location": null,
+      "weight": 1.0
     },
     {
-      "relation": "conceptually_related_to",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "USER.md",
-      "source": "av_safety_project",
-      "target": "user_ahmed"
-    },
-    {
-      "relation": "conceptually_related_to",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "memory/2026-06-02.md",
-      "source": "fixing_operational_issues_plan",
-      "target": "av_safety_project"
-    },
-    {
-      "relation": "conceptually_related_to",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "memory/2026-06-02-1700.md",
-      "source": "kinematics_engine",
-      "target": "av_safety_project"
-    },
-    {
-      "relation": "implements",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "memory/2026-06-02-1720.md",
-      "source": "openclaw",
-      "target": "gateway"
-    },
-    {
+      "source": "skill_md",
+      "target": "user_md",
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "memory/2026-06-02-1941.md",
-      "source": "openclaw",
-      "target": "ollama"
+      "source_file": "SKILL.md",
+      "source_location": null,
+      "weight": 1.0
     },
     {
+      "source": "graphify_skill_md",
+      "target": "graphify_extraction_spec_md",
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "memory/2026-06-02-1941.md",
-      "source": "graphify",
-      "target": "ollama"
+      "source_file": ".openclaw/skills/graphify/SKILL.md",
+      "source_location": null,
+      "weight": 1.0
     },
     {
+      "source": "graphify_skill_md",
+      "target": "graphify_add_watch_md",
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "memory/2026-06-02-1700.md",
-      "source": "ollama",
-      "target": "glm-4_7-flash"
+      "source_file": ".openclaw/skills/graphify/SKILL.md",
+      "source_location": null,
+      "weight": 1.0
     },
     {
+      "source": "graphify_skill_md",
+      "target": "graphify_hooks_md",
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "memory/2026-06-02.md",
-      "source": "github",
-      "target": "fixing_operational_issues_plan"
+      "source_file": ".openclaw/skills/graphify/SKILL.md",
+      "source_location": null,
+      "weight": 1.0
     },
     {
+      "source": "graphify_skill_md",
+      "target": "graphify_query_md",
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "memory/2026-06-02-1700.md",
-      "source": "github",
-      "target": "kinematics_engine"
+      "source_file": ".openclaw/skills/graphify/SKILL.md",
+      "source_location": null,
+      "weight": 1.0
     },
     {
-      "relation": "implements",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "memory/2026-06-02-1941.md",
-      "source": "graphify",
-      "target": "ast_extraction"
-    },
-    {
-      "relation": "implements",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "memory/2026-06-02-1941.md",
-      "source": "graphify",
-      "target": "semantic_extraction"
-    },
-    {
+      "source": "graphify_skill_md",
+      "target": "graphify_update_md",
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "memory/2026-06-02-1918.md",
-      "source": "remax",
-      "target": "tenancy_application"
+      "source_file": ".openclaw/skills/graphify/SKILL.md",
+      "source_location": null,
+      "weight": 1.0
     },
     {
+      "source": "graphify_skill_md",
+      "target": "graphify_exports_md",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".openclaw/skills/graphify/SKILL.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "graphify_skill_md",
+      "target": "graphify_github_and_merge_md",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".openclaw/skills/graphify/SKILL.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "graphify_skill_md",
+      "target": "graphify_transcribe_md",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".openclaw/skills/graphify/SKILL.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "handoff_md",
+      "target": "bayesian_evt_skill_md",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/architecture/handoff.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "handoff_md",
+      "target": "three_d_animation_skill_md",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/architecture/handoff.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "fixing_operational_issues_plan_md",
+      "target": "agents_md",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/architecture/fixing_operational_issues_plan.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "fixing_operational_issues_plan_md",
+      "target": "soul_md",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/architecture/fixing_operational_issues_plan.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "skill_md",
+      "target": "three_d_animation_skill_md",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SKILL.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "skill_md",
+      "target": "bayesian_evt_skill_md",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SKILL.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "bayesian_evt_skill_md",
+      "target": "bayesian_analysis_skill_md",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "skills/bayesian-evt/SKILL.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "bayesian_evt_skill_md",
+      "target": "three_d_animation_skill_md",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "skills/bayesian-evt/SKILL.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "skill_md",
+      "target": "collision_modeling_skill_md",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SKILL.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "collision_modeling_skill_md",
+      "target": "bayesian_evt_skill_md",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "skills/collision-modeling/SKILL.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "skill_md",
+      "target": "data_exploration_skill_md",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SKILL.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "data_exploration_skill_md",
+      "target": "collision_modeling_skill_md",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "skills/data-exploration/SKILL.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "skill_md",
+      "target": "bayesian_analysis_skill_md",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SKILL.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "risk_quantification_skill",
+      "target": "kinematics_engine_skill",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "skills/risk-quantification/SKILL.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "risk_quantification_skill",
+      "target": "indicator_computation_skill",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "skills/risk-quantification/SKILL.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "risk_quantification_skill",
+      "target": "stochastic_simulation_skill",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "skills/risk-quantification/SKILL.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "risk_quantification_skill",
+      "target": "safety_thresholds_skill",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "skills/risk-quantification/SKILL.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "risk_quantification_skill",
+      "target": "portfolio_ui_skill",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "skills/risk-quantification/SKILL.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "risk_quantification_skill",
+      "target": "risk_metrics_skill",
       "relation": "conceptually_related_to",
       "confidence": "INFERRED",
       "confidence_score": 1.0,
-      "source_file": "memory/2026-06-02.md",
-      "source": "session_failures",
-      "target": "context_bloat"
+      "source_file": "skills/risk-quantification/SKILL.md",
+      "source_location": null,
+      "weight": 1.0
     },
     {
+      "source": "portfolio_ui_skill",
+      "target": "indicator_computation_skill",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "skills/portfolio-ui/SKILL.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "kinematics_engine_skill",
+      "target": "scenario_taxonomy_skill",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "skills/kinematics-engine/SKILL.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "kinematics_engine_skill",
+      "target": "indicator_computation_skill",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "skills/kinematics-engine/SKILL.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "stochastic_simulation_skill",
+      "target": "kinematics_engine_skill",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "skills/stochastic-simulation/SKILL.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "statistical_validation_skill",
+      "target": "risk_quantification_skill",
       "relation": "conceptually_related_to",
       "confidence": "INFERRED",
       "confidence_score": 1.0,
-      "source_file": "memory/2026-06-02.md",
-      "source": "session_failures",
-      "target": "error_recovery"
+      "source_file": "skills/statistical-validation/SKILL.md",
+      "source_location": null,
+      "weight": 1.0
     }
   ],
-  "hyperedges": []
+  "hyperedges": [],
+  "input_tokens": 88895,
+  "output_tokens": 7907
 }

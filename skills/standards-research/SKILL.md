@@ -90,7 +90,14 @@ Use when:
 - Building compliance matrices for portfolio
 - Answering "what does the standard say about X?"
 
-## File Structure
+## Cross-Skill Dependencies
+
+- **safety-thresholds** (sibling) — standards provide threshold benchmarks (UL 4600, ISO 21448)
+- **risk-metrics** (sibling) — standards define metric requirements (UL 4600 Section 6.2, ISO 21448 HARA)
+- **data-ingest** (upstream) — data sources mapped to standards references
+- **portfolio-deploy** (downstream) — compliance documentation drives deployment artifacts
+
+## File Structure (target — when docs/standards/ is populated)
 ```
 docs/standards/
 ├── ul-4600-analysis.md

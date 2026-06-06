@@ -56,7 +56,7 @@ az.waic(trace)           # WAIC alternative
 ## Posterior Predictive Check
 
 ```python
-post_pred = pm.sample_posterior_predictible(trace, var_names=["likelihood"])
+post_pred = pm.sample_posterior_predictive(trace, var_names=["likelihood"])
 observed = trace.posterior["likelihood"].mean(dim=["chain", "sample"]).values
 predicted = post_pred["likelihood"].mean(dim=["chain", "sample"]).values
 

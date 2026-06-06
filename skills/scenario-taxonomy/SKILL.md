@@ -25,6 +25,7 @@ Define, validate, and maintain the complete taxonomy of traffic conflict scenari
 - Lane exit (off-ramp) — leaves lane to exit
 - Lane change (outbound) — moves to right lane
 - Right turn at intersection — turns right, blocking path
+- Lane divergence — drifts from lane without signal
 
 ### 4. Weaving
 - Short weave — closely spaced ramps
@@ -60,19 +61,30 @@ Define, validate, and maintain the complete taxonomy of traffic conflict scenari
 
 ## Severity Spectrum
 
-Each scenario has 3 tiers:
-- **Benign:** Collision probability < 5%, near safety threshold
-- **Moderate:** Collision probability 5–50%, meaningful risk
-- **Extreme:** Collision probability > 50%, near-certain crash
+Each scenario has 3 tiers mapped to collision probability bands:
+- **Benign:** P(collision) < 5%, near safety threshold — indicators within normal range
+- **Moderate:** P(collision) 5–50%, meaningful risk — indicators show escalating risk
+- **Extreme:** P(collision) > 50%, near-certain crash — high-severity indicators
 
 Parameters slide along spectrum continuously — benign → moderate → extreme with smooth transitions.
+
+## Cross-Skill Dependencies
+
+- **kinematics-engine** — conflict types drive trajectory computation
+- **indicator-computation** — each sub-category maps to applicable indicators
+- **stochastic-simulation** — severity spectrum drives parameter sampling distributions
+- **3d-animation** — conflict types define animation scenario catalog
+- **portfolio-ui** — conflict types form the playground scenario selector
+- **data-ingest** — conflict types define target scenarios for data ingestion
+- **risk-metrics** — conflict types map to risk metric computation targets
 
 ## Validation Requirements
 
 1. **Literature alignment:** Each sub-category references at least one traffic safety study
-2. **Realism:** Parameters within observed ranges in real crash data
+2. **Realism:** Parameters within observed ranges in real crash data (NHTSA FARS, CISS, CMFwiki)
 3. **Spectrum continuity:** Benign → Moderate → Extreme smooth parameter transition
 4. **Cross-type distinction:** Different conflict types produce distinctly different indicator patterns
+5. **Completeness:** All 8 conflict types have ≥4 sub-categories each
 
 ## Reuse Trigger
 
@@ -83,13 +95,12 @@ Use when:
 - Mapping indicators to conflicts
 - Designing playground UI layout
 
-## File Structure
+## Scenario JSON Schema
+
+Each scenario follows the format in `references/sub-categories.md` and `single-scenario-demo/data/`:
+
 ```
-src/scenario_taxonomy/
-  conflict_types.py     Conflict type definitions
-  scenarios.py          All scenario definitions (loaded from JSON)
-  parameters.py         Parameter validation and normalization
-  severity_levels.py    Severity spectrum definitions
-  geometry.py           Road geometry generation
-  validation.py         Validate scenarios against constraints
+single-scenario-demo/data/scenario-<CONFLICT_TYPE>-<JURISDICTION>-<NUMBER>.json
 ```
+
+Key fields: `conflict_type`, `sub_category`, `severity_spectrum` (benign/moderate/extreme ranges), `applicable_indicators`, `road_geometry`, `road_users`, `monte_carlo_expected`.

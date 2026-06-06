@@ -1,0 +1,27 @@
+version: "3.8"
+
+services:
+  portfolio-ui:
+    build:
+      context: .
+      dockerfile: deploy/Dockerfile
+    ports:
+      - "80:80"
+    volumes:
+      - ./ui:/app/ui
+      - ./docs:/app/docs
+    environment:
+      - ENVIRONMENT=${ENVIRONMENT:-production}
+      - SERVICE=ui
+
+  risk-api:
+    build:
+      context: .
+      dockerfile: deploy/Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./src:/app/src
+    environment:
+      - ENVIRONMENT=${ENVIRONMENT:-production}
+      - SERVICE=api

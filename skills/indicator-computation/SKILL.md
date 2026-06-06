@@ -86,7 +86,22 @@ class Indicator:
 | Snow | 0.1–0.3 | 1.0–2.9 |
 | Ice | 0.05–0.15 | 0.5–1.5 |
 
-## File Structure
+## Cross-Skill Dependencies
+
+- **kinematics-engine** (upstream) — state arrays (position, velocity, acceleration) feed all indicator computations
+- **scenario-taxonomy** (upstream) — conflict types determine applicable indicators per scenario
+- **stochastic-simulation** (downstream) — Monte Carlo runs produce indicator histories for aggregation
+- **bayesian-evt** (downstream) — indicator values (TTC, DRAC) become inputs for GPD fitting
+- **risk-quantification** (downstream) — 42 indicator values aggregated into risk scores
+- **risk-metrics** (sibling) — indicator definitions aligned with risk metric specifications
+- **3d-animation** (downstream) — real-time indicator values become HUD overlays
+
+## Reference Implementation
+
+Indicator computations referenced in `src/risk_quantification/pipeline.py` (step 2) and `src/risk_quantification/risk_scoring.py`.
+Indicator-computation as a standalone package `src/indicators/` when scope grows beyond pipeline integration.
+
+## File Structure (target)
 ```
 src/indicators/
 ├── base.py           Base indicator class

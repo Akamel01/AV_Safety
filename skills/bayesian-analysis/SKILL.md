@@ -15,10 +15,20 @@ Apply Bayesian statistical methods to quantify uncertainty in collision risk est
 - **Posterior analysis** — Extract credible intervals, posterior predictive checks, model comparison
 - **Sensitivity analysis** — Test how priors and model structure affect risk conclusions
 
+## Cross-Skill Dependencies
+
+- **bayesian-evt** (sibling) — shares hierarchical modeling; bayesian-evt specific to EVT/GEV/GPD
+- **stochastic-simulation** (upstream) — Monte Carlo outputs feed Bayesian model data
+- **safety-thresholds** (downstream) — Bayesian posteriors inform safe threshold computation
+- **risk-metrics** (downstream) — Bayesian risk estimates feed risk metric computation
+- **risk-quantification** (downstream) — Bayesian module provides posterior analysis for the full pipeline
+- **scenario-taxonomy** (upstream) — scenario hierarchy drives hierarchical model structure
+- **data-ingest** (upstream) — cleaned data becomes Bayesian model input
+
 ## Workflow
 
 1. **Define** the Bayesian model (likelihood, priors, hierarchical structure)
-2. **Specify** in PyMC or Stan format in `src/analysis/bayesian/<model_name>.py`
+2. **Specify** in `src/evaluation/bayesian/<model_name>.py` (target package)
 3. **Fit** the model and run convergence diagnostics (R-hat, ESS)
 4. **Validate** with posterior predictive checks
 5. **Document** model assumptions, priors, and posterior summaries in `docs/research/bayesian/<model_name>.md`

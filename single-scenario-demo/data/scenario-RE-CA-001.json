@@ -1,0 +1,115 @@
+{
+  "scenario": {
+    "id": "RE-CA-001",
+    "name": "Rear-End, Highway Following, Cut-Under",
+    "conflict_type": "rear-end",
+    "conflict_type_index": 5,
+    "sub_category": "cut-under",
+    "setting": "Multi-lane highway, urban corridor, daytime",
+    "jurisdiction": "USA",
+    "description": "Leading sedan cruises at 100 km/h on a 4-lane highway. At t=3s, it suddenly brakes hard (−5 m/s²). Following sedan maintains constant gap until perception-reaction delay (1.5s), then applies emergency braking (−8 m/s²). With nominal parameters (30m headway), collision is avoided (TTC_min ≈ 3.5s). With closer headway (≤10m) and delayed reaction (≥2.5s), collision occurs with ΔV ≈ 12 m/s.",
+    "road_geometry": {
+      "lanes": 4,
+      "lane_width_m": 3.7,
+      "segment_length_m": 200,
+      "curve_type": "tangent",
+      "visibility_m": 300,
+      "surface": "dry asphalt",
+      "friction_coefficient": 0.85
+    },
+    "weather": "clear",
+    "time_of_day": "daytime"
+  },
+  "road_users": {
+    "vehicle_a": {
+      "type": "compact_sedan",
+      "dimensions_m": [4.3, 1.8, 1.4],
+      "mass_kg": 1200,
+      "initial_position_m": [0, 1.85, 0],
+      "initial_velocity_ms": 27.8,
+      "initial_accel_ms2": 0,
+      "brake_event_t": 3.0,
+      "brake_accel_ms2": -5.0,
+      "max_brake_ms2": -8.0,
+      "brake_lag_s": 0.15,
+      "stopping_distance_m": 77.3
+    },
+    "vehicle_b": {
+      "type": "compact_sedan",
+      "dimensions_m": [4.3, 1.8, 1.4],
+      "mass_kg": 1200,
+      "initial_gap_m": 30.0,
+      "initial_velocity_ms": 27.8,
+      "reaction_time_s": 1.5,
+      "max_decel_ms2": -8.0,
+      "comfort_decel_ms2": -3.5,
+      "brake_lag_s": 0.15,
+      "abs_threshold_ms2": 8.33
+    }
+  },
+  "nominal_case": {
+    "collision": false,
+    "ttc_min_s": 3.49,
+    "min_gap_m": 33.5,
+    "gap_min_time_s": 4.92,
+    "explanation": "Nominal parameters (headway=30m, τ=1.5s) avoid collision. Gap closes to 33.5m at t=4.92s then opens."
+  },
+  "worst_case": {
+    "parameters": {
+      "headway_m": 10,
+      "reaction_time_s": 2.5
+    },
+    "collision": true,
+    "collision_time_s": 5.40,
+    "delta_v_ms": 12.0,
+    "delta_v_kmh": 43.2,
+    "severity": "moderate-to-severe injury (MAI3+)",
+    "explanation": "With headway=10m and τ=2.5s, B collides with A during B's reaction phase. ΔV=43.2 km/h exceeds NHTSA 40 km/h fatality threshold."
+  },
+  "monte_carlo_expected": {
+    "n_simulations": 10000,
+    "collision_rate": "2-5%",
+    "ttc_median_s": "4-6",
+    "ttc_p5_s": "1.5-2.5",
+    "delta_v_median_ms": "5-8",
+    "severity_distribution": {
+      "pdo_percent": 85,
+      "minor_injury_percent": 10,
+      "moderate_percent": 3,
+      "severe_percent": 2
+    }
+  },
+  "gpd_expected": {
+    "threshold_method": "MRL",
+    "threshold_u_s": "2.0-3.0",
+    "xi_expected": "0.2-0.4",
+    "sigma_expected": "1.0-2.0",
+    "convergence_targets": {
+      "rhat": "< 1.01",
+      "ess": "> 400 per parameter"
+    }
+  },
+  "benchmarking": {
+    "nhtsa_fatal_rate_usa_highway_per_100m": 0.12,
+    "nhtsa_v_fatal_threshold_kmh": 40,
+    "nhtsa_v_pdo_threshold_kmh": 10,
+    "nhtsa_v_minor_threshold_kmh": 25,
+    "aaa_safe_headway_seconds": 2.0,
+    "aaa_safe_headway_m_at_100kph": 56
+  },
+  "indicator_benchmarks": {
+    "ttc_nominal_s": 3.49,
+    "drac_nominal_ms2": null,
+    "delta_v_nominal_ms": 0,
+    "rla_nominal_ms2": "varies by timestep",
+    "cp_nominal": 0,
+    "cri_nominal": "varies",
+    "pce": 1.0
+  },
+  "nhtsa_sources": [
+    "NHTSA FARS 2020 — Fatal Accident Reporting System",
+    "NHTSA ES-28 — Event Severity Index methodology",
+    "BANSYSE — Bayesian Safety Analysis System injury correlation"
+  ],
+  "computed_at": "2026-06-03T02:02:00Z"
+}

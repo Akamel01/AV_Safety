@@ -58,18 +58,21 @@ Severity index: S = δ · f(ΔV, θ, μ_mass, μ_protect)
 5. **Stability analysis:** fit GPD at [u-δ, u, u+δ], check ξ and σ overlap within CI
 6. **QQ-plot validation:** transform data, plot empirical vs GPD quantiles; 45° line = good fit
 
-## Integration Points
+## Cross-Skill Dependencies
 
-| From Skill | Data | Used For |
-|---|-|-|
-| stochastic-simulation | Extreme values from Monte Carlo (min TTC < u) | GPD fitting |
-| kinematics-engine | Collision times, ΔV, impact angles, positions | Threshold selection, severity model |
-| indicator-computation | All 42 indicator values | Replace heuristic metrics with GPD estimates |
+- **stochastic-simulation** (upstream) — extreme values from Monte Carlo (min TTC < u) drive GPD fitting
+- **kinematics-engine** (upstream) — collision times, ΔV, impact angles, positions for threshold selection and severity model
+- **indicator-computation** (upstream) — all 42 indicator values replaced by GPD estimates
+- **bayesian-analysis** (sibling) — shares hierarchical modeling approach; bayesian-evt specific to EVT/GEV/GPD
+- **safety-thresholds** (downstream) — GPD-predicted collision rates feed into safe threshold computation
+- **risk-metrics** (downstream) — GPD-predicted severity and collision rate drive risk metric computation
+- **risk-quantification** (sibling) — bayesian-evt provides the EVT module for the full risk quantification pipeline
 
-**To other skills:**
-- P(collision) from GPD replaces heuristic collision probability
-- GPD-predicted severity replaces heuristic severity metrics
-- Credible intervals on all estimates
+## Cross-Skill Data Flow
+
+**P(collision) from GPD replaces heuristic collision probability**
+**GPD-predicted severity replaces heuristic severity metrics**
+**Credible intervals on all estimates propagate to downstream skills**
 
 ## Validation Requirements
 
@@ -110,16 +113,16 @@ Severity index: S = δ · f(ΔV, θ, μ_mass, μ_protect)
 }
 ```
 
-## File Structure
-```
-src/evaluation/bayesian_evt/
-├── gpd.py               GPD fitting and sampling
-├── hierarchical.py      Bayesian hierarchical model (PyMC)
-├── collision_rate.py    Collision occurrence likelihood estimation
-├── severity_model.py    Severity distribution fitting
-├── threshold_selection.py MRL plot + stability analysis
-├── posterior_predictive.py PPC validation
-├── jurisdiction.py      Cross-jurisdiction comparison
-├── risk_quantification.py Full risk quantification pipeline
-└── visualization.py     Posterior plots, MRL plots, QQ-plots
-```
+## Reference Implementation Location
+
+GPD/EVT logic is distributed across the active src/ packages:
+
+- **`src/risk_quantification/pipeline.py`** — orchestrates EVT stage in the 7-step pipeline (kinematics → indicators → Monte Carlo → Bayesian EVT → collision modeling → safety thresholds → portfolio output)
+- **`src/risk_quantification/risk_scoring.py`** — GPD-based risk scoring
+- **`src/risk_quantification/threshold_checker.py`** — GPD collision rate vs threshold
+- **`src/safety_thresholds/baseline_estimator.py`** — baseline risk (GPD-informed)
+- **`src/safety_thresholds/collision_rate_thresholds.py`** — collision rate thresholds
+- **`src/safety_thresholds/ttc_thresholds.py`** — TTC thresholds (used by EVT)
+- **`src/safety_thresholds/drac_thresholds.py`** — DRAC thresholds (used by EVT)
+
+Future: dedicated `src/evaluation/bayesian_evt/` package when module scope grows beyond pipeline integration.

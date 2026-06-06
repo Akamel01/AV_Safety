@@ -112,6 +112,15 @@ crossing, merging, diverging, weaving, rear-end, sideswipe, right-angle, opposin
 - Debounce parameter controls (300ms)
 - Pagination for "View All"
 
+## Cross-Skill Dependencies
+
+- **bayesian-evt** (depends on) — risk computation delegates to bayesian-evt for EVT analysis
+- **3d-animation** (depends on) — visualization delegates to 3d-animation module
+- **indicator-computation** (depends on) — 42 indicator display delegates to indicator-computation
+- **stochastic-simulation** (depends on) — Monte Carlo runs delegated for interactive scenarios
+- **portfolio-deploy** (downstream) — portfolio UI built here, deployed by portfolio-deploy
+- **scenario-taxonomy** (data source) — 8 conflict types form the scenario selector
+
 ## Testing Checklist
 - [ ] Landing page loads, navigation works
 - [ ] Featured scenarios + "View All" expand

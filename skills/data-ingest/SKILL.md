@@ -116,7 +116,16 @@ Use when:
 - Ingesting new data sources
 - Standardizing cross-jurisdictional data
 
-## File Structure
+## Cross-Skill Dependencies
+
+- **scenario-taxonomy** (downstream) — conflict types define target scenarios for data ingestion
+- **data-exploration** (downstream) — cleaned data becomes EDA input
+- **bayesian-analysis** (downstream) — cleaned data feeds Bayesian model input
+- **risk-metrics** (downstream) — ingestion metrics inform risk metric computation
+- **statistical-validation** (sibling) — data quality metrics validated together
+- **standards-research** (sibling) — data sources mapped to standards references
+
+## File Structure (target — when src/data_ingest/ package is created)
 ```
 src/data_ingest/
 ├── ingestor.py        Main ingestion engine

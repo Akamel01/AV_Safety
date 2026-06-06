@@ -83,7 +83,21 @@ State_i(t) = { position: (x, y), velocity: v, heading: θ, acceleration: a, jerk
 | bayesian-evt | Monte Carlo collision outputs → GPD fits |
 | stochastic-simulation | Monte Carlo parameter sampling |
 
-## File Structure
+## Cross-Skill Dependencies
+
+- **scenario-taxonomy** (upstream) — scenario parameters and conflict types drive trajectory logic
+- **indicator-computation** (downstream) — state arrays feed into all 42 indicator computations
+- **stochastic-simulation** (sibling) — Monte Carlo parameter sampling drives simulation runs
+- **3d-animation** (downstream) — trajectory arrays become 3D position inputs
+- **bayesian-evt** (sibling) — Monte Carlo collision outputs feed into GPD fits
+- **risk-quantification** (sibling) — kinematics engine provides trajectory foundation for the full pipeline
+
+## Reference Implementation
+
+Kinematic models are integrated into `src/risk_quantification/pipeline.py` (step 1: kinematics → step 2: indicators).
+Per-conflict-type logic referenced in `single-scenario-demo/data/` scenario JSONs.
+
+## Future File Structure (when src/kinematics/ package is created)
 ```
 src/kinematics/
 ├── model.py           Universal kinematic model

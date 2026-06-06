@@ -110,7 +110,16 @@ Render parameterized collision scenarios in high-fidelity 3D (Three.js) with fal
 - **Animation:** Cubic Hermite interpolation, accurate physics, proper collision timing, realistic deformation, particle/debris/shockwave FX
 - **UI:** Clean modern HUD, color-coded severity, responsive layout, accessible contrast
 
-## 7. File Structure
+## Cross-Skill Dependencies
+
+- **scenario-taxonomy** (upstream) — conflict types define scene configuration
+- **kinematics-engine** (upstream) — trajectory arrays drive animation positions
+- **indicator-computation** (upstream) — real-time indicator values drive HUD overlay
+- **stochastic-simulation** (upstream) — Monte Carlo collision outcomes drive animation decisions
+- **bayesian-evt** (upstream) — Bayesian posterior results drive distribution plots
+- **portfolio-ui** (downstream) — 3D/2D scenes become portfolio visualization components
+
+## File Structure (target — when src/animation/ package is created)
 
 ```
 src/animation/

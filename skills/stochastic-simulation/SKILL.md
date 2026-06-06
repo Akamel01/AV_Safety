@@ -123,7 +123,16 @@ Use when:
 - Computing sensitivity of parameters to outcomes
 - Generating stochastic outcome data for Bayesian EVT
 
-## File Structure
+## Cross-Skill Dependencies
+
+- **scenario-taxonomy** (upstream) — parameter distributions per conflict type
+- **kinematics-engine** (downstream) — sampled parameters drive kinematic simulation
+- **bayesian-evt** (downstream) — extreme values from Monte Carlo feed GPD fitting
+- **indicator-computation** (downstream) — simulation runs produce indicator histories
+- **risk-quantification** (sibling) — Monte Carlo results feed the risk quantification pipeline
+- **data-ingest** (sibling) — data-derived distributions inform parameter priors
+
+## File Structure (target — when src/simulation/ package is created)
 ```
 src/simulation/
 ├── engine.py            Monte Carlo engine

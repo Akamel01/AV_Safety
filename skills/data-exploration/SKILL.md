@@ -53,7 +53,13 @@ Cleaned Data
 - Correlation heatmap (triangular mask)
 - Multi-panel figures for EDA report
 
-## Key EDA Findings to Document
+## Cross-Skill Dependencies
+
+- **data-ingest** (upstream) — outputs cleaned dataset that data-exploration ingests
+- **bayesian-analysis** (downstream) — EDA informs prior elicitation and model design
+- **risk-metrics** (downstream) — EDA findings drive metric selection and validation
+- **scenario-taxonomy** — conflict type segmentation uses taxonomy definitions
+- **stochastic-simulation** — EDA distributions drive Monte Carlo sampling parameters
 1. Dominant conflict types and their relative frequencies
 2. Speed distributions by jurisdiction and vehicle type
 3. TTC distribution characteristics (mean, median, tail behavior)
@@ -88,21 +94,19 @@ Use when:
 - Identifying patterns for feature engineering
 - Generating EDA reports for portfolio
 
-## File Structure
-```
-src/data_exploration/
-├── eda_engine.py        Main EDA orchestrator
-├── summary_stats.py     Descriptive statistics
-├── distributions.py     Distribution analysis (histograms, KDE, CDF)
-├── correlations.py      Feature correlation analysis
-├── segmentation.py      Data segmentation by type/jurisdiction/severity
-├── visualization.py     Plotting functions
-├── notebooks/           Jupyter notebooks for exploratory analysis
-│   ├── 01_overview.ipynb
-│   ├── 02_conflict_analysis.ipynb
-│   ├── 03_jurisdiction_comparison.ipynb
-│   └── 04_severity_analysis.ipynb
-└── reports/             Generated EDA reports
-    ├── summary.md
-    └── figures/
-```
+## Expected Data Schema (input from data-ingest)
+
+Required columns in input DataFrame:
+- `crash_id`, `date`, `jurisdiction` — always required (no missing values)
+- `conflict_type` — from scenario-taxonomy taxonomy (one of 8 types)
+- `severity_level` — benign/moderate/extreme
+- `speed_ms`, `gap_distance_m`, `TTC_s` — numeric features
+- `collision` — binary indicator (0/1)
+
+## Data Availability
+
+Data directories are currently empty (not yet populated):
+- `data/raw/` — raw crash datasets (FARS, CISS, CMFwiki, etc.)
+- `data/processed/` — cleaned/normalized datasets for EDA
+
+EDA pipelines execute against whatever data is available in `data/processed/`.

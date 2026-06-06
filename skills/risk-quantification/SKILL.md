@@ -94,19 +94,27 @@ Use when:
 - Checking compliance against safety thresholds
 - Exporting results in multiple formats
 
-## File Structure
+## Cross-Skill Dependencies
+
+- **kinematics-engine** (upstream) — trajectories feed pipeline step 1
+- **indicator-computation** (upstream) — 42 indicators feed pipeline step 2
+- **stochastic-simulation** (upstream) — Monte Carlo engine feeds pipeline step 3
+- **bayesian-evt** (upstream) — GPD/EVT analysis feeds pipeline step 4
+- **collision-modeling** (upstream) — ML models feed pipeline step 5
+- **safety-thresholds** (upstream) — threshold definitions feed pipeline step 6
+- **portfolio-ui** (downstream) — pipeline results drive portfolio visualization
+- **portfolio-deploy** (downstream) — pipeline outputs deployed to portfolio
+
+## File Structure (actual — matches `src/risk_quantification/`)
 ```
 src/risk_quantification/
-├── pipeline.py              Main pipeline orchestrator
-├── scenario_runner.py       Run individual scenarios
-├── batch_runner.py          Run all scenarios
-├── results_aggregator.py    Aggregate results
-├── risk_report_generator.py Generate risk reports
-├── threshold_checker.py     Compare against safety thresholds
-├── output_formats/
-│   ├── json_export.py       Export to JSON
-│   ├── csv_export.py        Export to CSV
-│   └── markdown_report.py   Generate markdown report
-└── validation/
-    └── pipeline_validation.py Validate pipeline outputs
+├── pipeline.py              Main pipeline orchestrator (7-step pipeline)
+├── risk_scoring.py          Risk scoring with GPD integration
+├── threshold_checker.py     Threshold compliance checking
+├── results_aggregator.py    Aggregate results across scenarios
+├── report_generator.py      Generate risk reports
+├── output_formats.py        JSON, CSV, Markdown exporters
+├── pipeline_validation.py   Validate pipeline outputs
+└── output_formats/          (submodule directory)
+└── validation/              (submodule directory)
 ```

@@ -115,7 +115,16 @@ Use when:
 - Generating validation reports for regulatory submission
 - Testing sensitivity of key parameters
 
-## File Structure
+## Cross-Skill Dependencies
+
+- **bayesian-evt** (upstream) — EVT model outputs need validation (r-hat, ESS, PPC)
+- **risk-quantification** (upstream) — pipeline outputs validated here
+- **safety-thresholds** (upstream) — threshold values compared against benchmarks
+- **data-ingest** (upstream) — data quality validated
+- **risk-metrics** (sibling) — metric computation validated here
+- **collision-modeling** (sibling) — ML model validation methods shared
+
+## File Structure (target — when src/statistical_validation/ package is created)
 ```
 src/statistical_validation/
 ├── validation_engine.py    Main validation orchestrator

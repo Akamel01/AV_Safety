@@ -270,6 +270,28 @@ When working on AV_Safety:
 - Standards: UL 4600, ISO 21448 (SOTIF), ISO 26262, ISO 21002, NHTSA publications
 - Evidence-first rigor at every step
 
+### Rule 10: STATUS.md — The Notetaker (Single Source of Truth)
+
+Scattered progress tracking across `Run_Checkpoints.md`, `Task_Ledger.md`, `Open_Issues.md`, `Blockers.md`, and `Validation_Log.md` creates cognitive overload and fails every time a session restarts.
+
+**`STATUS.md` is the single source of truth for project progress.** Every project MUST have one.
+
+**It must contain:**
+- **Current Status** — One-line summary of where we are right now
+- **Phase Breakdown** — Each phase's status (✅ done / 🔄 in progress / 🔴 not started), priority, and key tasks
+- **What's Done** — Completed work (grows as we progress)
+- **What's Next** — Road ahead (shrinks as we complete tasks)
+- **Critical Path** — Dependency chain showing what blocks what
+- **Blockers** — Items that must be resolved before proceeding
+
+**Rules:**
+- Read `STATUS.md` FIRST every session to regain context
+- Update `STATUS.md` LAST after every work session
+- If `STATUS.md` doesn't exist, CREATE IT before doing anything else
+- If `STATUS.md` is stale (not updated in 3+ sessions), UPDATE IT immediately
+- Refer to `Task_Ledger.md` for detailed task breakdown, `Run_Checkpoints.md` for checkpoint logs, `Open_Issues.md` for active issues, `Blockers.md` for blocking items, and `Validation_Log.md` for test results
+- **Never ship a project without `STATUS.md`. Never start one without creating it.**
+
 ## Related
 
 - [Default AGENTS.md](/reference/AGENTS.default)

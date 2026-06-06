@@ -108,15 +108,24 @@ Use when:
 - Validating thresholds against real-world data
 - Building compliance matrices for regulatory approval
 
-## File Structure
+## Cross-Skill Dependencies
+
+- **bayesian-evt** (upstream) — GPD-predicted collision rates inform threshold computation
+- **standards-research** (upstream) — UL 4600 / ISO 21448 standards provide threshold benchmarks
+- **risk-metrics** (sibling) — TTC/DRAC thresholds align with risk metric specifications
+- **risk-quantification** (downstream) — thresholds evaluated against pipeline results
+- **portfolio-ui** (downstream) — thresholds displayed in portfolio HUD
+
+## File Structure (actual — matches `src/safety_thresholds/`)
 ```
 src/safety_thresholds/
-├── baseline_estimator.py     Human driver baseline rates
-├── acceptable_risk.py        Define acceptable risk reduction
-├── safe_threshold.py         Compute safe/deployment thresholds
-├── ttc_thresholds.py         TTC threshold definitions
-├── drac_thresholds.py        DRAC threshold definitions
-├── standards.py              UL 4600 / ISO 21448 thresholds
-├── deployment_criteria.py    AV deployment evaluation
-└── monitoring.py             Continuous monitoring / online update
+├── baseline_estimator.py     Human driver baseline rates ✅
+├── acceptable_risk.py        Define acceptable risk reduction ✅
+├── safe_threshold.py         Compute safe/deployment thresholds ✅
+├── ttc_thresholds.py         TTC threshold definitions ✅
+├── drac_thresholds.py        DRAC threshold definitions ✅
+├── standards.py              UL 4600 / ISO 21448 thresholds ✅
+├── deployment_criteria.py    AV deployment evaluation ✅
+├── monitoring.py             Continuous monitoring / online update ✅
+└── collision_rate_thresholds.py  Collision rate thresholds ✅
 ```
