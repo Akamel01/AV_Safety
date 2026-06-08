@@ -22,7 +22,7 @@ services:
       dockerfile: deploy/Dockerfile
     container_name: av-safety-api
     ports:
-      - "8000:8000"
+      - "8010:8000"
     volumes:
       - ./src:/app/src
       - ./deploy/docker-entrypoint.sh:/app/docker-entrypoint.sh
@@ -39,7 +39,7 @@ services:
       dockerfile: deploy/Dockerfile
     container_name: av-safety-ui
     ports:
-      - "80:80"
+      - "8888:80"
     volumes:
       - ./single-scenario-demo:/app/ui
       - ./deploy/nginx.conf:/etc/nginx/conf.d/default.conf
@@ -52,7 +52,7 @@ services:
     image: nginx:alpine
     container_name: av-safety-nginx
     ports:
-      - "8080:80"
+      - "8081:80"
     volumes:
       - ./deploy/nginx.conf:/etc/nginx/conf.d/default.conf
       - ./single-scenario-demo:/usr/share/nginx/html
