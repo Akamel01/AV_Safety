@@ -8,7 +8,7 @@
 
 ## What It Is
 
-AV_Safety is a research-grade collision risk quantification system for autonomous vehicles. It simulates rear-end collision scenarios, computes surrogate safety indicators, runs Monte Carlo simulations with parameter uncertainty, performs Bayesian extreme value analysis on tail risk, and classifies deployment risk levels.
+AV_Safety is a research initiative aimed at developing a hierarchical, data-driven framework for autonomous vehicle safety assessment. The system integrates crash failure mechanism catalogs, scenario-based risk modeling, surrogate safety metrics, Monte Carlo simulation, Bayesian extreme value theory, and ODD-aware domain adaptation to estimate collision risk and generate evidence for safety validation and deployment readiness.
 
 ## Quick Start
 
