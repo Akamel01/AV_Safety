@@ -14,7 +14,7 @@ AV-Safety is a research initiative aimed at developing a hierarchical, data-driv
 
 ### Browser Demo (No Server Required)
 
-1. Open `single-scenario-demo/index.html` in a modern browser (Chrome, Firefox, Safari)
+1. Open `single-scenario-demo/index.html` in a web browser
 2. Adjust parameter sliders or use preset scenarios
 3. Click "Run Monte Carlo" to simulate 10k scenarios
 4. Bayesian EVT runs automatically when collisions exceed 10 samples
@@ -90,8 +90,8 @@ AV_Safety/
 1. **Kinematics** — 2.5ms timestep simulation of vehicle trajectories
 2. **Indicators** — 42 surrogate safety metrics (TTC, DRAC, PET, etc.)
 3. **Monte Carlo** — 10k samples with parameter distributions → collision rate
-4. **Bayesian EVT** — GPD fitting on tail exceedances (method of moments)
-5. **Collision Modeling** — Ensemble of kinematics (40%) + EVT (60%)
+4. **Bayesian EVT** — GPD fitting on tail exceedances (method of moments) - PYMC inference if run locally
+5. **Collision Modeling** — Ensemble of kinematics + EVT 
 6. **Safety Thresholds** — Compare against jurisdiction standards (USA, CAN, GB)
 7. **Portfolio Aggregation** — Composite risk score (collision rate, severity, uncertainty, compliance)
 
@@ -108,9 +108,9 @@ AV_Safety/
 
 | Jurisdiction | TTC (s) | DRAC (m/s²) | Deployment Status |
 |-------------|---------|-------------|-------------------|
-| USA (NHTSA) | ≥ 2.0 | < 4.0 | APPROVED / CONDITIONAL / DENIED |
-| Canada (TC) | ≥ 2.5 | < 3.5 | APPROVED / CONDITIONAL / DENIED |
-| GB (DfT) | ≥ 1.5 | < 5.0 | APPROVED / CONDITIONAL / DENIED |
+| USA (NHTSA) | ≥ TBD | < TBD | APPROVED / CONDITIONAL / DENIED |
+| Canada (TC) | ≥ TBD | < TBD | APPROVED / CONDITIONAL / DENIED |
+| GB (DfT) | ≥ TBD | < TBD | APPROVED / CONDITIONAL / DENIED |
 
 ## Known Limitations
 
