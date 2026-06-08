@@ -75,6 +75,12 @@ class RiskQuantificationPipeline:
         7. Portfolio (aggregation + scoring)
     """
 
+    _KNOWN_JURISDICTIONS = frozenset(("usa", "canada", "england"))
+    _REQUIRED_SCENARIO_KEYS = frozenset(("scenario_id", "road_users", "road_geometry"))
+    _REQUIRED_VEHICLE_KEYS = frozenset(("initial_velocity_ms",))
+    _DEFAULT_N_MC = 10000
+    _DEFAULT_SEED = 42
+
     def __init__(
         self,
         scenario: dict[str, Any],
@@ -85,17 +91,105 @@ class RiskQuantificationPipeline:
         """Initialize the pipeline.
 
         Args:
-            scenario: Scenario definition dict.
-            n_mc_samples: Monte Carlo sample count.
-            jurisdiction: Jurisdiction for threshold comparison.
-            seed: Random seed for reproducibility.
+            scenario: Scenario definition dict.  Must contain scenario_id,
+                      road_users (with vehicle_a and vehicle_b), and
+                      road_geometry.
+            n_mc_samples: Monte Carlo sample count.  Must be a positive int.
+            jurisdiction: Jurisdiction for threshold comparison.  Must be
+                          one of 'usa', 'canada', 'england'.
+            seed: Random seed for reproducibility.  Must be a non-negative int.
+
+        Raises:
+            ValueError: If any required field is missing or a parameter
+                        violates a type/constraint check.
         """
+        # Validate scenario structure
+        self._validate_scenario(scenario)
+
+        # Validate numeric/type parameters
+        self._validate_parameters(n_mc_samples, jurisdiction, seed)
+
         self.scenario = scenario
         self.n_mc_samples = n_mc_samples
-        self.jurisdiction = jurisdiction
+        self.jurisdiction = jurisdiction.lower()
         self.seed = seed
         self.results: dict[str, Any] = {}
         self.log = PipelineLog(start_time=time.time())
+
+    # ------------------------------------------------------------------
+    # Validation helpers
+    # ------------------------------------------------------------------
+
+    def _validate_scenario(self, scenario: dict[str, Any]) -> None:
+        """Validate that the scenario dict contains all required keys.
+
+        Args:
+            scenario: The scenario dictionary.
+
+        Raises:
+            ValueError: If required keys are missing.
+        """
+        missing = self._REQUIRED_SCENARIO_KEYS - set(scenario.keys())
+        if missing:
+            raise ValueError(
+                f"Scenario missing required keys: {', '.join(sorted(missing))}. "
+                f"Required: {', '.join(sorted(self._REQUIRED_SCENARIO_KEYS))}."
+            )
+
+        # Validate road_users has both vehicles
+        road_users = scenario.get("road_users", {})
+        for vehicle_key in ("vehicle_a", "vehicle_b"):
+            vehicle = road_users.get(vehicle_key, {})
+            if not vehicle:
+                raise ValueError(
+                    f"road_users.{vehicle_key} is missing or empty. "
+                    f"Provide at least {{'initial_velocity_ms': <number>}}."
+                )
+            # Check that vehicle has velocity info
+            if "initial_velocity_ms" not in vehicle:
+                raise ValueError(
+                    f"road_users.{vehicle_key} missing 'initial_velocity_ms'. "
+                    f"Expected a number (e.g. 27.8 for 100 km/h)."
+                )
+
+    def _validate_parameters(
+        self,
+        n_mc_samples: int,
+        jurisdiction: str,
+        seed: int,
+    ) -> None:
+        """Validate Monte Carlo, jurisdiction, and seed parameters.
+
+        Args:
+            n_mc_samples: Number of Monte Carlo samples.
+            jurisdiction: Jurisdiction code.
+            seed: Random seed.
+
+        Raises:
+            ValueError: If any parameter is invalid.
+        """
+        if not isinstance(n_mc_samples, int) or n_mc_samples <= 0:
+            raise ValueError(
+                f"n_mc_samples must be a positive integer, got {n_mc_samples!r}."
+            )
+
+        if not isinstance(jurisdiction, str) or not jurisdiction:
+            raise ValueError(
+                f"jurisdiction must be a non-empty string, got {jurisdiction!r}."
+            )
+
+        jurisdiction_lower = jurisdiction.lower()
+        if jurisdiction_lower not in self._KNOWN_JURISDICTIONS:
+            raise ValueError(
+                f"Unknown jurisdiction: {jurisdiction!r} (case-insensitive). "
+                f"Known: {sorted(self._KNOWN_JURISDICTIONS)}."
+            )
+        self._jurisdiction_lower = jurisdiction_lower
+
+        if not isinstance(seed, int) or seed < 0:
+            raise ValueError(
+                f"seed must be a non-negative integer, got {seed!r}."
+            )
 
     def run(self) -> dict[str, Any]:
         """Run the full pipeline on the scenario.

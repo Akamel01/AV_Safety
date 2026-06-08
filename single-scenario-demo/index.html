@@ -5,8 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Collision Risk Playground — RE-CA-001 | AV_Safety Portfolio</title>
   <link rel="stylesheet" href="style.css">
-  <!-- Pyodide for in-browser Python -->
-  <script src="https://cdn.jsdelivr.net/pyodide/v0.24.1/full/pyodide.js"></script>
 </head>
 <body>
 
@@ -24,6 +22,9 @@
       <button class="btn btn-sm" id="btn-share">🔗 Share</button>
     </div>
   </header>
+
+  <!-- Status bar -->
+  <div id="status-bar" class="status-bar"></div>
 
   <!-- ==================== MAIN LAYOUT ==================== -->
   <main class="main-layout">
@@ -45,7 +46,7 @@
           </div>
           <div class="controller-group">
             <div class="controller-row">
-              <span class="controller-label">De cel</span>
+              <span class="controller-label">Decel</span>
               <input type="range" class="controller-input" id="p-a-lead" min="-8" max="-2" step="0.25" value="-5.0">
               <span class="controller-value" id="v-a-lead">-5.0 m/s²</span>
             </div>
@@ -97,6 +98,18 @@
               <span class="controller-value" id="v-a-follow">-8.0 m/s²</span>
             </div>
             <div class="controller-range">-10 — -3 m/s²</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Nominal Status -->
+      <div class="indicator-section" id="nominal-status-section">
+        <div class="indicator-section-title">Simulation Status</div>
+        <div class="indicator-list">
+          <div class="controller-group">
+            <div class="controller-row">
+              <span id="nominal-status" style="font-weight:bold;color:var(--text-muted);">—</span>
+            </div>
           </div>
         </div>
       </div>
@@ -367,7 +380,7 @@
     </div>
     <div>
       <a href="https://github.com/Akamel01/AV_Safety" target="_blank">🔗 GitHub</a> ·
-      <a href="docs/demo-readme.md" target="_blank">📖 Readme</a>
+      <span style="color:var(--text-muted);font-size:0.85em;">Readme (coming soon)</span>
     </div>
   </footer>
 

@@ -133,14 +133,15 @@ class RiskScorer {
 
     // TTC component: lower TTC = higher score
     let ttcScore = 0;
-    if (ttcStats?.min !== null && ttcStats.min !== Infinity) {
+    const minTtc = ttcStats?.min;
+    if (minTtc != null && minTtc !== Infinity) {
       // Inverse relationship: TTC < 1s → 100, TTC > 10s → 0
-      if (ttcStats.min < 1.0) {
+      if (minTtc < 1.0) {
         ttcScore = 100;
-      } else if (ttcStats.min > 10.0) {
+      } else if (minTtc > 10.0) {
         ttcScore = 0;
       } else {
-        ttcScore = 100 * (1 - (ttcStats.min - 1.0) / 9.0);
+        ttcScore = 100 * (1 - (minTtc - 1.0) / 9.0);
       }
     }
 
@@ -196,12 +197,13 @@ class RiskScorer {
     let score = 100;
 
     // TTC < 2s threshold
-    if (ttcStats?.min !== null && ttcStats.min < 2.0) {
+    const minTtc = ttcStats?.min;
+    if (minTtc != null && minTtc < 2.0) {
       score -= 30;
     }
 
     // TTC < 1s threshold
-    if (ttcStats?.min !== null && ttcStats.min < 1.0) {
+    if (minTtc != null && minTtc < 1.0) {
       score -= 30;
     }
 

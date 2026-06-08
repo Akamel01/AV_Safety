@@ -16,29 +16,31 @@ class BayesianEVT {
     this.threshold = null;
   }
 
-  /** Initialize Pyodide runtime */
+  /** Initialize Pyodide runtime.
+
+   * Most methods (selectThresholdMRL, fitGPD, computeCollisionRate) are
+   * pure-JS and need no runtime. init() is intentionally a no-op so the
+   * app boots without waiting for a heavy CDN load or failing on network
+   * errors. runFullPipeline() will load Pyodide lazily when actually needed.
+   */
   async init() {
-    if (this.pyodide) return this.pyodide;
+    return this; // All used methods are pure JS — no Pyodide required
+  }
 
-    // Load Pyodide
-    if (!window.loadPyodide) {
-      const script = document.createElement('script');
-      script.src = 'https://cdn.jsdelivr.net/pyodide/v0.24.1/full/pyodide.js';
-      document.head.appendChild(script);
-      await new Promise((resolve) => { script.onload = resolve; });
-    }
+  /**
+   * Compute profile-likelihood for GPD parameters (public API for app.js).
+   * Grid search around Method-of-Moments estimate.
+   */
+  fitGPDProfileLikelihood(excesses, threshold) {
+    const gpdFit = this.fitGPD(excesses, threshold);
+    return this._profileLikelihoodBayesian(excesses, gpdFit, 2000);
+  }
 
-    this.pyodide = await loadPyodide({
-      indexURL: 'https://cdn.jsdelivr.net/pyodide/v0.24.1/full/',
-    });
-
-    // Install PyMC via micropip
-    await this.pyodide.runPythonAsync(`
-        import micropip
-        await micropip.install(['numpy', 'scipy', 'arviz'])
-    `);
-
-    return this.pyodide;
+  /**
+   * Posterior predictive check: KS statistic comparing observed vs GPD-simulated.
+   */
+  posteriorPredictiveCheck(gpd, excesses) {
+    return this._posteriorPredictiveCheck(gpd, excesses);
   }
 
   /**
@@ -534,26 +536,42 @@ class BayesianEVT {
 
   /**
    * Generate GPD PDF data for rendering.
-   */
-  getGPDPlotData(nPoints = 100) {
-    const { xi, sigma } = this.gpdParams || { xi: { estimate: 0.3 }, sigma: { estimate: 1.5 } };
-    const data = [];
+   /** Generate GPD PDF data for rendering. */
+   getGPDPlotData(nPoints = 100) {
+     const { xi, sigma } = this.gpdParams || { xi: { estimate: 0.3 }, sigma: { estimate: 1.5 } };
+     const data = [];
 
-    for (let i = 0; i < nPoints; i++) {
-      const x = i / nPoints * 10;
-      let pdf;
-      if (Math.abs(xi.estimate) < 0.001) {
-        pdf = (1 / sigma.estimate) * Math.exp(-x / sigma.estimate);
-      } else {
-        const base = 1 + xi.estimate * x / sigma.estimate;
-        if (base <= 0) { pdf = 0; }
-        else { pdf = (1 / sigma.estimate) * Math.pow(base, -(1 / xi.estimate + 1)); }
-      }
-      data.push({ x, y: pdf });
-    }
+     for (let i = 0; i < nPoints; i++) {
+       const x = i / nPoints * 10;
+       let pdf;
+       if (Math.abs(xi.estimate) < 0.001) {
+         pdf = (1 / sigma.estimate) * Math.exp(-x / sigma.estimate);
+       } else {
+         const base = 1 + xi.estimate * x / sigma.estimate;
+         if (base <= 0) { pdf = 0; }
+         else { pdf = (1 / sigma.estimate) * Math.pow(base, -(1 / xi.estimate + 1)); }
+       }
+       data.push({ x, y: pdf });
+     }
 
-    return data;
-  }
+     return data;
+   }
+
+   // ============================================================
+   // Public wrappers (needed by app.js API)
+   // ============================================================
+
+   /** Fit GPD via profile likelihood — public entry point for app */
+   fitGPDProfileLikelihood(excesses, gpdParams, nSims = 2000) {
+     const gpdFit = this.gpdParams || gpdParams;
+     return this._profileLikelihoodBayesian(excesses, gpdFit, nSims);
+   }
+
+   /** Posterior predictive check — public entry point for app */
+   posteriorPredictiveCheck(gpdParams, excesses) {
+     const gpd = gpdParams || this.gpdParams;
+     return this._posteriorPredictiveCheck(gpd, excesses);
+   }
 }
 
 if (typeof module !== 'undefined' && module.exports) {

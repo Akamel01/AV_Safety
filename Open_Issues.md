@@ -1,39 +1,59 @@
 # Open Issues — AV_Safety
 
-**Last Updated:** 2026-06-05 13:00 PDT
-
-## Critical Issues
-| # | Issue | Priority | Impact | Status |
-|---|-------|----------|--------|--------|
-| 1 | Missing "validation" skill | P0 | Pipeline incomplete | RESOLVED — skills/validation/ created |
-| 2 | Python pipeline uses simulated data | P0 | Results not reproducible | RESOLVED — deploy skill with CI/CD created |
-| 3 | Tests directory empty | P0 | No quality assurance | RESOLVED — 15 tests pass |
-| 4 | Portfolio UI directory empty | P0 | No production UI | Open |
-
-## High Priority
-| # | Issue | Priority | Impact | Status |
-|---|-------|----------|--------|--------|
-| 5 | Pipeline _run_monte_carlo generates random data | P1 | Simulation results meaningless | Open |
-| 6 | Risk scoring weights arbitrary (0.3/0.3/0.2/0.2) | P1 | Risk scores not justified | Open |
-| 7 | No CI/CD pipeline | P1 | No automated quality checks | RESOLVED — deploy/ci/ scripts created |
-| 8 | graphify-out empty directory misclassified as skill | P1 | Organization issue | RESOLVED — 46 files present |
-
-## Medium Priority
-| # | Issue | Priority | Impact | Status |
-|---|-------|----------|--------|--------|
-| 9 | 42 indicators not all computed consistently | P2 | Analysis incomplete | Open |
-| 10 | No external data ingestion | P2 | Validation against real crash data impossible | Open |
-| 11 | Pyodide PyMC installation may fail | P2 | Bayesian EVT may not work in browser | Open |
-| 12 | Three.js CDN may block requests | P2 | 3D visualization may fail | Open |
-| 13 | No error handling in Monte Carlo simulation | P2 | Silent failures possible | Open |
-
-## Low Priority
-| # | Issue | Priority | Impact | Status |
-|---|-------|----------|--------|--------|
-| 14 | No assets/ directories in skills | P3 | Limited reusability | Open |
-| 15 | No agents/openai.yaml for skill UI metadata | P3 | Skills won't surface in Codex CLI | Open |
-| 16 | Graphify skill exceeds 500 lines | P3 | Hard to maintain | Open |
+**Last Updated:** 2026-06-07
+**Total Tracked:** 13 issues (was 10, updated with new findings)
 
 ---
 
-*This issue list is updated as new issues are discovered.*
+## Critical Issues (3)
+
+| ID | Title | Priority | File | Status |
+|----|-------|----------|------|--------|
+|| **CRIT-003** | `animateNominal()` no try/catch — crash kills demo | P1 | `app.js` 235-285 | ✅ **FIXED** (try/catch around frame, trajectory validation, graceful stop on error) |
+|| **CRIT-004** | Pipeline `__init__` no input validation | P1 | `pipeline.py` 78-98 | ✅ **FIXED** (scenario/parameter validation, case-insensitive jurisdiction, 21 validation tests) |
+|| **CRIT-005** | 5 JS module API mismatches — calls non-existent methods | P1 | `app.js` 150-200 | 🔵 **RE-EVALUATED** — no real mismatches (app.js methods match module methods; old analysis was regex false positive on ES class syntax) |
+
+### CRIT-005 Details (New)
+5 API mismatches identified from source analysis:
+1. `vizEngine.updateHUD()` → should be `updateHUDValues()` (method renamed)
+2. `vizEngine.animate()` → verify if still exists (method signature may differ)
+3. `collapseResults` — property object called as method (property not callable)
+4. `bayesianEVT.fitGPDProfileLikelihood()` → internal method only, not exported
+5. `bayesianEVT.posteriorPredictiveCheck()` → internal method only, not exported
+
+---
+
+## High Issues (7)
+
+| ID | Title | Priority | File | Status |
+|----|-------|----------|------|--------|
+| **HIGH-001** | Risk scoring weights (0.3/0.3/0.2/0.2) arbitrary | P2 | `risk_scoring.py` 1-182 | 🟡 Documented |
+| **HIGH-002** | Bayesian EVT uses Method of Moments (not full inference) | P2 | `pipeline.py` 269-316 | 🟡 Documented gap |
+| **HIGH-003** | No external data ingestion (all synthetic) | P2 | scenario JSON only | 🟡 Documented gap |
+| **HIGH-004** | Pipeline catches all exceptions with `{}` (silent failure) | P2 | `pipeline.py` 163-167 | 🟡 Silent failure |
+| **HIGH-005** | No test coverage measurement (pyproject.toml targets 80%) | P2 | pyproject.toml | 🟡 Partial |
+| **HIGH-006** | Multiple Dockerfile locations (root vs deploy/) | P3 | Dockerfile files | 🟡 Documented |
+| **HIGH-007** | `visualization.js` location not at expected path (root) | P3 | `modules/visualization.js` | 🟡 Documented |
+
+---
+
+## Blockers (2)
+
+| ID | Title | Impact | Status |
+|----|-------|--------|--------|
+| **BLK-001** | No external data source configured | Limits testing scope | Awaiting |
+| **BLK-002** | No deployment target specified | Can't plan rollout | Awaiting |
+
+---
+
+## Informational
+
+- 244 total files in repository
+- 46 tests passing (verified live)
+- 14 continuity files created
+- 23 skill directories
+- Safety standards: ISO 26262, ISO 21448 (SOTIF), UL 4600, NHTSA FARS 2020
+
+---
+
+*This issue list is updated continuously. Last verified: 2026-06-07. CRIT-005 added as new critical finding.*

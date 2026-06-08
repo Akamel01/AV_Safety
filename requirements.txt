@@ -6,11 +6,12 @@ pandas>=2.0
 numpy>=1.26
 scipy>=1.12
 
-# Statistical analysis & Bayesian inference
-statsmodels>=0.14
-pymc>=5.0
-arviz>=0.15
-pystan>=3.0
+# Statistical analysis & Bayesian inference (Python backend, not used in demo)
+# NOTE: pymc/pystan/arviz removed — unused by current pipeline
+# Re-enable for server-side full Bayesian inference:
+# pymc>=5.0
+# arviz>=0.15
+# pystan>=3.0
 
 # Machine learning
 scikit-learn>=1.4

@@ -145,7 +145,7 @@ class VisualizationEngine {
         return;
       }
       const script = document.createElement('script');
-      script.src = 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r160/three.min.js';
+      script.src = 'https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js';
       script.onload = () => resolve(THREE);
       script.onerror = () => resolve(null);
       document.head.appendChild(script);
@@ -500,7 +500,7 @@ class VisualizationEngine {
     `;
   }
 
-  /** Update HUD values (called by app) */
+  /** Update HUD values — legacy API (called by app) */
   updateHUDValues(ttc, drac, dv, cp, cpi) {
     if (!this.hudElement) return;
     const setVal = (id, val, color) => {
@@ -520,6 +520,27 @@ class VisualizationEngine {
       this._getCPColor(cp));
     setVal('hud-cpi', `CPI: ${cpi?.toFixed(2) || '--'}`,
       this._getCPIColor(cpi));
+  }
+
+  /** Update HUD with full trajectory frame data (called by app.animateNominal) */
+  updateHUD(frame) {
+    if (!this.hudElement) return;
+    const { ttc, collision } = frame;
+    // Compute DRAC from velocity change rate
+    const v_a = frame.v_a || 0;
+    const v_b = frame.v_b || 0;
+    const t = frame.time || 0;
+    // Use stored previous state to estimate drac
+    if (!this._prevV_b) this._prevV_b = v_b;
+    if (!this._prevT) this._prevT = t;
+    const dt = t - this._prevT;
+    const drac = dt > 0.05 ? Math.abs((v_b - this._prevV_b) / dt) : 0;
+    this._prevV_b = v_b;
+    this._prevT = t;
+
+    const cp = collision ? 100 : 0;
+    const cpi = collision ? 1.0 : (ttc !== null && ttc > 0 ? Math.max(0, 1 - ttc / 10) : 0.5);
+    this.updateHUDValues(ttc, drac, 0, cp, cpi);
   }
 
   /** Color coding helpers */

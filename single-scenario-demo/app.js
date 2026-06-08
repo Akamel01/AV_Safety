@@ -40,10 +40,13 @@ const AppState = {
 // ============================================================
 async function init() {
   const statusEl = document.getElementById('status-bar');
+  const updateStatus = (msg) => {
+    if (statusEl) statusEl.textContent = msg;
+  };
 
   try {
     // 1. Load scenario data
-    statusEl.textContent = 'Loading scenario data...';
+    updateStatus('Loading scenario data...');
     const resp = await fetch('data/scenario-RE-CA-001.json');
     AppState.scenario = await resp.json();
     console.log('[app] Scenario loaded:', AppState.scenario.scenario.id);
@@ -219,8 +222,8 @@ async function runNominalSimulation() {
     }
 
     // Update status bar
-    const statusEl = document.getElementById('status-bar');
-    if (statusEl) statusEl.textContent = 'Nominal simulation complete.';
+    const statusEl2 = document.getElementById('status-bar');
+    if (statusEl2) statusEl2.textContent = 'Nominal simulation complete.';
 
   } catch (e) {
     console.error('[app] Nominal simulation failed:', e);
@@ -246,34 +249,44 @@ function animateNominal(trajectory) {
       Math.floor(AppState.time / 15.0 * n)
     );
 
-    const t = trajectory.t[AppState.frameIdx];
-    const x_a = trajectory.x_a[AppState.frameIdx];
-    const x_b = trajectory.x_b[AppState.frameIdx];
-    const v_a = trajectory.v_a[AppState.frameIdx];
-    const v_b = trajectory.v_b[AppState.frameIdx];
-    const gap = trajectory.gap[AppState.frameIdx];
-    const ttc = trajectory.ttc[AppState.frameIdx];
-    const isCol = trajectory.collision[AppState.frameIdx];
+    try {
+      const t = trajectory.t[AppState.frameIdx];
+      const x_a = trajectory.x_a[AppState.frameIdx];
+      const x_b = trajectory.x_b[AppState.frameIdx];
+      const v_a = trajectory.v_a[AppState.frameIdx];
+      const v_b = trajectory.v_b[AppState.frameIdx];
+      const gap = trajectory.gap[AppState.frameIdx];
+      const ttc = trajectory.ttc[AppState.frameIdx];
+      const isCol = trajectory.collision[AppState.frameIdx];
 
-    // Update HUD in visualization
-    AppState.vizEngine.updateHUD({
-      time: t,
-      gap: gap,
-      v_a: v_a,
-      v_b: v_b,
-      ttc: ttc,
-      collision: isCol,
-    });
+      // Validate extracted values before using — stop animation if data is bad
+      if (t === undefined || t === null || x_a === undefined || x_b === undefined) {
+        throw new Error(`Missing trajectory data at index ${AppState.frameIdx}`);
+      }
 
-    // Animate frame
-    AppState.vizEngine.animateFrame({
-      x: x_a - x_b,
-      v_a, v_b,
-      collision: isCol,
-      time: t,
-    });
+      // Update HUD in visualization
+      AppState.vizEngine.updateHUD({
+        time: t,
+        gap: gap,
+        v_a: v_a,
+        v_b: v_b,
+        ttc: ttc,
+        collision: isCol,
+      });
 
-    if (AppState.time < 15.0) {
+      // Animate frame — update vehicle positions + render
+      if (AppState.vizEngine) {
+        AppState.vizEngine.updatePositions({ x: x_a - x_b, v_a, v_b, collision: isCol, time: t });
+        AppState.vizEngine.render();
+      }
+    } catch (e) {
+      console.error('[animateNominal] Frame error:', e.message);
+      AppState.animRunning = false;
+      AppState.vizEngine?.stopAnimation();
+      return;
+    }
+
+    if (AppState.time < 15.0 && AppState.animRunning) {
       AppState.animFrameId = requestAnimationFrame(frame);
     } else {
       AppState.animRunning = false;
@@ -326,7 +339,12 @@ async function runMonteCarlo() {
     }
 
     // Compute risk score
-    computeRiskScore(mcResults);
+    console.log('[app] mcResults keys:', mcResults ? Object.keys(mcResults) : 'null', 'collapsed:', mcResults?.collapsedResults, 'ttc:', mcResults?.collapsedResults?.ttc);
+    if (!mcResults?.collapsedResults) {
+      console.warn('[app] No collapsedResults, skipping risk score');
+    } else {
+      computeRiskScore(mcResults);
+    }
 
     if (statusEl) statusEl.textContent = 'Monte Carlo simulation complete.';
 
@@ -336,33 +354,30 @@ async function runMonteCarlo() {
   } finally {
     AppState.mcRunning = false;
     btnMC.disabled = false;
-    btnMC.textContent = '▶ Monte Carlo';
     if (progressFill) progressFill.style.width = '0%';
   }
 }
 
 function buildMCSpec(params) {
-  // Build parameter distribution spec from nominal parameters
+  // Build parameter distribution spec for MonteCarloEngine (flat structure)
   return {
     seed: 42,
-    parameters: {
-      v_a0: { mu: params.v_a0, sigma: 1.0, lo: 15, hi: 35 },
-      v_b0: { mu: params.v_b0, sigma: 1.0, lo: 15, hi: 35 },
-      headway: { mu: params.headway, sigma: 5.0, lo: 5, hi: 60 },
-      reaction_time: { mu: params.reaction_time, sigma: 0.3, lo: 0.5, hi: 4.0 },
-      a_lead: { mu: params.a_lead, sigma: 1.0, lo: -8, hi: -2 },
-      a_follow_max: { mu: params.a_follow_max, sigma: 1.0, lo: -10, hi: -3 },
-      brake_lag: { mu: 0.15, sigma: 0.02, lo: 0.05, hi: 0.3 },
-      vehicle_length: { mu: 4.3, sigma: 0.1, lo: 3.5, hi: 5.0 },
-      lane_width: { mu: 3.7, sigma: 0.1, lo: 3.0, hi: 4.5 },
-      sim_duration: { mu: 15.0, sigma: 0, lo: 15, hi: 15 },
-      t_brake_event: { mu: 3.0, sigma: 0.0, lo: 3, hi: 3 },
-    },
+    v_a0: { mu: params.v_a0, sigma: 1.0, lo: 15, hi: 35 },
+    v_b0: { mu: params.v_b0, sigma: 1.0, lo: 15, hi: 35 },
+    headway: { mu: params.headway, sigma: 5.0, lo: 5, hi: 60 },
+    reaction_time: { mu: params.reaction_time, sigma: 0.3, lo: 0.5, hi: 4.0 },
+    a_lead: { mu: params.a_lead, sigma: 1.0, lo: -8, hi: -2 },
+    a_follow_max: { mu: params.a_follow_max, sigma: 1.0, lo: -10, hi: -3 },
+    brake_lag: { mu: 0.15, sigma: 0.02, lo: 0.05, hi: 0.3 },
+    vehicle_length: { mu: 4.3, sigma: 0.1, lo: 3.5, hi: 5.0 },
+    lane_width: { mu: 3.7, sigma: 0.1, lo: 3.0, hi: 4.5 },
+    sim_duration: { mu: 15.0, sigma: 0, lo: 15, hi: 15 },
+    t_brake_event: { mu: 3.0, sigma: 0.0, lo: 3, hi: 3 },
   };
 }
 
 function updateMCResults(mcResults) {
-  const stats = mcResults.collapseResults();
+  const stats = mcResults.collapsedResults;
   const n = mcResults.n;
 
   // Collision rate
@@ -473,8 +488,8 @@ async function runBayesianEVT(mcResultsInput) {
 // Risk Scoring
 // ============================================================
 function computeRiskScore(mcResults) {
-  const stats = mcResults.collapseResults();
-  const collisionRate = mcResults.collisions / mcResults.n;
+  const stats = mcResults?.collapsedResults || {};
+  const collisionRate = mcResults?.collisions / mcResults?.n || 0;
 
   // Compute components
   const evt = AppState.gpdParams || { xi: { estimate: 0.3 }, sigma: { estimate: 1.5 } };

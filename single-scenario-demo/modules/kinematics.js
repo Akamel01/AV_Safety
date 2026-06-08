@@ -346,7 +346,15 @@ class RearEndKinematics {
         break;
       }
     }
-    indicators.rdcp = rdcp !== null ? rdcp : minGap;
+    // Fallback: minimum gap when no collision occurred
+    if (rdcp === null) {
+      let fallbackGap = Infinity;
+      for (let i = 0; i < n; i++) {
+        if (traj.gap[i] < fallbackGap) fallbackGap = traj.gap[i];
+      }
+      rdcp = fallbackGap === Infinity ? null : fallbackGap;
+    }
+    indicators.rdcp = rdcp;
 
     // 15. min_spatial_gap: Minimum longitudinal gap
     let minSpatialGap = Infinity;
