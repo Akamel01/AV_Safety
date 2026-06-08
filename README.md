@@ -8,7 +8,7 @@
 
 ## What It Is
 
-AV_Safety is a research initiative aimed at developing a hierarchical, data-driven framework for autonomous vehicle safety assessment. The system integrates crash failure mechanism catalogs, scenario-based risk modeling, surrogate safety metrics, Monte Carlo simulation, Bayesian extreme value theory, and ODD-aware domain adaptation to estimate collision risk and generate evidence for safety validation and deployment readiness.
+AV-Safety is a research initiative aimed at developing a hierarchical, data-driven framework for autonomous vehicle safety assessment. The system integrates crash failure mechanism catalogs, scenario-based risk modeling, surrogate safety metrics, Monte Carlo simulation, Bayesian extreme value theory, and ODD-aware domain adaptation to estimate collision risk and generate evidence for safety validation and deployment readiness.
 
 ## Quick Start
 
