@@ -220,7 +220,7 @@ python3 -m pytest tests/ -v
 # Build and start all services
 docker compose up --build
 
-# Risk API will be available at http://localhost:8000
+# Risk API will be available at http://localhost:9000
 # UI will be available at http://localhost:80
 ```
 
@@ -334,6 +334,14 @@ Full repository audit, code verification, inventory, continuity artifacts.
 - `docs/METHODOLOGY.md` — Detailed scientific methodology for the 7-step pipeline
 - `docs/HARA_Analysis.md` — Hazard Analysis and Risk Assessment documentation
 - `docs/DEVELOPMENT_STATUS.md` — Detailed component status matrix with confidence levels
+
+### Research Documentation (Integrated from APEX CONTROL)
+- `docs/research/AV-SAFETY-CORE-REPORT.md` — Executive summary of ISO standards research
+- `docs/research/iso-21448-sotif/README.md` — Comprehensive SOTIF (ISO 21448) analysis
+- `docs/research/iso-26262-functional/README.md` — Comprehensive Functional Safety (ISO 26262) analysis
+- `docs/research/iso-comparative-analysis.md` — Comparative analysis and integration guidance
+
+> **Note:** APEX CONTROL's AV-SAFETY-CORE research effort has been integrated to provide comprehensive ISO 21448 (SOTIF) and ISO 26262 (Functional Safety) analysis for safety case development.
 
 ---
 
