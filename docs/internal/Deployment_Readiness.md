@@ -84,8 +84,8 @@
 
 ### Deployment
 - [ ] Build Docker image: `docker build -t av-safety:latest .`
-- [ ] Run container: `docker run -p 8000:8000 av-safety:latest`
-- [ ] Verify demo loads: open `http://localhost:8000`
+- [ ] Run container: `docker run -p 9000:8000 av-safety:latest`
+- [ ] Verify demo loads: open `http://localhost:9080`
 - [ ] Run MC simulation (10k samples) — verify completion
 - [ ] Verify EVT triggers correctly when collisions >= 10
 

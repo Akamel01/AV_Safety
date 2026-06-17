@@ -6,7 +6,7 @@ services:
       context: .
       dockerfile: deploy/Dockerfile
     ports:
-      - "80:80"
+      - "3000:80"
     volumes:
       - ./ui:/app/ui
       - ./docs:/app/docs
@@ -19,7 +19,7 @@ services:
       context: .
       dockerfile: deploy/Dockerfile
     ports:
-      - "8000:8000"
+      - "9000:8000"
     volumes:
       - ./src:/app/src
     environment:

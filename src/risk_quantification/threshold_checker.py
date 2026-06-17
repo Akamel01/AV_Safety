@@ -6,8 +6,8 @@ thresholds and produces compliance classifications.
 
 from __future__ import annotations
 
-# safety_thresholds is a sibling package under src/ — relative import works with src.* imports
-from ..safety_thresholds import BaselineEstimator, CollisionRateThresholds, THRESHOLDS, AVDeploymentCriteria
+# safety_thresholds is a sibling package under src/ — use absolute import for standalone scripts
+from src.safety_thresholds import BaselineEstimator, CollisionRateThresholds, THRESHOLDS, AVDeploymentCriteria
 
 
 class ThresholdComplianceChecker:

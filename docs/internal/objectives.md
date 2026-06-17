@@ -38,7 +38,7 @@ Derived from: `Project_Overview.md` strategic objectives, `Portfolio_Blueprint.m
   - [ ] Dockerfile ENTRYPOINT matches CMD and packages
   - [ ] Docker build succeeds
   - [ ] Docker run succeeds
-- **Validation:** `docker build -t av-safety . && docker run -p 8000:8000 av-safety`
+- [ ] Validation: `docker build -t av-safety . && docker run -p 9000:8000 av-safety`
 - **Dependencies:** None
 
 #### O1.3: CSV Exporter Working [MEDIUM]

@@ -1,0 +1,114 @@
+{
+  "pipeline_info": {
+    "pipeline_id": "av-safety-pipeline-v1",
+    "version": "1.0.0",
+    "completed_at": 1781684316.628387
+  },
+  "scenario_info": {
+    "scenario_id": "DEMO-001",
+    "conflict_type": "rear-end",
+    "jurisdiction": "usa"
+  },
+  "kinematics": {
+    "v_a0": 27.8,
+    "v_b0": 27.8,
+    "headway": 30.0,
+    "t_brake_event": 3.0,
+    "a_lead": -5.0,
+    "a_follow_max": -8.0,
+    "t_reaction": 1.5,
+    "vehicle_length": 4.3,
+    "lane_width": 3.7,
+    "collision": false,
+    "params": {}
+  },
+  "indicators": {
+    "ttc": 1.079136690647482,
+    "drac": 5.0,
+    "ttc_nominal": 0,
+    "drac_nominal": 0,
+    "delta_v": 0,
+    "rla": 0,
+    "min_spatial_gap": 30.0
+  },
+  "monte_carlo": {
+    "n_samples": 1000,
+    "collision_rate": 0.766,
+    "n_collisions": 766,
+    "collision_rate_ci95": [
+      0.7397591206244912,
+      0.7922408793755088
+    ],
+    "ttc_mean": 0.8407360456011245,
+    "ttc_std": 0.2867454538177844,
+    "ttc_min": 0.0659516218653699,
+    "ttc_max": 1.7290408222982099,
+    "delta_v_mean": 6.566099300730577,
+    "delta_v_max": 16.9848338987938,
+    "min_gap_mean": 1.9272473043661333,
+    "mean_collision_time": 7.034369545402251,
+    "drac_mean": 3.0
+  },
+  "bayesian_evt": {
+    "gpd_params": {
+      "xi": 0.5,
+      "sigma": 3.283,
+      "method": "method_of_moments"
+    },
+    "threshold": 2.0,
+    "severity_gpd": {
+      "xi": 0.4,
+      "sigma": 1.9698
+    },
+    "severity_score": 6.566099300730577,
+    "occurrence_likelihood": 76.6,
+    "confidence": 0.85,
+    "n_exceedances": 766,
+    "posterior_mean": {
+      "xi": 0.5,
+      "sigma": 3.2830496503652884
+    }
+  },
+  "collision_modeling": {
+    "model": "ensemble",
+    "collision_probability": 0.766,
+    "uncertainty": 0.15000000000000002,
+    "severity_gpd": {
+      "xi": 0.4,
+      "sigma": 1.9698
+    },
+    "ensemble_weights": {
+      "kinematics": 0.4,
+      "evidence": 0.6
+    }
+  },
+  "threshold_checker": {
+    "jurisdiction": "usa",
+    "collision_rate": 0.766,
+    "n_samples": 1000,
+    "compliance_level": "FULL",
+    "meets_threshold": true,
+    "safety_margin_percent": 21.030927835051543,
+    "required_improvement_percent": 0,
+    "threshold_value": 0.97,
+    "safe_threshold": 0.85,
+    "baseline_fatal_rate": 1.12,
+    "confidence_interval": [
+      0.7397591206244912,
+      0.7922408793755088
+    ]
+  },
+  "risk_scoring": {
+    "overall_risk_score": 2.387568,
+    "risk_level": "CRITICAL",
+    "recommendation": "DENIED",
+    "confidence": 0.85,
+    "component_scores": {
+      "collision_rate": 0.766,
+      "severity": 6.566099300730577,
+      "uncertainty": 0.15000000000000002,
+      "threshold_compliance": 0.7896907216494846
+    },
+    "compliance": "FULL"
+  }
+}

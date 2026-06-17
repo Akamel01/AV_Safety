@@ -64,13 +64,13 @@ SERVICE=api ENVIRONMENT=development docker-compose up -d risk-api
 SERVICE=ui ENVIRONMENT=development docker-compose up -d portfolio-ui
 
 # API URL (development)
-#   http://localhost:8000
+#   http://localhost:9000
 
 # Portfolio UI URL
 #   http://localhost:80
 
 # Nginx proxy URL
-#   http://localhost:8080
+#   http://localhost:9080
 ```
 
 ### Dockerfile Notes
@@ -245,9 +245,9 @@ Location: `single-scenario-demo/`
 
 - [ ] Run `pip3 install -r requirements.txt` in project root
 - [ ] Run `docker-compose up -d` for full stack
-- [ ] Verify `http://localhost:8000` (API) responds
-- [ ] Verify `http://localhost:80` (UI) serves the demo
-- [ ] Verify `http://localhost:8080` (nginx proxy) routes correctly
+- [ ] Verify `http://localhost:9000` (API) responds
+- [ ] Verify `http://localhost:3000` (UI) serves the demo
+- [ ] Verify `http://localhost:9080` (nginx proxy) routes correctly
 - [ ] Run tests: `pytest tests/` from project root
 - [ ] Update `data/raw/` with external crash data (NHTSA FARS, CISS, Transport Canada, DfT GB)
 - [ ] Create missing `single-scenario-demo/app.js`
